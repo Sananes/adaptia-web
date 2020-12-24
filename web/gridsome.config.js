@@ -25,9 +25,9 @@ function addStyleResource (rule) {
 }
 
 module.exports = {
-  siteName: 'Gridsome Blog Starter',
+  siteName: 'Adaptia Design',
   siteDescription:
-    'A simple, hackable & minimalistic starter for Gridsome that uses structured content from Sanity.io.',
+    'A marketing and branding agency',
 
   templates: {
     SanityPost: '/:slug__current'
