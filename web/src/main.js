@@ -14,4 +14,10 @@ export default function(Vue, { router, head, isClient }) {
 
   // Inject global image URL builder
   Vue.prototype.$urlForImage = urlForImage
+
+  head.link.push({
+    rel: 'stylesheet',
+    type: 'text/css',
+    href: 'https://fonts.googleapis.com/css?family=Inter:400,500,600,700&display=swap'
+  })
 }
