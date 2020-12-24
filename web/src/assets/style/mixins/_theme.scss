@@ -1,0 +1,6 @@
+@mixin theme($theme: 'dark') {
+    $selector: #{&};
+    @at-root [data-theme='#{$theme}'] #{$selector} {
+      @content;
+    }
+  }

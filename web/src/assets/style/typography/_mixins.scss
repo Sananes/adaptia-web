@@ -1,0 +1,95 @@
+@mixin font-family($family: var(--font-family-heading)) {
+    font-family: $family;
+  }
+  
+  @mixin heading-1 {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-heading-1);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: var(--letter-spacing);
+    line-height: var(--line-height-tighter);
+  }
+  
+  @mixin heading-2 {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-heading-2);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: var(--letter-spacing);
+    line-height: var(--line-height-tighter);
+  }
+  
+  @mixin heading-3 {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-heading-3);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tighter);
+  }
+  
+  @mixin heading-4 {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-heading-4);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+  }
+  
+  @mixin heading-5 {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-heading-5);
+    font-weight: var(--font-weight-bold);
+  }
+  
+  @mixin heading-6 {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-heading-6);
+    font-weight: var(--font-weight-bold);
+  }
+  
+  @mixin body-xxl {
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-body-xxl);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height);
+  }
+  
+  @mixin body-xl {
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-body-xl);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height);
+  }
+  
+  @mixin body-l {
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-body-l);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height);
+  }
+  
+  @mixin body {
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height);
+  }
+  
+  @mixin body-s {
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-body-s);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height);
+  }
+  
+  @mixin body-xs {
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-body-xs);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height);
+  }
+  
+  @mixin body-xxs {
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-body-xxs);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height);
+  }
+  
