@@ -9,6 +9,7 @@
 
     <div class="header__right">
       <toggle-theme />
+      <button class="header__menu"><Menu /></button>
     </div>
   </header>
 </template>
@@ -23,6 +24,7 @@ export default {
   components: {
     HeaderLogo,
     ToggleTheme,
+    Menu: () => import('~/assets/icons/menu.svg'),
     Logo: () => import('../../static/logo.svg'),
   },
 }
@@ -51,6 +53,17 @@ export default {
     margin: 0;
   }
 
+  .header__menu {
+    color: inherit;
+    outline: 0;
+    padding: 0.5rem;
+    opacity: inherit;
+    cursor: pointer;
+    margin: -0.5rem;
+    border: none;
+    background: none;
+  }
+
   .header__logo {
     height: var(--logo-height);
   }
@@ -59,6 +72,12 @@ export default {
   &__right {
     display: flex;
     align-items: center;
+  }
+
+  &__right {
+    display: grid;
+    grid-gap: 1rem;
+    grid-auto-flow: column;
   }
 
   @media screen and (min-width: 1300px) {
