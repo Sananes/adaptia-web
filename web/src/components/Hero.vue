@@ -1,5 +1,13 @@
 <template>
   <div class="hero">
+    <div class="hero__container">
+      <div class="hero__content">
+        <h1 class="hero__title">Marketing &amp; design agency in san diego, california</h1>
+        <!-- <h1 class="hero__title">We help you adapt to Evolving markets</h1> -->
+      </div>
+      <div class="hero__scroll"><a href="#section1">Learn more</a></div>
+    </div>
+    <div class="hero__phone"><a href="tel:+1 7325670876">Call Us +1 732 567 0876</a></div>
     <div class="hero__image-container">
       <div class="hero__image">
         <g-image
@@ -12,13 +20,6 @@
         />
       </div>
     </div>
-    <div class="hero__container">
-      <div class="hero__content">
-        <h1 class="hero__title">Marketing &amp; design agency in san diego, california</h1>
-      </div>
-      <div class="hero__scroll"><a href="#section1">Learn more</a></div>
-    </div>
-    <div class="hero__phone"><a href="tel:+1 445 667 121">Call Us +1 445 667 121</a></div>
   </div>
 </template>
 
@@ -60,6 +61,7 @@ $specific-breakpoint: '>=935px';
   @include media($specific-breakpoint) {
     box-sizing: content-box;
     display: grid;
+    z-index: 10;
     order: 1;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 0.2fr 1fr 0.2fr;
@@ -139,6 +141,7 @@ $specific-breakpoint: '>=935px';
   height: auto;
   line-height: 1;
   transform: rotate(-90deg);
+  z-index: 10;
 
   @include media('>1400px') {
     display: inline;
