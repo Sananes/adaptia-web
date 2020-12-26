@@ -48,11 +48,14 @@ export default {
 }
 
 .footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: calc(var(--space) / 2);
-  text-align: center;
+  padding: var(--gutter-h);
+
+  @include media('>tablet') {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
 
   > span {
     margin: 0 0.35em;

@@ -20,9 +20,11 @@
   --link-color: #6b17e6;
   --border-color: rgba(0, 0, 0, 0.1);
   --space: 3.5rem;
+  --gutter-h: 1rem;
   --content-width: 860px;
-  --header-height: 88px;
+  --header-height: 60px;
   --radius: 5px;
+  --logo-height: 24px;
 
   --letter-spacing-tight: -4px;
 
@@ -40,10 +42,17 @@
   --font-weight-bold: 900;
 }
 
-// Make  things smaller for mobile
-@include media('<650px') {
-  --space: 1.5rem;
-  --header-height: 60px;
+body {
+  // Make  things smaller for mobile
+  @include media('>phone') {
+    --gutter-h: 1.5rem;
+    --header-height: 88px;
+  }
+
+  @include media('>tablet') {
+    --gutter-h: 2rem;
+    --logo-height: 40px;
+  }
 }
 
 // Override variables for Dark theme

@@ -1,7 +1,9 @@
 <template>
   <header class="header">
     <div class="header__left">
-      <logo class="logo" />
+      <h1 class="header__title">
+        <g-link to="/"><logo class="header__logo" /></g-link>
+      </h1>
       <header-logo v-if="showLogo" />
     </div>
 
@@ -17,7 +19,6 @@ import Logo from '../../static/logo.svg'
 import HeaderLogo from '~/components/HeaderLogo.vue'
 
 export default {
-  methods: {},
   name: 'Header',
   components: {
     HeaderLogo,
@@ -34,7 +35,7 @@ export default {
   align-items: center;
   min-height: var(--header-height);
   background: var(--color-black);
-  padding: 0 calc(var(--space) / 2);
+  padding: 0 var(--gutter-h);
   top: 0;
   z-index: 10;
   color: var(--color-white);
@@ -44,8 +45,14 @@ export default {
     background: var(--color-white);
   }
 
-  .logo {
-    height: 32px;
+  .header__title,
+  .header__title a {
+    color: inherit;
+    margin: 0;
+  }
+
+  .header__logo {
+    height: var(--logo-height);
   }
 
   &__left,

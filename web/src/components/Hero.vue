@@ -2,14 +2,23 @@
   <div class="hero">
     <div class="hero__image-container">
       <div class="hero__image">
-        <g-image src="~/assets/images/hero.png" fit="cover" position="right bottom" />
+        <g-image
+          :immediate="true"
+          src="~/assets/images/hero.png"
+          fit="inside"
+          width="873"
+          height="909"
+          position="bottom right"
+        />
       </div>
     </div>
     <div class="hero__container">
       <div class="hero__content">
         <h1 class="hero__title">Marketing &amp; design agency in san diego, california</h1>
       </div>
+      <div class="hero__scroll"><a href="#section1">Learn more</a></div>
     </div>
+    <div class="hero__phone"><a href="tel:+1 445 667 121">Call Us +1 445 667 121</a></div>
   </div>
 </template>
 
@@ -20,123 +29,125 @@ export default {
 </script>
 
 <style lang="scss">
+$specific-breakpoint: '>=935px';
 .hero {
-  display: inline-grid;
   position: relative;
+  display: grid;
   background: var(--color-black);
   color: var(--color-white);
+
+  @include media($specific-breakpoint) {
+    height: 100%;
+    width: 100%;
+    grid-template-rows: minmax(40vw, 1fr);
+    overflow: hidden;
+  }
 
   @include theme('dark') {
     background: white;
     color: var(--color-black);
   }
 
-  @include media('>phone') {
-    height: 75vh;
-    width: 100%;
-    overflow: hidden;
-  }
-
-  @include media('>phone', '<=tablet') {
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 1rem;
-    height: 50vh;
-    width: 100%;
-    overflow: hidden;
+  a {
+    color: inherit;
+    text-decoration: none;
   }
 }
 
 .hero__container {
-  box-sizing: content-box;
-  grid-template-rows: 1fr 1fr;
   order: -1;
-
-  @include media('>phone') {
+  // Specific breakpoint
+  @include media($specific-breakpoint) {
+    box-sizing: content-box;
     display: grid;
     order: 1;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: auto;
+    grid-template-rows: 0.2fr 1fr 0.2fr;
     max-width: var(--max-width);
     margin: 0 auto;
     justify-content: center;
     align-items: center;
   }
-
-  @include media('>phone', '<=tablet') {
-    grid-template-columns: auto;
-    max-width: 100%;
-    grid-column: 2 / span 1;
-  }
 }
 
 .hero__image-container {
-  @include media('>phone') {
+  @include media($specific-breakpoint) {
+    display: inline-grid;
+
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     width: 100%;
-    height: 75vh;
-    display: inline-grid;
+    height: 100%;
     grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 100%;
     grid-gap: 3.2rem;
     align-items: flex-end;
-  }
-
-  @include media('>phone', '<=tablet') {
-    position: relative;
-    grid-template-columns: none;
-    grid-column: 1 / span 1;
-    height: 50vh;
   }
 }
 
 .hero__image {
-  display: flex;
-  flex: 1 1 0;
-
-  @include media('>phone') {
-    grid-column: 1 / span 6;
-    position: relative;
-    justify-self: flex-end;
-    justify-content: flex-end;
-    align-self: flex-end;
-  }
-
-  @include media('>phone', '<=tablet') {
-    grid-column: 1 / span 5;
-  }
+  grid-column: 1 / span 6;
+  width: 100%;
+  height: 100%;
+  justify-self: flex-end;
+  align-self: flex-end;
 
   img {
-    @include media('>phone') {
-      width: 100%;
-      max-width: 75vh;
-      min-width: 70vh;
-    }
-    @include media('>phone', '<=tablet') {
-      width: 100%;
-      max-width: 100%;
-      min-width: 100%;
-    }
+    display: block;
+    object-fit: contain;
+    position: relative;
+    width: 100%;
+    height: 100%;
   }
 }
 
 .hero__content {
-  padding: 1rem;
+  padding: var(--gutter-h);
 
-  @include media('>phone') {
+  @include media($specific-breakpoint) {
     padding: 0;
     grid-column: 8 / span 4;
+    grid-row: 2;
     max-width: 30rem;
-  }
-
-  @include media('>phone', '<=tablet') {
-    grid-column: 9 / span 3;
   }
 }
 
 .hero__title {
   @include hero-title;
+  margin: 0 !important;
   color: inherit;
+}
+
+.hero__scroll {
+  padding: 0 var(--gutter-h);
+
+  @include media($specific-breakpoint) {
+    padding: calc(var(--gutter-h) / 2) 0;
+    grid-column: 8 / span 4;
+    grid-row: 3;
+  }
+}
+
+.hero__phone {
+  display: none;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  right: -0.25rem;
+  height: auto;
+  line-height: 1;
+  transform: rotate(-90deg);
+
+  @include media('>1400px') {
+    display: inline;
+  }
+
+  a {
+    line-height: inherit;
+    display: inline;
+    height: inherit;
+  }
 }
 </style>

@@ -50,7 +50,7 @@
 export default {
   data() {
     return {
-      darkTheme: false
+      darkTheme: false,
     }
   },
   methods: {
@@ -59,11 +59,11 @@ export default {
 
       // This is using a script that is added in index.html
       window.__setPreferredTheme(this.darkTheme ? 'dark' : 'light')
-    }
+    },
   },
   mounted() {
     if (window.__theme == 'dark') this.darkTheme = true
-  }
+  },
 }
 </script>
 
@@ -71,6 +71,8 @@ export default {
 .toggle-theme {
   background-color: transparent;
   border: 0;
+  padding: 0.5rem;
+  margin: 0 -0.5rem;
   color: var(--body-color);
   cursor: pointer;
 
