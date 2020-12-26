@@ -36,6 +36,11 @@
   --font-size-heading-5: 0.75rem; // 24px
   --font-size-heading-6: 0.5rem; // 16px
 
+  --font-size-body-m: 1.25rem;
+  --font-size-body: 1rem;
+  --font-size-body-s: 0.875rem;
+  --font-size-body-xs: 0.75rem;
+
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 700;
@@ -52,6 +57,7 @@ body {
   @include media('>tablet') {
     --gutter-h: 2rem;
     --logo-height: 40px;
+    --font-baseline: 1.6;
   }
 }
 

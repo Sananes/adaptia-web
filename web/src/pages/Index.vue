@@ -1,6 +1,7 @@
 <template>
   <Layout :show-logo="false">
     <hero />
+    <Testimonial />
   </Layout>
 </template>
 
@@ -56,10 +57,12 @@
 <script>
 import AuthorCard from '~/components/AuthorCard'
 import PostCard from '~/components/PostCard'
+import Testimonial from '~/sections/Testimonial'
 
 export default {
   components: {
     Hero: () => import('~/components/Hero'),
+    Testimonial,
   },
   metaInfo: {
     title: 'Hello, world!',

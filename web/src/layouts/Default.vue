@@ -43,6 +43,11 @@ export default {
   max-width: var(--max-width);
 }
 
+.container--narrow {
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
 .main {
   margin: 0 auto;
 }

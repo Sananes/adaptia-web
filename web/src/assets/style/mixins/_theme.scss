@@ -1,6 +1,27 @@
 @mixin theme($theme: 'dark') {
-    $selector: #{&};
-    @at-root [data-theme='#{$theme}'] #{$selector} {
-      @content;
-    }
+  $selector: #{&};
+  @at-root [data-theme='#{$theme}'] #{$selector} {
+    @content;
   }
+}
+
+@mixin inverse-white {
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  color: var(--color-black);
+  background: var(--color-white);
+
+  @include theme('dark') {
+    color: var(--color-white);
+    background: var(--color-black);
+  }
+}
+
+@mixin inverse-black {
+  color: var(--color-white);
+  background: var(--color-black);
+
+  @include theme('dark') {
+    color: var(--color-black);
+    background: var(--color-white);
+  }
+}

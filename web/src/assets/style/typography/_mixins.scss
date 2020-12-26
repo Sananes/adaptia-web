@@ -1,42 +1,42 @@
-@mixin fluid-type($properties, $min-vw, $max-vw, $min-value, $max-value) {
-  $factor: 1 / ($max-vw - $min-vw) * ($max-value - $min-value);
-  $calc-value: unquote('#{ $min-value - ($min-vw * $factor) } + #{ 100vw * $factor }');
+// @mixin fluid-type($properties, $min-vw, $max-vw, $min-value, $max-value) {
+//   $factor: 1 / ($max-vw - $min-vw) * ($max-value - $min-value);
+//   $calc-value: unquote('#{ $min-value - ($min-vw * $factor) } + #{ 100vw * $factor }');
 
-  #{$properties}: $min-value; // Fallback for older browsers
-  #{$properties}: clamp(
-    #{if($min-value > $max-value, $max-value, $min-value)},
-    #{$calc-value},
-    #{if($min-value > $max-value, $min-value, $max-value)}
-  );
+//   #{$properties}: $min-value; // Fallback for older browsers
+//   #{$properties}: clamp(
+//     #{if($min-value > $max-value, $max-value, $min-value)},
+//     #{$calc-value},
+//     #{if($min-value > $max-value, $min-value, $max-value)}
+//   );
+// }
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
 }
 
-// @function strip-unit($value) {
-//   @return $value / ($value * 0 + 1);
-// }
+@mixin fluid-type($properties, $min-vw, $max-vw, $min-value, $max-value) {
+  & {
+    @each $property in $properties {
+      #{$property}: $min-value;
+    }
 
-// @mixin fluid-type($properties, $min-vw, $max-vw, $min-value, $max-value) {
-//   & {
-//     @each $property in $properties {
-//       #{$property}: $min-value;
-//     }
+    @media screen and (min-width: $min-vw) {
+      @each $property in $properties {
+        #{$property}: calc(
+          #{$min-value} +
+            #{strip-unit($max-value - $min-value)} *
+            ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
+        );
+      }
+    }
 
-//     @media screen and (min-width: $min-vw) {
-//       @each $property in $properties {
-//         #{$property}: calc(
-//           #{$min-value} +
-//             #{strip-unit($max-value - $min-value)} *
-//             ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
-//         );
-//       }
-//     }
-
-//     @media screen and (min-width: $max-vw) {
-//       @each $property in $properties {
-//         #{$property}: $max-value;
-//       }
-//     }
-//   }
-// }
+    @media screen and (min-width: $max-vw) {
+      @each $property in $properties {
+        #{$property}: $max-value;
+      }
+    }
+  }
+}
 
 @mixin vertical-spacing($properties, $size, $multiplier: 1) {
   & {
@@ -118,6 +118,7 @@
 }
 
 @mixin body-xxl {
+  @include vertical-spacing(margin-top, var(--font-size-heading-6), 2);
   font-family: var(--font-family-body);
   font-size: var(--font-size-body-xxl);
   font-weight: var(--font-weight-normal);
@@ -125,6 +126,7 @@
 }
 
 @mixin body-xl {
+  @include vertical-spacing(margin-top, var(--font-size-heading-6), 2);
   font-family: var(--font-family-body);
   font-size: var(--font-size-body-xl);
   font-weight: var(--font-weight-normal);
@@ -153,6 +155,7 @@
 }
 
 @mixin body-xs {
+  @include vertical-spacing(margin-top, var(--font-size-heading-6), 2);
   font-family: var(--font-family-body);
   font-size: var(--font-size-body-xs);
   font-weight: var(--font-weight-normal);
@@ -160,6 +163,7 @@
 }
 
 @mixin body-xxs {
+  @include vertical-spacing(margin-top, var(--font-size-heading-6), 2);
   font-family: var(--font-family-body);
   font-size: var(--font-size-body-xxs);
   font-weight: var(--font-weight-normal);

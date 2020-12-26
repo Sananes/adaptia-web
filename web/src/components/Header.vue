@@ -21,6 +21,12 @@ import HeaderLogo from '~/components/HeaderLogo.vue'
 
 export default {
   name: 'Header',
+  props: {
+    showLogo: {
+      type: Boolean,
+      default: false,
+    },
+  },
   components: {
     HeaderLogo,
     ToggleTheme,
@@ -80,10 +86,10 @@ export default {
     grid-auto-flow: column;
   }
 
-  @media screen and (min-width: 1300px) {
-    //Make header sticky for large screens
-    position: sticky;
-    width: 100%;
-  }
+  // @include media('>desktop') {
+  //   //Make header sticky for large screens
+  //   position: sticky;
+  //   width: 100%;
+  // }
 }
 </style>
