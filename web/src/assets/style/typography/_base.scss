@@ -4,38 +4,50 @@ html {
 
 body {
   font-family: var(--font-family-primary);
-  font-weight: 300;
-  line-height: 1.45;
 }
 
 p {
-	margin-bottom: 1.25em;
+  line-height: var(--font-baseline);
+  margin-bottom: var(--font-baseline);
 }
 
-h1, h2, h3, h4, h5 {
-  transition: color .6s;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  transition: color 0.6s;
   color: var(--title-color);
-  margin: 2.75rem 0 1rem;
-  font-family: var(--font-family-primary);
-  font-weight: 700;
-  line-height: 1.15;
+  margin-bottom: var(--font-baseline);
 }
-
 
 h1 {
-  margin-top: 0;
-  font-size: 1.802em;
+  @include heading-1;
 }
 
-h2 {font-size: 1.602em;}
+h2 {
+  @include heading-2;
+}
 
-h3 {font-size: 1.424em;}
+h3 {
+  @include heading-3;
+}
 
-h4 {font-size: 1.266em;}
+h4 {
+  @include heading-4;
+}
 
-h5 {font-size: 1.125em;}
+h5 {
+  @include heading-5;
+}
 
-small {font-size: 0.889em;}
+h6 {
+  @include heading-6;
+}
+
+small {
+  font-size: 0.889em;
+}
 
 strong {
   font-weight: 500;
@@ -51,19 +63,19 @@ em {
   font-style: italic;
 }
 
-ul { 
-  list-style-type: disc; 
+ul {
+  list-style-type: disc;
   margin-left: 1.25em;
   margin-bottom: 1.25em;
   li {
-    margin-bottom: .6em;
+    margin-bottom: 0.6em;
   }
 }
-ol { 
-  list-style-type: decimal; 
+ol {
+  list-style-type: decimal;
   margin-left: 1.25em;
   margin-bottom: 1.25em;
   li {
-    margin-bottom: .6em;
+    margin-bottom: 0.6em;
   }
 }

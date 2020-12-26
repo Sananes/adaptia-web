@@ -1,44 +1,58 @@
-// Default variables
-html {
-	--base-font-size: 20px;
-}
-
 // Light default theme
-body {
-	--font-family-base: "Inter", -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-	--font-family-primary: var(--font-family-base);
-	--bg-color: #F3F7F9;
-	--bg-content-color: #fff;
-	--bg-code: #fffbf3;
-	--body-color: #444;
-	--title-color: #111;
-	--link-color: #6b17e6;
-	--border-color:  rgba(0,0,0,.1);;
-	--space: 3.5rem;
-	--content-width: 860px;
-	--header-height: 80px;
-	--radius: 5px;
+:root {
+  --base-font-size: 16px;
+  --font-baseline: 1.5rem;
+  --fluid-typography-ratio: 1;
+
+  --font-family-base: 'Inter', -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  --font-family-primary: var(--font-family-base);
+  --max-width: 45rem;
+  --font-family-secondary: Tungsten, sans-serif;
+  --font-family-heading: var(--font-family-secondary);
+  --color-white: #fff;
+  --color-black: #131313;
+  --bg-color: #f3f7f9;
+  --bg-content-color: #fff;
+  --bg-code: #fffbf3;
+  --body-color: #444;
+  --title-color: #111;
+  --link-color: #6b17e6;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --space: 3.5rem;
+  --content-width: 860px;
+  --header-height: 88px;
+  --radius: 5px;
+
+  --letter-spacing-tight: -4px;
+
+  --font-size-hero: 2.25rem; // 72px
+  --font-size-heading-1: 2rem; // 64px
+  --font-size-heading-2: 1.75rem; // 56px
+  --font-size-heading-3: 1.5rem; // 48px
+  --font-size-heading-4: 1.125rem; // 36px
+  --font-size-heading-5: 0.75rem; // 24px
+  --font-size-heading-6: 0.5rem; // 16px
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 700;
+  --font-weight-bold: 900;
 }
 
 // Make  things smaller for mobile
 @include media('<650px') {
-	html {
-		--base-font-size: 17px;
-	}
-	body {
-		--space: 1.5rem;
-		--header-height: 60px;
-	}
+  --space: 1.5rem;
+  --header-height: 60px;
 }
-
 
 // Override variables for Dark theme
 @include theme('dark') {
-	--bg-color: #0D2538;
-	--bg-content-color: #0f2d44;
-	--bg-code: rgba(0,0,0,.3);
-	--border-color:  rgba(255,255,255,.1);;
-	--body-color: #ced8de;
-	--title-color: #fff;
-	--link-color: #af9cef;
+  --bg-color: #131313;
+  --bg-content-color: #0f2d44;
+  --bg-code: rgba(0, 0, 0, 0.3);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --body-color: #ced8de;
+  --title-color: #fff;
+  --link-color: #af9cef;
 }

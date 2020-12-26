@@ -1,11 +1,17 @@
 <template>
-  <div class="post-card content-box" :class="{'post-card--has-poster' : post.poster}">
+  <div class="post-card content-box" :class="{ 'post-card--has-poster': post.poster }">
     <div class="post-card__header">
       <g-image
         alt="Cover image"
         v-if="post.mainImage"
         class="post-card__image"
-        :src="$urlForImage(post.mainImage, $page.metadata.sanityOptions).height(440).width(800).auto('format').url()"
+        :src="
+          $urlForImage(post.mainImage, $page.metadata.sanityOptions)
+            .height(440)
+            .width(800)
+            .auto('format')
+            .url()
+        "
       />
     </div>
     <div class="post-card__content">
@@ -29,11 +35,11 @@ export default {
   components: {
     PostMeta,
     PostTags,
-    BlockContent
+    BlockContent,
   },
   props: {
-    post: Object
-  }
+    post: Object,
+  },
 }
 </script>
 
@@ -60,6 +66,7 @@ export default {
   }
 
   &__title {
+    @include heading-4;
     margin-top: 0;
   }
 

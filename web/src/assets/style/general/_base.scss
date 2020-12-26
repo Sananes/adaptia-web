@@ -1,18 +1,29 @@
 // Default
 * {
   box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+
+  @include fluid-type(font-size, 20rem, 45rem, 1rem, 2rem);
 }
 
 body {
   background-color: var(--bg-color);
+  // background-image: linear-gradient(rgba(200, 50, 50, 0.25) 1px, transparent 1px);
+  // background-size: 1px var(--font-baseline);
   color: var(--body-color);
   transition: color 0.6s, background-color 0.6s;
   font-family: var(--font-family-primary);
   margin: 0;
   padding: 0;
-  line-height: 1.5;
+  font-size: var(--base-font-size);
+  line-height: var(--font-baseline);
 }
 
 a:not(.button) {

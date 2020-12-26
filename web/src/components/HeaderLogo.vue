@@ -12,7 +12,16 @@ query {
 }
 </static-query>
 
-<style lang="scss">
+<script>
+import Logo from '../../static/logo.svg'
+export default {
+  components: {
+    Logo,
+  },
+}
+</script>
+
+<style lang="scss" scoped>
 .logo {
   text-decoration: none;
   color: var(--body-color) !important;

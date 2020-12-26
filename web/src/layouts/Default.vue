@@ -1,15 +1,6 @@
 <template>
   <div id="app">
-    <header class="header">
-      <div class="header__left">
-        <header-logo v-if="showLogo" />
-      </div>
-
-      <div class="header__right">
-        <toggle-theme />
-      </div>
-    </header>
-
+    <Header />
     <main class="main">
       <slot />
     </main>
@@ -26,49 +17,34 @@
 </template>
 
 <script>
-import HeaderLogo from '~/components/HeaderLogo'
-import ToggleTheme from '~/components/ToggleTheme'
-
+import Header from '~/components/Header'
 export default {
   props: {
     showLogo: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
   components: {
-    HeaderLogo,
-    ToggleTheme
-  }
+    Header,
+  },
 }
 </script>
 
 <style lang="scss">
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-height: var(--header-height);
-  padding: 0 calc(var(--space) / 2);
-  top: 0;
-  z-index: 10;
+@font-face {
+  font-family: Tungsten;
+  src: url('../assets/fonts/TungstenSemibold.otf');
+  font-weight: normal;
+}
 
-  &__left,
-  &__right {
-    display: flex;
-    align-items: center;
-  }
-
-  @media screen and (min-width: 1300px) {
-    //Make header sticky for large screens
-    position: sticky;
-    width: 100%;
-  }
+.container {
+  margin: 0 auto;
+  max-width: var(--max-width);
 }
 
 .main {
   margin: 0 auto;
-  padding: 1.5vw 15px 0;
 }
 
 .footer {
@@ -77,7 +53,6 @@ export default {
   justify-content: center;
   padding: calc(var(--space) / 2);
   text-align: center;
-  font-size: 0.8em;
 
   > span {
     margin: 0 0.35em;

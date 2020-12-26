@@ -1,17 +1,6 @@
 <template>
   <Layout :show-logo="false">
-    <!-- Author intro -->
-    <author-card :show-title="true" />
-
-    <!-- List posts -->
-    <div class="posts">
-      <post-card
-        v-for="edge in $page.posts.edges"
-        :key="edge.node.id"
-        :post="edge.node"
-        :metadata="$page.metadata"
-      />
-    </div>
+    <hero />
   </Layout>
 </template>
 
@@ -70,11 +59,13 @@ import PostCard from '~/components/PostCard'
 
 export default {
   components: {
-    AuthorCard,
-    PostCard
+    Hero: () => import('~/components/Hero'),
   },
   metaInfo: {
-    title: 'Hello, world!'
-  }
+    title: 'Hello, world!',
+  },
 }
 </script>
+
+<style lang="scss">
+</style>
