@@ -1,24 +1,22 @@
 <template>
   <div class="testimonial">
     <div class="container--narrow">
-      <client-only
-        ><swiper class="swiper" :options="swiperOption">
-          <swiper-slide v-for="(testimonial, index) in testimonials" :key="index">
-            <div class="testimonial__rating">
-              <icon name="star" />
-              <icon name="star" />
-              <icon name="star" />
-              <icon name="star" />
-              <icon name="star" />
-            </div>
-            <blockquote class="testimonial__quote">{{ testimonial.text }}</blockquote>
-            <aside class="testimonial__author" v-if="testimonial.name">
-              <strong class="testimonial__name">{{ testimonial.name }}</strong
-              ><span class="testimonial__role" v-html="testimonial.role" /></aside
-          ></swiper-slide>
-          <div class="swiper-pagination" slot="pagination"></div>
-        </swiper>
-      </client-only>
+      <swiper class="swiper" :options="swiperOption">
+        <swiper-slide v-for="(testimonial, index) in testimonials" :key="index">
+          <div class="testimonial__rating">
+            <icon name="star" />
+            <icon name="star" />
+            <icon name="star" />
+            <icon name="star" />
+            <icon name="star" />
+          </div>
+          <blockquote class="testimonial__quote">{{ testimonial.text }}</blockquote>
+          <aside class="testimonial__author" v-if="testimonial.name">
+            <strong class="testimonial__name">{{ testimonial.name }}</strong
+            ><span class="testimonial__role" v-html="testimonial.role" /></aside
+        ></swiper-slide>
+        <div class="swiper-pagination" slot="pagination"></div>
+      </swiper>
     </div>
   </div>
 </template>
@@ -79,7 +77,7 @@ export default {
 }
 
 .testimonial__quote {
-  font-size: var(--font-size-body-m);
+  font-size: var(--font-size-body);
   color: inherit;
   padding-left: 0;
   margin-bottom: rfs(2rem);
