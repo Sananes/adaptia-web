@@ -33,7 +33,6 @@ export default {
       swiperOption: {
         pagination: {
           el: '.swiper-pagination',
-          dynamicBullets: true,
         },
       },
       testimonials: [
@@ -53,14 +52,6 @@ export default {
         },
       ],
     }
-  },
-  methods: {
-    onTouchStart(event) {
-      document.querySelector('body').style.overflow = 'touch-action: pan-x'
-    },
-    onTouchEnd() {
-      document.querySelector('body').remove.style.overflow = 'touch-action: auto'
-    },
   },
   components: { Icon, Swiper, SwiperSlide },
   name: 'Testimonial',
@@ -108,5 +99,18 @@ export default {
   @include body-xxs;
   display: block;
   opacity: 0.5;
+}
+
+.swiper-pagination {
+  --swiper-pagination-color: var(--color-black);
+  margin-top: rfs(-1rem);
+  padding-top: rfs(2rem);
+  position: relative;
+  display: block;
+  bottom: 0;
+
+  @include theme('dark') {
+    --swiper-pagination-color: var(--color-white);
+  }
 }
 </style>
