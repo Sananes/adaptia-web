@@ -1,6 +1,13 @@
 <template>
   <div class="testimonial">
     <div class="container--narrow">
+      <div class="testimonial__rating">
+        <icon name="star" />
+        <icon name="star" />
+        <icon name="star" />
+        <icon name="star" />
+        <icon name="star" />
+      </div>
       <blockquote class="testimonial__quote">
         “Adaptia turned around our entire SEO strategy. We went from tens of thousands of negative
         backlinks and terrible Google stats to massive growth in our search rankings in only 3
@@ -15,7 +22,9 @@
 </template>
 
 <script>
+import Icon from '../components/Icon.vue'
 export default {
+  components: { Icon },
   name: 'Testimonial',
 }
 </script>
@@ -23,7 +32,7 @@ export default {
 <style lang="scss" scoped>
 .testimonial {
   @include inverse-white;
-  @include padding(4rem 1rem);
+  @include padding(6rem 1rem);
   padding-left: var(--gutter-h);
   padding-right: var(--gutter-h);
   text-align: center;
@@ -31,6 +40,13 @@ export default {
   @include media('>desktop') {
     @include padding(8rem 1rem);
   }
+}
+
+.testimonial__rating {
+  display: inline-grid;
+  grid-auto-flow: column;
+  grid-gap: 0.5rem;
+  margin-bottom: var(--gutter-h);
 }
 
 .testimonial__quote {
