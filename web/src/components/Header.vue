@@ -9,7 +9,7 @@
 
     <div class="header__right">
       <toggle-theme />
-      <button class="header__menu"><Menu /></button>
+      <button class="header__menu"><icon name="menu" /></button>
     </div>
   </header>
 </template>
@@ -17,6 +17,7 @@
 <script>
 import ToggleTheme from '~/components/ToggleTheme'
 import Logo from '../../static/logo.svg'
+import Icon from '~/components/Icon.vue'
 import HeaderLogo from '~/components/HeaderLogo.vue'
 
 export default {
@@ -30,7 +31,7 @@ export default {
   components: {
     HeaderLogo,
     ToggleTheme,
-    Menu: () => import('~/assets/icons/menu.svg'),
+    Icon,
     Logo: () => import('../../static/logo.svg'),
   },
 }
@@ -86,11 +87,5 @@ export default {
     grid-gap: 1rem;
     grid-auto-flow: column;
   }
-
-  // @include media('>desktop') {
-  //   //Make header sticky for large screens
-  //   position: sticky;
-  //   width: 100%;
-  // }
 }
 </style>

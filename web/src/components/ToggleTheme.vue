@@ -73,11 +73,13 @@ export default {
   border: 0;
   padding: 0.5rem;
   margin: 0 -0.5rem;
-  color: var(--body-color);
+  color: inherit;
+  opacity: 0.6;
   cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
 
   &:hover {
-    opacity: 0.8;
+    opacity: 0.4;
   }
   &:focus {
     outline: none;
