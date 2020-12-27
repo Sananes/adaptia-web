@@ -2,7 +2,9 @@
   <div class="hero">
     <div class="hero__container">
       <div class="hero__content">
-        <h1 class="hero__title">Marketing &amp; design agency in san diego, california</h1>
+        <h1 class="hero__title">
+          Marketing &amp; design agency in san diego, <span>california</span>
+        </h1>
         <!-- <h1 class="hero__title">We help you adapt to Evolving markets</h1> -->
       </div>
       <div class="hero__scroll"><a href="#section1">Learn more</a></div>
@@ -31,6 +33,7 @@ export default {
 
 <style lang="scss">
 $specific-breakpoint: '>=935px';
+
 .hero {
   position: relative;
   display: grid;
@@ -57,6 +60,8 @@ $specific-breakpoint: '>=935px';
 
 .hero__container {
   order: -1;
+  grid-template-rows: rfs(0.5fr) 1fr rfs(0.5fr);
+
   // Specific breakpoint
   @include media($specific-breakpoint) {
     box-sizing: content-box;
@@ -64,11 +69,15 @@ $specific-breakpoint: '>=935px';
     z-index: 10;
     order: 1;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 0.2fr 1fr 0.2fr;
-    max-width: var(--max-width);
+    grid-template-rows: rfs(0.4fr) 1fr rfs(0.4fr);
+    max-width: rfs(--max-width);
     margin: 0 auto;
     justify-content: center;
     align-items: center;
+  }
+
+  @include media('>desktop') {
+    grid-template-rows: rfs(20%) 1fr rfs(20%);
   }
 }
 
@@ -118,8 +127,11 @@ $specific-breakpoint: '>=935px';
 
 .hero__title {
   @include hero-title;
-  margin: 0 !important;
   color: inherit;
+
+  span {
+    @include outline-styles;
+  }
 }
 
 .hero__scroll {
@@ -134,14 +146,18 @@ $specific-breakpoint: '>=935px';
 
 .hero__phone {
   display: none;
-  top: 50%;
-  transform: translateY(-50%);
   position: absolute;
-  right: -0.25rem;
+  top: 60%;
+  right: var(--gutter-h);
   height: auto;
   line-height: 1;
-  transform: rotate(-90deg);
+  transform: rotate(270deg) translateY(-50%);
   z-index: 10;
+  margin: 0;
+  width: 0;
+  white-space: nowrap;
+  text-align: center;
+  transform-origin: bottom;
 
   @include media('>1400px') {
     display: inline;

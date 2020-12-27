@@ -1,41 +1,5 @@
-// @mixin fluid-type($properties, $min-vw, $max-vw, $min-value, $max-value) {
-//   $factor: 1 / ($max-vw - $min-vw) * ($max-value - $min-value);
-//   $calc-value: unquote('#{ $min-value - ($min-vw * $factor) } + #{ 100vw * $factor }');
-
-//   #{$properties}: $min-value; // Fallback for older browsers
-//   #{$properties}: clamp(
-//     #{if($min-value > $max-value, $max-value, $min-value)},
-//     #{$calc-value},
-//     #{if($min-value > $max-value, $min-value, $max-value)}
-//   );
-// }
-
 @function strip-unit($value) {
   @return $value / ($value * 0 + 1);
-}
-
-@mixin fluid-type($properties, $min-vw, $max-vw, $min-value, $max-value) {
-  & {
-    @each $property in $properties {
-      #{$property}: $min-value;
-    }
-
-    @media screen and (min-width: $min-vw) {
-      @each $property in $properties {
-        #{$property}: calc(
-          #{$min-value} +
-            #{strip-unit($max-value - $min-value)} *
-            ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
-        );
-      }
-    }
-
-    @media screen and (min-width: $max-vw) {
-      @each $property in $properties {
-        #{$property}: $max-value;
-      }
-    }
-  }
 }
 
 @mixin vertical-spacing($properties, $size, $multiplier: 1) {
@@ -46,126 +10,123 @@
   }
 }
 
-%heading-styles {
+@mixin font-family($family: var(--font-family-heading)) {
+  @if ($family == 'heading') {
+    font-family: var(--font-family-heading);
+  } @else {
+    font-family: var(--font-family-body);
+  }
+}
+
+@mixin outline-styles {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-color: var(---color-white);
+  -webkit-text-stroke-width: 0.5px;
+  // text-shadow: -1px 1px 0 var(--color-white), 1px 1px 0 var(--color-white),
+  //   1px -1px 0 var(--color-white), -1px -1px 0 var(--color-white);
+}
+
+/*----------------
+
+  Heading styles
+  
+----------------*/
+
+@mixin heading-styles {
+  @include font-family('heading');
   text-transform: uppercase;
 }
 
-@mixin font-family($property, $family: var(--font-family-heading)) {
-  font-family: $family;
+@mixin paragraph-styles {
+  @include font-family('body');
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height);
+  text-transform: none;
 }
 
 @mixin hero-title {
-  @extend %heading-styles;
+  @include heading-styles;
   font-size: var(--font-size-hero);
-  font-weight: var(--font-weight-semibold);
   line-height: var(--font-size-hero);
-  @include vertical-spacing(margin-top, var(--font-size-heading-1));
+  font-weight: var(--font-weight-semibold);
 }
 
 @mixin heading-1 {
-  @extend %heading-styles;
+  @include heading-styles;
   font-size: var(--font-size-heading-1);
-  font-family: var(--font-family-heading);
-  font-weight: var(--font-weight-semibold);
   line-height: var(--font-size-heading-1);
-  @include vertical-spacing(margin-top, var(--font-size-heading-1));
+  font-weight: var(--font-weight-semibold);
 }
 
 @mixin heading-2 {
-  @extend %heading-styles;
+  @include heading-styles;
   font-size: var(--font-size-heading-2);
-  font-family: var(--font-family-heading);
+  line-height: var(--font-size-heading-2);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--letter-spacing);
-  line-height: var(--font-size-heading-2);
-  @include vertical-spacing(margin-top, var(--font-size-heading-2), 2);
 }
 
 @mixin heading-3 {
-  @extend %heading-styles;
+  @include heading-styles;
   font-size: var(--font-size-heading-3);
-  font-family: var(--font-family-heading);
+  line-height: var(--font-size-heading-3);
   font-weight: var(--font-weight-bold);
   line-height: var(--font-size-heading-3);
-  @include vertical-spacing(margin-top, var(--font-size-heading-3), 2);
 }
 
 @mixin heading-4 {
-  @extend %heading-styles;
+  @include heading-styles;
   font-size: var(--font-size-heading-4);
-  font-family: var(--font-family-heading);
+  line-height: var(--font-size-heading-4);
   font-weight: var(--font-weight-bold);
   line-height: var(--font-size-heading-4);
-  @include vertical-spacing(margin-top, var(--font-size-heading-4), 2);
 }
 
 @mixin heading-5 {
-  @extend %heading-styles;
+  @include heading-styles;
   font-size: var(--font-size-heading-5);
-  font-family: var(--font-family-heading);
-  font-weight: var(--font-weight-bold);
   line-height: var(--font-size-heading-5);
-  @include vertical-spacing(margin-top, var(--font-size-heading-5), 2);
+  font-weight: var(--font-weight-bold);
 }
 
 @mixin heading-6 {
-  @extend %heading-styles;
+  @include heading-styles;
   font-size: var(--font-size-heading-6);
-  font-family: var(--font-family-heading);
-  font-weight: var(--font-weight-bold);
   line-height: var(--font-size-heading-6);
-  @include vertical-spacing(margin-top, var(--font-size-heading-6), 2);
-}
-
-@mixin body-xxl {
-  @include vertical-spacing(margin-top, var(--font-size-heading-6), 2);
-  font-family: var(--font-family-body);
-  font-size: var(--font-size-body-xxl);
-  font-weight: var(--font-weight-normal);
-  line-height: var(--line-height);
+  font-weight: var(--font-weight-bold);
 }
 
 @mixin body-xl {
-  @include vertical-spacing(margin-top, var(--font-size-heading-6), 2);
-  font-family: var(--font-family-body);
+  @include paragraph-styles;
   font-size: var(--font-size-body-xl);
-  font-weight: var(--font-weight-normal);
-  line-height: var(--line-height);
 }
 
 @mixin body-l {
-  font-family: var(--font-family-body);
+  @include paragraph-styles;
   font-size: var(--font-size-body-l);
-  font-weight: var(--font-weight-normal);
-  line-height: var(--line-height);
+}
+
+@mixin body-m {
+  @include paragraph-styles;
+  font-size: var(--font-size-body-m);
 }
 
 @mixin body {
-  font-family: var(--font-family-body);
+  @include paragraph-styles;
   font-size: var(--font-size-body);
-  font-weight: var(--font-weight-normal);
-  line-height: var(--line-height);
 }
 
 @mixin body-s {
-  font-family: var(--font-family-body);
+  @include paragraph-styles;
   font-size: var(--font-size-body-s);
-  font-weight: var(--font-weight-normal);
-  line-height: var(--line-height);
 }
 
 @mixin body-xs {
-  @include vertical-spacing(margin-top, var(--font-size-heading-6), 2);
-  font-family: var(--font-family-body);
+  @include paragraph-styles;
   font-size: var(--font-size-body-xs);
-  font-weight: var(--font-weight-normal);
-  line-height: var(--line-height);
 }
 
 @mixin body-xxs {
-  @include vertical-spacing(margin-top, var(--font-size-heading-6), 2);
-  font-family: var(--font-family-body);
+  @include paragraph-styles;
   font-size: var(--font-size-body-xxs);
-  font-weight: var(--font-weight-normal);
-  line-height: var(--line-height);
 }

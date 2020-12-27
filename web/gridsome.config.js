@@ -2,6 +2,8 @@
 // Learn more: https://gridsome.org/docs/config
 
 const path = require('path')
+const purgecss = require('@fullhuman/postcss-purgecss')
+const rfs = require('rfs')
 
 // Changes here requires a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
@@ -13,6 +15,12 @@ require('dotenv').config({
 const clientConfig = require('./client-config')
 
 const isProd = process.env.NODE_ENV === 'production'
+
+const postcssPlugins = [rfs(), require('autoprefixer')]
+
+if (isProd) {
+  postcssPlugins.push(purgecss(require('./purgecss.config.js')))
+}
 
 function addStyleResource(rule) {
   rule
@@ -26,9 +34,15 @@ function addStyleResource(rule) {
 module.exports = {
   siteName: 'Adaptia Design',
   siteDescription: 'A marketing and branding agency',
-
   templates: {
     SanityPost: '/:slug__current'
+  },
+  css: {
+    loaderOptions: {
+      postcss: {
+        plugins: postcssPlugins
+      }
+    }
   },
 
   // Scss loader

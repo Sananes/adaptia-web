@@ -1,9 +1,9 @@
-html {
-  font-size: var(--base-font-size);
-}
+@import '~rfs/scss';
 
 body {
+  @include font-size(1rem);
   font-family: var(--font-family-primary);
+  line-height: var(--font-baseline);
 }
 
 p {

@@ -41,6 +41,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  justify-items: center;
   min-height: var(--header-height);
   background: var(--color-black);
   padding: 0 var(--gutter-h);

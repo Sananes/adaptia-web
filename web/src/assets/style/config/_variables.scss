@@ -1,4 +1,3 @@
-// Light default theme
 :root {
   --base-font-size: 16px;
   --font-baseline: 1.5rem;
@@ -7,39 +6,42 @@
   --font-family-base: 'Inter', -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto,
     'Helvetica Neue', Arial, sans-serif;
   --font-family-primary: var(--font-family-base);
-  --max-width: 45rem;
+  --max-width: rfs(1440px);
   --font-family-secondary: Tungsten, sans-serif;
   --font-family-heading: var(--font-family-secondary);
   --color-white: #fff;
   --color-black: #131313;
-  --bg-color: #f3f7f9;
-  --bg-content-color: #fff;
+  --color-background: #f6f6f6;
+  --color-content-background: #fff;
   --bg-code: #fffbf3;
   --body-color: #444;
   --title-color: #111;
   --link-color: #6b17e6;
   --border-color: rgba(0, 0, 0, 0.1);
   --space: 3.5rem;
-  --gutter-h: 1rem;
-  --content-width: 860px;
+  --gutter-h: rfs(1rem);
+  --content-width: rfs(860px);
   --header-height: 60px;
   --radius: 5px;
-  --logo-height: 24px;
+  --logo-height: rfs(24px);
+  --line-height: 1.6;
 
   --letter-spacing-tight: -4px;
 
-  --font-size-hero: 2.25rem; // 72px
-  --font-size-heading-1: 2rem; // 64px
-  --font-size-heading-2: 1.75rem; // 56px
-  --font-size-heading-3: 1.5rem; // 48px
-  --font-size-heading-4: 1.125rem; // 36px
-  --font-size-heading-5: 0.75rem; // 24px
-  --font-size-heading-6: 0.5rem; // 16px
+  --font-size-hero: rfs(4.5rem); // 72px
+  --font-size-heading-1: rfs(4rem); // 64px
+  --font-size-heading-2: rfs(3.5rem); // 56px
+  --font-size-heading-3: rfs(3rem); // 48px
+  --font-size-heading-4: rfs(2.25rem); // 36px
+  --font-size-heading-5: rfs(1.5rem); // 24px
+  --font-size-heading-6: rfs(1rem); // 16px
 
-  --font-size-body-m: 1.25rem;
-  --font-size-body: 1rem;
-  --font-size-body-s: 0.875rem;
-  --font-size-body-xs: 0.75rem;
+  --font-size-body-xl: rfs(1.5rem); // 24px
+  --font-size-body-l: rfs(1.25rem); // 20px
+  --font-size-body-m: rfs(1.125rem); // 18px
+  --font-size-body: rfs(1rem); // 16px
+  --font-size-body-s: rfs(0.875rem); // 14px
+  --font-size-body-xs: rfs(0.75rem); // 12px
 
   --font-weight-normal: 400;
   --font-weight-medium: 500;
@@ -63,8 +65,8 @@ body {
 
 // Override variables for Dark theme
 @include theme('dark') {
-  --bg-color: #131313;
-  --bg-content-color: #0f2d44;
+  --color-background: #131313;
+  --color-content-background: #0f2d44;
   --bg-code: rgba(0, 0, 0, 0.3);
   --border-color: rgba(255, 255, 255, 0.1);
   --body-color: #ced8de;

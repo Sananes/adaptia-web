@@ -40,7 +40,7 @@ export default {
 
 .container {
   margin: 0 auto;
-  max-width: var(--max-width);
+  max-width: rfs(--max-width);
 }
 
 .container--narrow {

@@ -22,23 +22,22 @@ export default {
 
 <style lang="scss" scoped>
 .testimonial {
-  @include fluid-type((padding-top, padding-bottom), 20rem, 45rem, 2rem, 4rem);
   @include inverse-white;
+  @include padding(4rem 1rem);
   padding-left: var(--gutter-h);
   padding-right: var(--gutter-h);
   text-align: center;
 
   @include media('>desktop') {
-    padding-left: 0;
-    padding-right: 0;
+    @include padding(8rem 1rem);
   }
 }
 
 .testimonial__quote {
-  @include body;
+  @include body-xl;
   color: inherit;
   padding-left: 0;
-  margin-bottom: 1rem;
+  margin-bottom: rfs(2rem);
 }
 
 .testimonial__author {
@@ -48,13 +47,11 @@ export default {
 .testimonial__name {
   @include heading-5;
   display: block;
-  margin-top: 0 !important;
   margin-bottom: 0.5rem;
 }
 
 .testimonial__role {
   @include body-xxs;
-  margin: 0 !important;
   display: block;
   opacity: 0.5;
 }
