@@ -1,5 +1,8 @@
 // Import main css
 import '~/assets/style/index.scss'
+import Vue from 'vue'
+import '@animxyz/core'
+import VueAnimXYZ from '@animxyz/vue'
 
 // Import default layout so we don't need to import it to every page
 import DefaultLayout from '~/layouts/Default.vue'
@@ -11,6 +14,7 @@ import urlForImage from './utils/urlForImage'
 export default function(Vue, { router, head, isClient }) {
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
+  Vue.use(VueAnimXYZ)
 
   // Inject global image URL builder
   Vue.prototype.$urlForImage = urlForImage

@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <transition name="fade" appear><div class="overlay"></div></transition>
     <Header />
     <main class="main">
       <slot />
@@ -72,38 +71,39 @@ export default {
   }
 }
 
-.fade-enter-to {
-  bottom: 0;
-  height: 0%;
-}
+// .fade-enter-to {
+//   bottom: 0;
+//   height: 0%;
+// }
 
-.fade-enter-leave {
-  top: 0;
-  bottom: auto;
-  height: 100%;
-}
+// .fade-enter-leave {
+//   top: 0;
+//   bottom: auto;
+//   height: 100%;
+// }
 
-.fade-enter-active {
-  animation: fade-in 0.5s var(--animation);
-}
+// .fade-enter-active {
+//   animation: fade-in 0.5s var(--animation);
+// }
 
-.fade-leave-active {
-  animation: fade-in 0.5s reverse var(--animation);
-}
+// .fade-leave-active {
+//   animation: fade-in 0.5s reverse var(--animation);
+// }
 
-@keyframes fade-in {
-  from {
-    height: 100%;
-  }
-  to {
-    height: 0%;
-  }
-}
+// @keyframes fade-in {
+//   from {
+//     height: 100%;
+//   }
+//   to {
+//     height: 0%;
+//   }
+// }
 
 .overlay {
-  position: fixed;
+  position: absolute;
   background: black;
   width: 100%;
+  height: 100%;
   z-index: 999;
 }
 </style>

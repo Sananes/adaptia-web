@@ -2,29 +2,45 @@
   <div class="hero">
     <div class="hero__container">
       <div class="hero__content">
-        <transition name="title" appear>
+        <XyzTransition
+          appear
+          xyz="fade down ease-out-back"
+          :duration="{ appear: 'auto', in: 2000, out: 2000 }"
+        >
           <h1 class="hero__title">
-            Marketing &amp; design agency in san diego, <span>california</span>
+            <XyzTransitionGroup
+              appear
+              xyz="fade down ease-out-back"
+              :duration="{ number: 3, appear: 'auto', in: 2000, out: 2000 }"
+            >
+              <div key="1">Marketing &amp; design</div>
+              <div key="2">agency in san diego,</div>
+              <span key="3">california</span>
+            </XyzTransitionGroup>
           </h1>
-        </transition>
+        </XyzTransition>
         <!-- <h1 class="hero__title">We help you adapt to Evolving markets</h1> -->
       </div>
-      <div class="hero__scroll">
-        <a href="#section1"><icon name="chevron-down" size="small" fill="none" /> Learn more</a>
-      </div>
+      <XyzTransition appear xyz="fade down ease-in">
+        <div class="hero__scroll">
+          <a href="#section1"><icon name="chevron-down" size="small" fill="none" /> Learn more</a>
+        </div>
+      </XyzTransition>
     </div>
     <div class="hero__phone"><a href="tel:+1 7325670876">Call Us +1 732 567 0876</a></div>
     <div class="hero__image-container">
-      <div class="hero__image">
-        <g-image
-          :immediate="true"
-          src="~/assets/images/hero.png"
-          fit="inside"
-          width="873"
-          height="909"
-          position="bottom right"
-        />
-      </div>
+      <XyzTransition appear xyz="fade down ease-out-back duration-10 delay-5"
+        ><div class="hero__image">
+          <g-image
+            :immediate="true"
+            src="~/assets/images/hero.png"
+            fit="inside"
+            width="873"
+            height="909"
+            position="bottom right"
+          />
+        </div>
+      </XyzTransition>
     </div>
   </div>
 </template>
