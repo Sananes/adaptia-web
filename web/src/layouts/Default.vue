@@ -72,27 +72,36 @@ export default {
   }
 }
 
-.fade-enter,
-.fade-leave {
-  height: 100%;
-}
-
 .fade-enter-to {
+  bottom: 0;
   height: 0%;
 }
 
+.fade-enter-leave {
+  top: 0;
+  bottom: auto;
+  height: 100%;
+}
+
 .fade-enter-active {
-  bottom: 0;
-  transition: all 1s ease-in-out;
+  animation: fade-in 0.5s var(--animation);
 }
 
 .fade-leave-active {
-  top: 0;
-  transition: all 1s ease-in-out;
+  animation: fade-in 0.5s reverse var(--animation);
+}
+
+@keyframes fade-in {
+  from {
+    height: 100%;
+  }
+  to {
+    height: 0%;
+  }
 }
 
 .overlay {
-  position: absolute;
+  position: fixed;
   background: black;
   width: 100%;
   z-index: 999;

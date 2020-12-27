@@ -199,6 +199,6 @@ $specific-breakpoint: '>=935px';
 
 .title-enter-active,
 .title-leave-active {
-  transition: opacity 0.5s ease-in-out 1s, transform 1.5s ease-in-out 1s;
+  transition: opacity 0.5s var(--animation) 0.5s, transform 1.5s var(--animation) 0.5s;
 }
 </style>
