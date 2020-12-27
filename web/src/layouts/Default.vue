@@ -36,6 +36,7 @@ export default {
   font-family: Tungsten;
   src: url('../assets/fonts/TungstenSemibold.otf');
   font-weight: normal;
+  font-display: swap;
 }
 
 .container {
