@@ -7,7 +7,9 @@
         </h1>
         <!-- <h1 class="hero__title">We help you adapt to Evolving markets</h1> -->
       </div>
-      <div class="hero__scroll"><a href="#section1">Learn more</a></div>
+      <div class="hero__scroll">
+        <a href="#section1"><icon name="chevron-down" size="small" fill="none" /> Learn more</a>
+      </div>
     </div>
     <div class="hero__phone"><a href="tel:+1 7325670876">Call Us +1 732 567 0876</a></div>
     <div class="hero__image-container">
@@ -26,7 +28,9 @@
 </template>
 
 <script>
+import Icon from './Icon.vue'
 export default {
+  components: { Icon },
   name: 'Hero',
 }
 </script>
@@ -128,6 +132,7 @@ $specific-breakpoint: '>=935px';
 .hero__title {
   @include hero-title;
   color: inherit;
+  margin: 0;
 
   span {
     @include outline-styles;
@@ -141,6 +146,15 @@ $specific-breakpoint: '>=935px';
     padding: calc(var(--gutter-h) / 2) 0;
     grid-column: 8 / span 4;
     grid-row: 3;
+  }
+
+  svg {
+    margin-right: rfs(0.5rem);
+  }
+
+  a {
+    display: flex;
+    align-items: center;
   }
 }
 
