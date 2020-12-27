@@ -1,10 +1,10 @@
 <template>
   <div id="app">
+    <transition name="fade" appear><div class="overlay"></div></transition>
     <Header />
     <main class="main">
       <slot />
     </main>
-
     <footer class="footer">
       <span class="footer__copyright">Copyright © {{ new Date().getFullYear() }}.</span>
       <span class="footer__links">
@@ -70,5 +70,31 @@ export default {
   a {
     color: currentColor;
   }
+}
+
+.fade-enter,
+.fade-leave {
+  height: 100%;
+}
+
+.fade-enter-to {
+  height: 0%;
+}
+
+.fade-enter-active {
+  bottom: 0;
+  transition: all 1s ease-in-out;
+}
+
+.fade-leave-active {
+  top: 0;
+  transition: all 1s ease-in-out;
+}
+
+.overlay {
+  position: absolute;
+  background: black;
+  width: 100%;
+  z-index: 999;
 }
 </style>

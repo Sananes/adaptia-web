@@ -2,9 +2,11 @@
   <div class="hero">
     <div class="hero__container">
       <div class="hero__content">
-        <h1 class="hero__title">
-          Marketing &amp; design agency in san diego, <span>california</span>
-        </h1>
+        <transition name="title" appear>
+          <h1 class="hero__title">
+            Marketing &amp; design agency in san diego, <span>california</span>
+          </h1>
+        </transition>
         <!-- <h1 class="hero__title">We help you adapt to Evolving markets</h1> -->
       </div>
       <div class="hero__scroll">
@@ -182,5 +184,21 @@ $specific-breakpoint: '>=935px';
     display: inline;
     height: inherit;
   }
+}
+
+.title-enter,
+.title-leave {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.title-enter-to {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.title-enter-active,
+.title-leave-active {
+  transition: opacity 0.5s ease-in-out 1s, transform 1.5s ease-in-out 1s;
 }
 </style>
