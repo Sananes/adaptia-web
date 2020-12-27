@@ -79,10 +79,14 @@ export default {
 }
 
 .testimonial__quote {
-  @include body-xl;
+  font-size: var(--font-size-body-m);
   color: inherit;
   padding-left: 0;
   margin-bottom: rfs(2rem);
+
+  @include media('>desktop') {
+    font-size: var(--font-size-body-xl);
+  }
 }
 
 .testimonial__author {

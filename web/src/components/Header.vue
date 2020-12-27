@@ -9,7 +9,7 @@
 
     <div class="header__right">
       <toggle-theme />
-      <g-link to="/kitchen-sink" class="header__menu"><icon name="menu" /></g-link>
+      <button class="header__menu"><icon name="menu" /></button>
     </div>
   </header>
 </template>
