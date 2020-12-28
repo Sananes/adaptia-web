@@ -1,7 +1,8 @@
 // Import main css
-import VueAnimXYZ from '@animxyz/vue'
+import VueAnimXyz from '@animxyz/vue'
+import '@animxyz/core'
+import 'normalize.css'
 import '~/assets/style/index.scss'
-import '@animxyz/core/dist/animxyz.min.css'
 import 'swiper/swiper-bundle.css'
 
 // Import default layout so we don't need to import it to every page
@@ -14,7 +15,7 @@ import urlForImage from './utils/urlForImage'
 export default function(Vue, { router, head, isClient }) {
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
-  Vue.use(VueAnimXYZ)
+  Vue.use(VueAnimXyz)
 
   // Inject global image URL builder
   Vue.prototype.$urlForImage = urlForImage
