@@ -75,46 +75,21 @@ module.exports = {
     {
       use: 'gridsome-plugin-pwa',
       options: {
-        // Service Worker Options
-        disableServiceWorker: false,
-        serviceWorkerPath: 'service-worker.js',
-        cachedFileTypes: 'js,json,css,html,png,jpg,jpeg,svg,gif',
-        disableTemplatedUrls: false, // Optional
-
-        // Manifest Options (https://developer.mozilla.org/en-US/docs/Web/Manifest)
-        manifestPath: 'manifest.json',
         title: 'Adaptia Design',
         startUrl: '/',
         display: 'standalone',
         statusBarStyle: 'default',
+        manifestPath: 'manifest.json',
+        disableServiceWorker: true,
+        serviceWorkerPath: 'service-worker.js',
+        cachedFileTypes: 'js,json,css,html,png,jpg,jpeg,svg',
+        shortName: 'Adaptia Design',
         themeColor: '#131313',
         backgroundColor: '#ffffff',
-        icon: '',
-        shortName: 'Adaptia Design', // Optional
-        description: 'A marketing and branding agency', // Optional
-        categories: ['agency'], // Optional
-        lang: 'en-US', // Optional
-        dir: 'auto', // Optional
-        maskableIcon: true, // Optional
-        screenshots: [
-          // Optional
-          {
-            src: 'src/assets/images/hero.png',
-            sizes: '1280x720',
-            type: 'image/png'
-          }
-        ],
-        gcmSenderId: undefined, // Optional
-
-        // Standard Meta Tags
-        svgFavicon: 'favicon.svg', // Optional. Requires favicon.ico fallback
-
-        // Microsoft Windows Meta Tags
-        msTileColor: '#131313', // Optional
-
-        // Apple MacOS Meta Tags
-        appleMaskIcon: 'favicon.svg', // Optional
-        appleMaskIconColor: '#131313' // Optional
+        icon: 'src/favicon.png', // must be provided like 'src/favicon.png'
+        msTileImage: '',
+        msTileColor: '#131313',
+        gcmSenderId: undefined
       }
     }
   ]
