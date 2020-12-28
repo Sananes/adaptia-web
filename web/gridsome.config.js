@@ -71,26 +71,51 @@ module.exports = {
         overlayDrafts: !isProd,
         watchMode: !isProd
       }
-    }
-    /* {
-      // Create posts from markdown files
-      use: '@gridsome/source-filesystem',
+    },
+    {
+      use: 'gridsome-plugin-pwa',
       options: {
-        typeName: 'Post',
-        path: 'content/posts/*.md',
-        route: '/:slug',
-        refs: {
-          // Creates a GraphQL collection from 'tags' in front-matter and adds a reference.
-          tags: {
-            typeName: 'Tag',
-            route: '/tag/:id',
-            create: true
-          }
-        }
-      },
-      {
+        // Service Worker Options
+        disableServiceWorker: false,
+        serviceWorkerPath: 'service-worker.js',
+        cachedFileTypes: 'js,json,css,html,png,jpg,jpeg,svg,gif',
+        disableTemplatedUrls: false, // Optional
 
+        // Manifest Options (https://developer.mozilla.org/en-US/docs/Web/Manifest)
+        manifestPath: 'manifest.json',
+        title: 'Adaptia Design',
+        startUrl: '/',
+        display: 'standalone',
+        statusBarStyle: 'default',
+        themeColor: '#131313',
+        backgroundColor: '#ffffff',
+        icon: '',
+        shortName: 'Adaptia Design', // Optional
+        description: 'A marketing and branding agency', // Optional
+        categories: ['agency'], // Optional
+        lang: 'en-US', // Optional
+        dir: 'auto', // Optional
+        maskableIcon: true, // Optional
+        screenshots: [
+          // Optional
+          {
+            src: 'src/assets/images/hero.png',
+            sizes: '1280x720',
+            type: 'image/png'
+          }
+        ],
+        gcmSenderId: undefined, // Optional
+
+        // Standard Meta Tags
+        svgFavicon: 'favicon.svg', // Optional. Requires favicon.ico fallback
+
+        // Microsoft Windows Meta Tags
+        msTileColor: '#131313', // Optional
+
+        // Apple MacOS Meta Tags
+        appleMaskIcon: 'favicon.svg', // Optional
+        appleMaskIconColor: '#131313' // Optional
       }
-    } */
+    }
   ]
 }
