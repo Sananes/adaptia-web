@@ -1,6 +1,5 @@
 // Import main css
 import '~/assets/style/index.scss'
-import VueAwesomeSwiper from 'vue-awesome-swiper'
 import VueAnimXYZ from '@animxyz/vue'
 import '@animxyz/core'
 import 'swiper/swiper-bundle.css'
