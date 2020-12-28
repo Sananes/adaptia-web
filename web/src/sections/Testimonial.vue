@@ -24,9 +24,7 @@
 </template>
 
 <script>
-import Vue from 'vue'
 import Icon from '../components/Icon.vue'
-import 'swiper/css/swiper.css'
 export default {
   data() {
     return {
@@ -51,12 +49,6 @@ export default {
           role: 'CEO, JJ Virgin & Associates',
         },
       ],
-    }
-  },
-  mounted() {
-    if (process.browser) {
-      const VueAwesomeSwiper = require('vue-awesome-swiper')
-      Vue.use(VueAwesomeSwiper)
     }
   },
   components: {
