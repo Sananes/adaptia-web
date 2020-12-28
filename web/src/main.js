@@ -15,7 +15,6 @@ import urlForImage from './utils/urlForImage'
 export default function(Vue, { router, head, isClient }) {
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
-  Vue.use(VueAwesomeSwiper /* { default options with global component } */)
   Vue.use(VueAnimXYZ)
 
   // Inject global image URL builder

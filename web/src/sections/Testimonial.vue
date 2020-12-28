@@ -2,30 +2,39 @@
   <div class="testimonial">
     <div class="container--narrow">
       <ClientOnly
-        ><swiper class="swiper" :options="swiperOption">
-          <swiper-slide v-for="(testimonial, index) in testimonials" :key="index">
-            <div class="testimonial__rating">
-              <icon name="star" />
-              <icon name="star" />
-              <icon name="star" />
-              <icon name="star" />
-              <icon name="star" />
+        ><div v-swiper:mySwiper="swiperOption" class="hp-slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" v-for="(testimonial, index) in testimonials" :key="index">
+              <div class="testimonial__rating">
+                <icon name="star" />
+                <icon name="star" />
+                <icon name="star" />
+                <icon name="star" />
+                <icon name="star" />
+              </div>
+              <blockquote class="testimonial__quote">{{ testimonial.text }}</blockquote>
+              <aside class="testimonial__author" v-if="testimonial.name">
+                <strong class="testimonial__name">{{ testimonial.name }}</strong
+                ><span class="testimonial__role" v-html="testimonial.role" />
+              </aside>
             </div>
-            <blockquote class="testimonial__quote">{{ testimonial.text }}</blockquote>
-            <aside class="testimonial__author" v-if="testimonial.name">
-              <strong class="testimonial__name">{{ testimonial.name }}</strong
-              ><span class="testimonial__role" v-html="testimonial.role" /></aside
-          ></swiper-slide>
-          <div class="swiper-pagination" slot="pagination"></div>
-        </swiper>
+            <div class="swiper-pagination" slot="pagination"></div>
+          </div>
+        </div>
       </ClientOnly>
     </div>
   </div>
 </template>
 
 <script>
+import Vue from 'vue'
 import Icon from '../components/Icon.vue'
 export default {
+  directives: !process.browser
+    ? {}
+    : {
+        swiper: require('vue-awesome-swiper').directive,
+      },
   data() {
     return {
       swiperOption: {
@@ -53,6 +62,10 @@ export default {
   },
   components: {
     Icon,
+  },
+
+  mounted() {
+    console.log('Swiper instance:', this.mySwiper)
   },
   name: 'Testimonial',
 }
