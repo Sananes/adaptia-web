@@ -1,7 +1,7 @@
 // Import main css
 import '~/assets/style/index.scss'
 import VueAnimXYZ from '@animxyz/vue'
-import '@animxyz/core/dist/animxyz.min.css'
+import '@animxyz/core'
 
 // Import default layout so we don't need to import it to every page
 import DefaultLayout from '~/layouts/Default.vue'

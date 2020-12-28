@@ -25,7 +25,6 @@
 
 <script>
 import Icon from '../components/Icon.vue'
-import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
 export default {
   data() {
@@ -53,7 +52,17 @@ export default {
       ],
     }
   },
-  components: { Icon, Swiper, SwiperSlide },
+  components: {
+    Icon,
+    Swiper: () =>
+      import('vue-awesome-swiper')
+        .then((m) => m.Swiper)
+        .catch(),
+    SwiperSlide: () =>
+      import('vue-awesome-swiper')
+        .then((m) => m.SwiperSlide)
+        .catch(),
+  },
   name: 'Testimonial',
 }
 </script>
