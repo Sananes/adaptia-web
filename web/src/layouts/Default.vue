@@ -37,7 +37,8 @@ export default {
 
 .container {
   margin: 0 auto;
-  max-width: rfs(--max-width);
+  max-width: var(--max-width);
+  padding: rfs(0 1rem);
 }
 
 .container--narrow {

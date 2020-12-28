@@ -1,5 +1,41 @@
 <template>
   <div class="hero">
+    <!-- <div
+      style="
+        position: relative;
+        height: 0;
+        width: 100%;
+        padding: 0;
+        padding-bottom: 100%;
+        padding-bottom: 104.092%;
+      "
+    >
+      <svg
+        style="position: absolute; height: 100%; width: 100%; left: 0; top: 0"
+        viewBox="0 0 953 992"
+        preserveAspectRatio="xMidYMin slice"
+      >
+        <defs>
+          <clipPath id="heroPath">
+            <path
+              fill="#FFFFFF"
+              stroke="#000000"
+              stroke-width="1.5794"
+              stroke-miterlimit="10"
+              d="M473.37 252.844l-.936-2.319-.921 2.326-143.356 362.13-1.391 3.514 2.947-2.367c66.309-53.24 143.158-103.514 230.926-143.354l.868-.394-.352-.886-30.982-77.968-.002-.005-56.801-140.677zm305.387 319.783l-1.122.268.425 1.073L943.413 991H767.945L623.038 629.498l-.402-1.003-.969.479C453.586 712.061 337.92 844.742 255.55 939.229l-.032.037c-16.597 19.037-31.834 36.516-45.881 51.734H1.473L394.682 1h155.523l115.154 288.891.001.002 50.336 126.879.326.821.855-.222c72.475-18.816 150.801-29.977 235.123-30.636v164.99c-62.81.086-120.263 8.247-173.243 20.902z"
+            />
+          </clipPath>
+        </defs>
+      </svg>
+
+      <g-image
+        :immediate="true"
+        src="~/assets/images/hero-alt.jpg"
+        fit="inside"
+        style="-webkit-clip-path: url(#heroPath); clip-path: url(#heroPath)"
+        position="bottom right"
+      />
+    </div> -->
     <div class="hero__container">
       <div class="hero__content">
         <XyzTransition appear xyz="fade down ease-out-back">
@@ -25,8 +61,8 @@
       </div></XyzTransition
     >
     <div class="hero__image-container">
-      <XyzTransition appear xyz="fade down duration-10  delay-10"
-        ><div class="hero__image">
+      <XyzTransition appear xyz="fade down duration-10  delay-10">
+        <div class="hero__image">
           <g-image
             :immediate="true"
             src="~/assets/images/hero.png"
@@ -47,10 +83,6 @@ export default {
   data() {
     return {}
   },
-
-  mounted() {
-    this.hasLoaded = !this.hasLoaded
-  },
   components: { Icon },
   name: 'Hero',
 }
@@ -58,11 +90,7 @@ export default {
 
 <style lang="scss">
 $specific-breakpoint: '>=935px';
-.square {
-  width: 500px;
-  height: 500px;
-  background: red;
-}
+
 .hero {
   position: relative;
   display: grid;
@@ -99,7 +127,6 @@ $specific-breakpoint: '>=935px';
     order: 1;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: rfs(0.4fr) 1fr rfs(0.4fr);
-    max-width: rfs(--max-width);
     margin: 0 auto;
     justify-content: center;
     align-items: center;
@@ -140,6 +167,7 @@ $specific-breakpoint: '>=935px';
     position: relative;
     width: 100%;
     height: 100%;
+    max-width: 100%;
   }
 }
 
