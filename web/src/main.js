@@ -24,7 +24,7 @@ export default function(Vue, { router, head, isClient }) {
     rel: 'preload',
     as: 'font',
     crossorigin: true,
-    href: require('~/assets/fonts/TungstenSemibold.otf')
+    href: require('~/assets/fonts/TungstenSemibold.woff')
   })
 
   head.link.push({

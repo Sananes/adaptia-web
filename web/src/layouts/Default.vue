@@ -27,7 +27,10 @@ export default {
 <style lang="scss">
 @font-face {
   font-family: Tungsten;
-  src: url('../assets/fonts/TungstenSemibold.otf');
+  src: url('../assets/fonts/TungstenSemibold.woff') format('woff'),
+    url('../assets/fonts/TungstenSemibold.woff2') format('woff2'),
+    url('../assets/fonts/TungstenSemibold.tff') format('truetype'),
+    url('../assets/fonts/TungstenSemibold.eot') format('eot');
   font-weight: normal;
   font-display: swap;
 }
