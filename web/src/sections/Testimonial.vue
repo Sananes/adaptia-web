@@ -118,6 +118,10 @@ export default {
   opacity: 0.5;
 }
 
+.swiper-container {
+  overflow: hidden;
+}
+
 .swiper-pagination {
   --swiper-pagination-color: var(--color-black);
   margin-top: rfs(-1rem);
