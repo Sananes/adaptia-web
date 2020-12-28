@@ -80,7 +80,7 @@ module.exports = {
         display: 'standalone',
         statusBarStyle: 'default',
         manifestPath: 'manifest.json',
-        disableServiceWorker: true,
+        disableServiceWorker: false,
         serviceWorkerPath: 'service-worker.js',
         cachedFileTypes: 'js,json,css,html,png,jpg,jpeg,svg',
         shortName: 'Adaptia Design',
@@ -88,8 +88,7 @@ module.exports = {
         backgroundColor: '#ffffff',
         icon: 'src/favicon.png', // must be provided like 'src/favicon.png'
         msTileImage: '',
-        msTileColor: '#131313',
-        gcmSenderId: undefined
+        msTileColor: '#131313'
       }
     }
   ]
