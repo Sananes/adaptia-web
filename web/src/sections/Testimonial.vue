@@ -1,5 +1,5 @@
 <template>
-  <div class="testimonial" v-if="data">
+  <div class="testimonial" v-if="data.edges">
     <div class="container--narrow">
       <ClientOnly
         ><div v-swiper:mySwiper="swiperOption" v-if="data.edges.length > 0" class="hp-slider">
@@ -29,16 +29,14 @@
 </template>
 
 <script>
-import Vue from 'vue'
 import Icon from '../components/Icon.vue'
 import BlockContent from '~/components/BlockContent'
 export default {
-  directives:
-    !process.browser && this.data.length > 0
-      ? {}
-      : {
-          swiper: require('vue-awesome-swiper').directive,
-        },
+  directives: !process.browser
+    ? {}
+    : {
+        swiper: require('vue-awesome-swiper').directive,
+      },
   props: {
     data: {
       type: Object,
@@ -57,10 +55,6 @@ export default {
   components: {
     Icon,
     BlockContent,
-  },
-
-  mounted() {
-    console.log('Swiper instance:', this.data)
   },
   name: 'Testimonial',
 }
