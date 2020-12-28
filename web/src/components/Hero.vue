@@ -2,6 +2,10 @@
   <div class="hero">
     <div class="hero__container">
       <div class="hero__content">
+        <XyzTransition appear xyz="fade rotate-right ease-out-back">
+          <div class="square" v-if="toggled"></div>
+        </XyzTransition>
+        <button @click="toggled = !toggled">Toggle</button>
         <XyzTransition appear="hasLoaded" xyz="fade down ease-out-back">
           <h1 class="hero__title">
             <XyzTransitionGroup appear="hasLoaded" xyz="fade down ease-out-back delay-20 stagger-1">
@@ -42,6 +46,7 @@ import Icon from './Icon.vue'
 export default {
   data() {
     return {
+      toggled: false,
       hasLoaded: false,
     }
   },
@@ -56,7 +61,11 @@ export default {
 
 <style lang="scss">
 $specific-breakpoint: '>=935px';
-
+.square {
+  width: 500px;
+  height: 500px;
+  background: red;
+}
 .hero {
   position: relative;
   display: grid;
