@@ -2,9 +2,9 @@
   <div class="hero">
     <div class="hero__container">
       <div class="hero__content">
-        <XyzTransition appear xyz="fade down ease-out-back">
+        <XyzTransition appear="hasLoaded" xyz="fade down ease-out-back">
           <h1 class="hero__title">
-            <XyzTransitionGroup appear xyz="fade down ease-out-back delay-20 stagger-1">
+            <XyzTransitionGroup appear="hasLoaded" xyz="fade down ease-out-back delay-20 stagger-1">
               <div key="1">Marketing &amp; design</div>
               <div key="2">agency in san diego,</div>
               <div class="outline" key="3">california</div>
@@ -13,7 +13,7 @@
         </XyzTransition>
         <!-- <h1 class="hero__title">We help you adapt to Evolving markets</h1> -->
       </div>
-      <XyzTransition appear xyz="fade down ease-in delay-20">
+      <XyzTransition appear="hasLoaded" xyz="fade down ease-in delay-20">
         <div class="hero__scroll">
           <a href="#section1"><icon name="chevron-down" size="small" fill="none" /> Learn more</a>
         </div>
@@ -21,7 +21,7 @@
     </div>
     <div class="hero__phone"><a href="tel:+1 7325670876">Call Us +1 732 567 0876</a></div>
     <div class="hero__image-container">
-      <XyzTransition appear xyz="fade down ease-out-back duration-10  delay-20"
+      <XyzTransition appear="hasLoaded" xyz="fade down ease-out-back duration-10  delay-20"
         ><div class="hero__image">
           <g-image
             :immediate="true"
@@ -40,6 +40,15 @@
 <script>
 import Icon from './Icon.vue'
 export default {
+  data() {
+    return {
+      hasLoaded: false,
+    }
+  },
+
+  mounted() {
+    this.hasLoaded = true
+  },
   components: { Icon },
   name: 'Hero',
 }

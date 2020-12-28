@@ -18,12 +18,6 @@
 <script>
 import Header from '~/components/Header'
 export default {
-  props: {
-    showLogo: {
-      type: Boolean,
-      default: true,
-    },
-  },
   components: {
     Header,
   },
