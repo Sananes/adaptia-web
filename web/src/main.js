@@ -1,7 +1,7 @@
 // Import main css
-import '~/assets/style/index.scss'
 import VueAnimXYZ from '@animxyz/vue'
-import '@animxyz/core'
+import '~/assets/style/index.scss'
+import '@animxyz/core/dist/animxyz.min.css'
 import 'swiper/swiper-bundle.css'
 
 // Import default layout so we don't need to import it to every page
@@ -22,6 +22,7 @@ export default function(Vue, { router, head, isClient }) {
   head.link.push({
     rel: 'stylesheet',
     type: 'text/css',
+    prefetch: true,
     href: 'https://fonts.googleapis.com/css?family=Inter:400,500,600,700&display=swap'
   })
 }
