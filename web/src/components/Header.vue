@@ -1,16 +1,21 @@
 <template>
   <header class="header">
     <div class="header__left">
-      <h1 class="header__title">
-        <g-link to="/"><logo class="header__logo" /></g-link>
-      </h1>
-      <header-logo v-if="showLogo" />
+      <XyzTransition appear xyz="fade up ease-out-back">
+        <h1 class="header__title">
+          <g-link to="/"><logo class="header__logo" /></g-link>
+        </h1>
+        <header-logo v-if="showLogo" />
+      </XyzTransition>
     </div>
 
-    <div class="header__right">
-      <toggle-theme />
-      <button class="header__menu"><icon name="menu" /></button>
-    </div>
+    <XyzTransitionGroup
+      appear
+      class="header__right"
+      xyz="fade up ease-out-back stagger-1"
+      mode="in-out"
+      ><toggle-theme key="1" /> <button key="2" class="header__menu"><icon name="menu" /></button
+    ></XyzTransitionGroup>
   </header>
 </template>
 
