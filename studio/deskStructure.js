@@ -1,6 +1,5 @@
 import S from '@sanity/desk-tool/structure-builder'
-import { MdSettings } from 'react-icons/md'
-import { MdPerson } from 'react-icons/md'
+import { MdSettings, MdPerson, MdFormatQuote } from 'react-icons/md'
 
 const hiddenDocTypes = listItem =>
   !['category', 'author', 'post', 'siteSettings'].includes(listItem.getId())
@@ -22,6 +21,11 @@ export default () =>
         .title('Blog posts')
         .schemaType('post')
         .child(S.documentTypeList('post').title('Blog posts')),
+      S.listItem()
+        .title('Testimonials')
+        .icon(MdFormatQuote)
+        .schemaType('testimonial')
+        .child(S.documentTypeList('testimonial').title('Testimonials')),
       S.listItem()
         .title('Authors')
         .icon(MdPerson)

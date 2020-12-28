@@ -1,10 +1,10 @@
 <template>
-  <div class="testimonial">
+  <div class="testimonial" v-if="data">
     <div class="container--narrow">
       <ClientOnly
-        ><div v-swiper:mySwiper="swiperOption" class="hp-slider">
+        ><div v-swiper:mySwiper="swiperOption" v-if="data.edges.length > 0" class="hp-slider">
           <div class="swiper-wrapper">
-            <div class="swiper-slide" v-for="(testimonial, index) in testimonials" :key="index">
+            <div class="swiper-slide" v-for="edge in data.edges" :key="edge.node.id">
               <div class="testimonial__rating">
                 <icon name="star" />
                 <icon name="star" />
@@ -12,10 +12,12 @@
                 <icon name="star" />
                 <icon name="star" />
               </div>
-              <blockquote class="testimonial__quote">{{ testimonial.text }}</blockquote>
-              <aside class="testimonial__author" v-if="testimonial.name">
-                <strong class="testimonial__name">{{ testimonial.name }}</strong
-                ><span class="testimonial__role" v-html="testimonial.role" />
+              <blockquote class="testimonial__quote">
+                <block-content :blocks="edge.node._rawBody" />
+              </blockquote>
+              <aside class="testimonial__author" v-if="edge.node.clientName">
+                <strong class="testimonial__name">{{ edge.node.clientName }}</strong
+                ><span class="testimonial__role" v-html="edge.node.clientRole" />
               </aside>
             </div>
             <div class="swiper-pagination" slot="pagination"></div>
@@ -29,12 +31,20 @@
 <script>
 import Vue from 'vue'
 import Icon from '../components/Icon.vue'
+import BlockContent from '~/components/BlockContent'
 export default {
-  directives: !process.browser
-    ? {}
-    : {
-        swiper: require('vue-awesome-swiper').directive,
-      },
+  directives:
+    !process.browser && this.data.length > 0
+      ? {}
+      : {
+          swiper: require('vue-awesome-swiper').directive,
+        },
+  props: {
+    data: {
+      type: Object,
+      required: true,
+    },
+  },
   data() {
     return {
       swiperOption: {
@@ -42,30 +52,15 @@ export default {
           el: '.swiper-pagination',
         },
       },
-      testimonials: [
-        {
-          text: `"Adaptia turned around our entire SEO strategy. We went from tens of thousands of
-            negative backlinks and terrible Google stats to massive growth in our search rankings in
-            only 3 months. Hiring Adaptia was one of the best marketing decisions we ever made."`,
-          name: 'Spring Barnickle',
-          role: 'CEO, JJ Virgin &amp; Associates',
-        },
-        {
-          text: `"Adaptia turned around our entire SEO strategy. We went from tens of thousands of
-            negative backlinks and terrible Google stats to massive growth in our search rankings in
-            only 3 months. Hiring Adaptia was one of the best marketing decisions we ever made."`,
-          name: 'Spring Barnickle',
-          role: 'CEO, JJ Virgin & Associates',
-        },
-      ],
     }
   },
   components: {
     Icon,
+    BlockContent,
   },
 
   mounted() {
-    console.log('Swiper instance:', this.mySwiper)
+    console.log('Swiper instance:', this.data)
   },
   name: 'Testimonial',
 }

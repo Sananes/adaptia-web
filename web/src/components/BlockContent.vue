@@ -12,10 +12,10 @@ import PortableText from 'sanity-blocks-vue-component'
 
 export default {
   props: {
-    blocks: Array
+    blocks: Array,
   },
   components: {
-    PortableText
+    PortableText,
   },
   data() {
     return {
@@ -31,11 +31,11 @@ export default {
               />
               <figcaption>{node.caption}</figcaption>
             </figure>
-          )
-        }
-      }
+          ),
+        },
+      },
     }
-  }
+  },
 }
 </script>
 

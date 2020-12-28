@@ -1,7 +1,7 @@
 <template>
   <Layout :show-logo="false">
     <hero />
-    <Testimonial />
+    <Testimonial :data="$page.testimonials" />
   </Layout>
 </template>
 
@@ -13,40 +13,13 @@
       dataset
     }
   }
-  posts: allSanityPost(sortBy: "publishedAt") {
+  testimonials: allSanityTestimonial(sortBy: "publishedAt", limit: 3) {
     edges {
       node {
         id
-        title
-        slug {
-          current
-        }
-        categories {
-          id
-          title
-        }
-        publishedAt(format: "D. MMMM YYYY")
-        _rawExcerpt
-        mainImage {
-          asset {
-            _id
-            url
-          }
-          caption
-          alt
-          hotspot {
-            x
-            y
-            height
-            width
-          }
-          crop {
-            top
-            bottom
-            left
-            right
-          }
-        }
+        _rawBody
+        clientName
+        clientRole
       }
     }
   }
