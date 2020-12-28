@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import Vue from 'vue'
 import Icon from '../components/Icon.vue'
 import 'swiper/css/swiper.css'
 export default {
@@ -52,16 +53,14 @@ export default {
       ],
     }
   },
+  mounted() {
+    if (process.browser) {
+      const VueAwesomeSwiper = require('vue-awesome-swiper')
+      Vue.use(VueAwesomeSwiper)
+    }
+  },
   components: {
     Icon,
-    Swiper: () =>
-      import('vue-awesome-swiper')
-        .then((m) => m.Swiper)
-        .catch(),
-    SwiperSlide: () =>
-      import('vue-awesome-swiper')
-        .then((m) => m.SwiperSlide)
-        .catch(),
   },
   name: 'Testimonial',
 }
