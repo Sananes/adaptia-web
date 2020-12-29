@@ -2,8 +2,6 @@
 // Learn more: https://gridsome.org/docs/config
 
 const path = require('path')
-const purgecss = require('@fullhuman/postcss-purgecss')
-const rfs = require('rfs')
 
 // Changes here requires a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
