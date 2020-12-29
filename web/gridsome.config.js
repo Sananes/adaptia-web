@@ -31,6 +31,13 @@ module.exports = {
   templates: {
     SanityPost: '/:slug__current'
   },
+  css: {
+    loaderOptions: {
+      postcss: {
+        plugins: [require('rfs'), require('autoprefixer')]
+      }
+    }
+  },
 
   // Scss loader
   chainWebpack(config) {
