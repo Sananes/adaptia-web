@@ -16,12 +16,6 @@ const clientConfig = require('./client-config')
 
 const isProd = process.env.NODE_ENV === 'production'
 
-const postcssPlugins = [rfs(), require('autoprefixer')]
-
-if (isProd) {
-  postcssPlugins.push(purgecss(require('./purgecss.config.js')))
-}
-
 function addStyleResource(rule) {
   rule
     .use('style-resource')
@@ -36,13 +30,6 @@ module.exports = {
   siteDescription: 'A marketing and branding agency',
   templates: {
     SanityPost: '/:slug__current'
-  },
-  css: {
-    loaderOptions: {
-      postcss: {
-        plugins: postcssPlugins
-      }
-    }
   },
 
   // Scss loader

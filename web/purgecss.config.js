@@ -7,7 +7,7 @@ module.exports = {
     './src/**/*.pug',
     './src/**/*.md'
   ],
-  whitelist: ['body', 'html', 'img', 'a', 'g-image', 'g-image--lazy', 'g-image--loaded'],
+  whitelist: ['body', 'html', 'img', 'a', 'g-image', 'g-image--lazy', 'g-image--loaded', 'xyz'],
   extractors: [
     {
       extractor: content => content.match(/[A-z0-9-:\\/]+/g),

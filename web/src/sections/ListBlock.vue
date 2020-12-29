@@ -7,12 +7,18 @@
         </h2>
       </div>
 
-      <ul class="list-block__list" :class="gridColumnClasses" v-if="list && list.length > 0">
+      <XyzTransitionGroup
+        tag="ul"
+        appear
+        class="list-block__list"
+        xyz="fade up ease-out-back stagger-3"
+        v-if="list && list.length > 0"
+      >
         <li class="list-block__item" v-for="node in list" :key="node.id">
           <h3 class="list-block__item-title">{{ node.title }}</h3>
           <p class="list-block__item-body">{{ node.body }}</p>
         </li>
-      </ul>
+      </XyzTransitionGroup>
     </div>
   </section-block>
 </template>
@@ -97,6 +103,7 @@ export default {
 
 .list-block__list {
   display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   grid-gap: rfs(2rem);
   list-style: none;
   grid-row-gap: rfs(1rem);
@@ -105,30 +112,6 @@ export default {
 
   @include media('>tablet') {
     grid-row-gap: rfs(6rem);
-
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @include media('>desktop') {
-    grid-template-columns: inherit;
-  }
-}
-
-.three {
-  @include media('>tablet') {
-    grid-auto-flow: columns;
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @include media('>desktop') {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.two {
-  @include media('>tablet') {
-    grid-auto-flow: columns;
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 
