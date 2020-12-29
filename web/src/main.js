@@ -8,6 +8,10 @@ import 'swiper/swiper-bundle.css'
 // Import default layout so we don't need to import it to every page
 import DefaultLayout from '~/layouts/Default.vue'
 
+// Scroll reveal
+import VueObserveVisibility from 'vue-observe-visibility'
+
+// registry directive
 // Import image url builder
 import urlForImage from './utils/urlForImage'
 
@@ -16,6 +20,7 @@ export default function(Vue, { router, head, isClient }) {
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
   Vue.use(VueAnimXyz)
+  Vue.use(VueObserveVisibility)
 
   // Inject global image URL builder
   Vue.prototype.$urlForImage = urlForImage

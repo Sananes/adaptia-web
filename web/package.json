@@ -18,7 +18,8 @@
     "rfs": "^9.0.3",
     "sanity-blocks-vue-component": "^0.1.0",
     "swiper": "^6.4.5",
-    "vue-awesome-swiper": "^4.1.1"
+    "vue-awesome-swiper": "^4.1.1",
+    "vue-observe-visibility": "^1.0.0"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^3.1.3",

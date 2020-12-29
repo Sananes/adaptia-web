@@ -2,29 +2,36 @@
   <section-block variant="muted" size="large">
     <div class="container">
       <div class="list-block__heading">
-        <h2 class="list-block__title">
-          {{ heading.title }}
-        </h2>
+        <AnTransition appear xyz="fade up">
+          <h2 class="list-block__title">
+            {{ heading.title }}
+          </h2>
+        </AnTransition>
       </div>
 
-      <XyzTransitionGroup
+      <AnTransitionGroup
+        group
         tag="ul"
         appear
+        v-if="list && list.length > 0"
         class="list-block__list"
         xyz="fade up ease-out-back stagger-3"
-        v-if="list && list.length > 0"
+        :options="{ once: true }"
+        duration="auto"
       >
         <li class="list-block__item" v-for="node in list" :key="node.id">
           <h3 class="list-block__item-title">{{ node.title }}</h3>
           <p class="list-block__item-body">{{ node.body }}</p>
         </li>
-      </XyzTransitionGroup>
+      </AnTransitionGroup>
     </div>
   </section-block>
 </template>
 
 <script>
-import SectionBlock from '~/components/SectionBlock.vue'
+import SectionBlock from '~/components/SectionBlock'
+import AnTransition from '~/components/AnTransition'
+import AnTransitionGroup from '~/components/AnTransitionGroup'
 export default {
   name: 'ListBlock',
   data() {
@@ -32,6 +39,7 @@ export default {
       heading: {
         title: 'What we do',
       },
+      isVisible: false,
       columns: 3,
       list: [
         {
@@ -81,8 +89,15 @@ export default {
       }
     },
   },
+  methods: {
+    visiblityChanged(isVisible) {
+      this.isVisible = isVisible
+    },
+  },
   components: {
     SectionBlock,
+    AnTransition,
+    AnTransitionGroup,
   },
 }
 </script>

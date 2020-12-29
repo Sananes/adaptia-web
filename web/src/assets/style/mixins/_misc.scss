@@ -1,0 +1,55 @@
+// SHAPE -------------------------------------
+
+@mixin size($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: $size / 2;
+}
+
+// BORDERS -------------------------------------
+
+@mixin curved-top($size: $br-m) {
+  border-top-left-radius: $size;
+  border-top-right-radius: $size;
+}
+
+@mixin curved-bottom($size: $br-m) {
+  border-bottom-left-radius: $size;
+  border-bottom-right-radius: $size;
+}
+
+// COLORS -------------------------------------
+
+@function hexToRGB($colorHex) {
+  @return #{red($colorHex)}, #{green($colorHex)}, #{blue($colorHex)};
+}
+
+// Add percentage of white to a color
+@function tint($color, $percent) {
+  @return mix(white, $color, $percent);
+}
+
+// Add percentage of black to a color
+@function shade($color, $percent) {
+  @return mix(black, $color, $percent);
+}
+
+@function primary-color($value: 500, $opacity: null) {
+  @if $opacity != null {
+    @return rgba(var(--primary-#{$value}-rgb), #{$opacity});
+  }
+  @return var(--primary-#{$value});
+}
+
+// TYPOGRAPHY -------------------------------------
+
+@mixin text-ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

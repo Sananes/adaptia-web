@@ -38,9 +38,13 @@
     </div> -->
     <div class="hero__container">
       <div class="hero__content">
-        <XyzTransition appear xyz="fade down ease-out-back">
+        <XyzTransition appear xyz="fade down ease-out-back" duration="auto">
           <h1 class="hero__title">
-            <XyzTransitionGroup appear xyz="fade down ease-out-back delay-10 stagger-1">
+            <XyzTransitionGroup
+              appear
+              xyz="fade down ease-out-back delay-10 stagger-1"
+              duration="auto"
+            >
               <span key="1">Marketing &amp; design</span>
               <span key="2">agency in san diego,</span>
               <span class="outline" key="3">california</span>
@@ -49,13 +53,13 @@
         </XyzTransition>
         <!-- <h1 class="hero__title">We help you adapt to Evolving markets</h1> -->
       </div>
-      <XyzTransition appear xyz="fade down rotate-90 ease-out-back delay-20">
+      <XyzTransition appear xyz="fade down rotate-90 ease-out-back delay-20" duration="auto">
         <div class="hero__scroll">
           <a href="#section1"><icon name="chevron-down" size="small" fill="none" /> Learn more</a>
         </div>
       </XyzTransition>
     </div>
-    <XyzTransition appear xyz="fade ease-out-back duration-10 delay-25"
+    <XyzTransition appear xyz="fade ease-out-back duration-10 delay-25" duration="auto"
       ><div class="hero__phone">
         <a href="tel:+1 7325670876"><strong>Call Us</strong> +1 732 567 0876</a>
       </div></XyzTransition

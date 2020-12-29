@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Header />
     <main class="main">
+      <Header />
       <slot />
     </main>
     <footer class="footer">
@@ -98,10 +98,9 @@ export default {
 // }
 
 .overlay {
-  position: absolute;
   background: black;
-  width: 100%;
-  height: 100%;
+  width: 500px;
+  height: 500px;
   z-index: 999;
 }
 </style>

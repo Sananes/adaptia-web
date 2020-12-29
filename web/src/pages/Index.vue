@@ -32,13 +32,15 @@
 import AuthorCard from '~/components/AuthorCard'
 import PostCard from '~/components/PostCard'
 import Testimonial from '~/sections/Testimonial'
-import ListBlock from '../sections/ListBlock.vue'
+import Hero from '~/components/Hero'
+import ListBlock from '../sections/ListBlock'
 
 export default {
+  watch: {},
   components: {
-    Hero: () => import('~/components/Hero'),
-    Testimonial,
-    ListBlock,
+    Hero,
+    Testimonial: () => import('~/sections/Testimonial'),
+    ListBlock: () => import('../sections/ListBlock'),
   },
   metaInfo: {
     title: 'Hello, world!',
