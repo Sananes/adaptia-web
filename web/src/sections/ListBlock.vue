@@ -3,9 +3,7 @@
     <div class="container">
       <div class="list-block__heading">
         <AnimTransition appear xyz="fade up">
-          <h2 class="list-block__title">
-            {{ heading.title }}
-          </h2>
+          <h2 class="list-block__title" v-html="heading.title"></h2>
         </AnimTransition>
       </div>
 
@@ -36,7 +34,7 @@ export default {
   data() {
     return {
       heading: {
-        title: 'What we do',
+        title: '<span>What</span> we do',
       },
       isVisible: false,
       columns: 3,

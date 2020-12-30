@@ -99,6 +99,11 @@ export default {
   p {
     line-height: 1;
   }
+
+  ::v-deep strong {
+    color: inherit;
+    @include outline-styles('dark');
+  }
 }
 
 .testimonial__author {

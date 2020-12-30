@@ -18,9 +18,9 @@
   }
 }
 
-@mixin outline-styles {
+@mixin outline-styles($color: 'white') {
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-color: var(---color-white);
+  -webkit-text-stroke-color: var(---color-#{$color});
   -webkit-text-stroke-width: 0.5px;
   // text-shadow: -1px 1px 0 var(--color-white), 1px 1px 0 var(--color-white),
   //   1px -1px 0 var(--color-white), -1px -1px 0 var(--color-white);
@@ -48,7 +48,7 @@
 @mixin hero-title {
   @include heading-styles;
   font-size: var(--font-size-hero);
-  line-height: var(--font-size-hero);
+  line-height: 0.9;
 }
 
 @mixin heading-1 {
