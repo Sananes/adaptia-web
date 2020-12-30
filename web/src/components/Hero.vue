@@ -182,6 +182,7 @@ $specific-breakpoint: '>=935px';
     grid-column: 8 / span 4;
     grid-row: 2;
     max-width: 30rem;
+    margin-top: rfs(-3rem);
   }
 }
 
