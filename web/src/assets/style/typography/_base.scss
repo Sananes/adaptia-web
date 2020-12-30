@@ -1,6 +1,7 @@
 body {
   @include font-size(1rem);
   font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-normal);
   line-height: var(--font-baseline);
 }
 

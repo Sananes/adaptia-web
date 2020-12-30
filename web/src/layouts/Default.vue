@@ -25,13 +25,86 @@ export default {
 </script>
 
 <style lang="scss">
+// @font-face {
+//   font-family: Tungsten;
+//   src: url('../assets/fonts/Roswell.woff') format('woff'),
+//     url('../assets/fonts/Roswell.woff2') format('woff2');
+//   font-weight: normal;
+//   font-display: swap;
+// }
+
 @font-face {
   font-family: Tungsten;
-  src: url('../assets/fonts/Tungsten-SemiBold.woff') format('woff'),
-    url('../assets/fonts/Tungsten-SemiBold.woff2') format('woff2'),
-    url('../assets/fonts/Tungsten-SemiBold.ttf') format('truetype'),
-    url('../assets/fonts/Tungsten-SemiBold.eot') format('eot');
+  src: url('../assets/fonts/Cinderblock.eot') format('eot');
   font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Roobert;
+  src: url('../assets/fonts/rooberttrial-regular-webfont.woff') format('woff'),
+    url('../assets/fonts/rooberttrial-regular-webfont.woff2') format('woff2');
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Roobert;
+  src: url('../assets/fonts/rooberttrial-regularitalic-webfont.woff') format('woff'),
+    url('../assets/fonts/rooberttrial-regularitalic-webfont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Roobert;
+  src: url('../assets/fonts/rooberttrial-medium-webfont.woff') format('woff'),
+    url('../assets/fonts/rooberttrial-medium-webfont.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Roobert;
+  src: url('../assets/fonts/rooberttrial-mediumitalic-webfont.woff') format('woff'),
+    url('../assets/fonts/rooberttrial-mediumitalic-webfont.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Roobert;
+  src: url('../assets/fonts/rooberttrial-semibold-webfont.woff') format('woff'),
+    url('../assets/fonts/rooberttrial-semibold-webfont.woff2') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Roobert;
+  src: url('../assets/fonts/rooberttrial-semibolditalic-webfont.woff') format('woff'),
+    url('../assets/fonts/rooberttrial-semibolditalic-webfont.woff2') format('woff2');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Roobert;
+  src: url('../assets/fonts/rooberttrial-bold-webfont.woff') format('woff'),
+    url('../assets/fonts/rooberttrial-bold-webfont.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Roobert;
+  src: url('../assets/fonts/rooberttrial-bolditalic-webfont.woff') format('woff'),
+    url('../assets/fonts/rooberttrial-bolditalic-webfont.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
   font-display: swap;
 }
 

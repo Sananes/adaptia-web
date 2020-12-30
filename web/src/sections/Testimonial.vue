@@ -122,6 +122,11 @@ export default {
   overflow: hidden;
 }
 
+.swiper-wrapper {
+  display: flex;
+  align-items: center;
+}
+
 .swiper-pagination {
   --swiper-pagination-color: var(--color-black);
   margin-top: rfs(-1rem);

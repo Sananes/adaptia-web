@@ -35,6 +35,7 @@
 @mixin heading-styles {
   @include font-family('heading');
   text-transform: uppercase;
+  font-weight: 600;
 }
 
 @mixin paragraph-styles {
@@ -48,21 +49,18 @@
   @include heading-styles;
   font-size: var(--font-size-hero);
   line-height: var(--font-size-hero);
-  font-weight: var(--font-weight-semibold);
 }
 
 @mixin heading-1 {
   @include heading-styles;
   font-size: var(--font-size-heading-1);
   line-height: var(--font-size-heading-1);
-  font-weight: var(--font-weight-semibold);
 }
 
 @mixin heading-2 {
   @include heading-styles;
   font-size: var(--font-size-heading-2);
   line-height: var(--font-size-heading-2);
-  font-weight: var(--font-weight-bold);
   letter-spacing: var(--letter-spacing);
 }
 
@@ -70,7 +68,6 @@
   @include heading-styles;
   font-size: var(--font-size-heading-3);
   line-height: var(--font-size-heading-3);
-  font-weight: var(--font-weight-bold);
   line-height: var(--font-size-heading-3);
 }
 
@@ -78,7 +75,6 @@
   @include heading-styles;
   font-size: var(--font-size-heading-4);
   line-height: var(--font-size-heading-4);
-  font-weight: var(--font-weight-bold);
   line-height: var(--font-size-heading-4);
 }
 
@@ -86,14 +82,12 @@
   @include heading-styles;
   font-size: var(--font-size-heading-5);
   line-height: var(--font-size-heading-5);
-  font-weight: var(--font-weight-bold);
 }
 
 @mixin heading-6 {
   @include heading-styles;
   font-size: var(--font-size-heading-6);
   line-height: var(--font-size-heading-6);
-  font-weight: var(--font-weight-bold);
 }
 
 @mixin body-xl {
