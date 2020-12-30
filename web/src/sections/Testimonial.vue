@@ -74,6 +74,8 @@ export default {
 <style lang="scss" scoped>
 .testimonial {
   @include padding(6rem 1rem);
+  background: var(--color-black);
+  color: var(--color-white);
   padding-left: var(--gutter-h);
   padding-right: var(--gutter-h);
   text-align: center;
