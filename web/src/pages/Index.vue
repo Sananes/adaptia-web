@@ -43,7 +43,7 @@ export default {
     ListBlock: () => import('../sections/ListBlock'),
   },
   metaInfo: {
-    title: 'Hello, world!',
+    title: 'Marketing & Design Agency in San Diego, California',
   },
 }
 </script>
