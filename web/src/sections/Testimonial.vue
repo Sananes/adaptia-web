@@ -6,7 +6,6 @@
           <div class="swiper-wrapper">
             <AnimTransitionGroup
               class="swiper-slide"
-              :options="{ once: false }"
               xyz="fade up stagger-2"
               v-for="edge in data.edges"
               :key="edge.node.id"

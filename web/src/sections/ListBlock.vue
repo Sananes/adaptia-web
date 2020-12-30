@@ -15,7 +15,7 @@
         appear
         v-if="list && list.length > 0"
         class="list-block__list"
-        xyz="fade up ease-out-back stagger-3"
+        xyz="fade up ease-out-back stagger-1"
         duration="auto"
       >
         <li class="list-block__item" v-for="node in list" :key="node.id">
