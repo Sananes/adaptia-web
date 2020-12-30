@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'AnTransition',
+  name: 'AnimTransition',
   props: {
     options: {
       type: Object,

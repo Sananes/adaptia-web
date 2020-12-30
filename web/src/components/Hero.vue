@@ -1,72 +1,63 @@
 <template>
   <div class="hero">
-    <!-- <div
-      style="
-        position: relative;
-        height: 0;
-        width: 100%;
-        padding: 0;
-        padding-bottom: 100%;
-        padding-bottom: 104.092%;
-      "
-    >
-      <svg
-        style="position: absolute; height: 100%; width: 100%; left: 0; top: 0"
-        viewBox="0 0 953 992"
-        preserveAspectRatio="xMidYMin slice"
-      >
-        <defs>
-          <clipPath id="heroPath">
-            <path
-              fill="#FFFFFF"
-              stroke="#000000"
-              stroke-width="1.5794"
-              stroke-miterlimit="10"
-              d="M473.37 252.844l-.936-2.319-.921 2.326-143.356 362.13-1.391 3.514 2.947-2.367c66.309-53.24 143.158-103.514 230.926-143.354l.868-.394-.352-.886-30.982-77.968-.002-.005-56.801-140.677zm305.387 319.783l-1.122.268.425 1.073L943.413 991H767.945L623.038 629.498l-.402-1.003-.969.479C453.586 712.061 337.92 844.742 255.55 939.229l-.032.037c-16.597 19.037-31.834 36.516-45.881 51.734H1.473L394.682 1h155.523l115.154 288.891.001.002 50.336 126.879.326.821.855-.222c72.475-18.816 150.801-29.977 235.123-30.636v164.99c-62.81.086-120.263 8.247-173.243 20.902z"
-            />
-          </clipPath>
-        </defs>
+    <!-- <figure>
+      <svg viewBox="0 0 953 992">
+        <defs />
+        <clipPath id="heroPath">
+          <path
+            stroke="#fff"
+            stroke-width="20"
+            d="M952 386.735v164.99c-62.81.086-120.263 8.247-173.243 20.902l-1.122.268.425 1.073L943.413 991H767.945L623.038 629.498l-.402-1.003-.969.479C453.586 712.061 337.92 844.742 255.55 939.229l-.032.037c-16.597 19.037-31.834 36.516-45.881 51.734H1.473L394.682 1h155.523l115.154 288.891.001.002 50.336 126.879.326.821.855-.222c72.475-18.816 150.801-29.977 235.123-30.636zm-421.827 6.791l-.002-.005-56.801-140.677-.936-2.319-.921 2.326L328.157 614.98l-1.391 3.515 2.947-2.367c66.309-53.24 143.158-103.514 230.926-143.354l.868-.394-.352-.886-30.982-77.968z"
+          />
+        </clipPath>
       </svg>
-
       <g-image
         :immediate="true"
+        preserveAspectRatio="xMidYMin slice"
         src="~/assets/images/hero-alt.jpg"
         fit="inside"
-        style="-webkit-clip-path: url(#heroPath); clip-path: url(#heroPath)"
+        tag="image"
+        width="873"
+        height="909"
+        style="clip-path: url(#heroPath)"
         position="bottom right"
       />
-    </div> -->
+    </figure> -->
     <div class="hero__container">
-      <div class="hero__content">
-        <XyzTransition appear xyz="fade down ease-out-back" duration="auto">
-          <h1 class="hero__title">
-            <XyzTransitionGroup
-              appear
-              xyz="fade down ease-out-back delay-10 stagger-1"
-              duration="auto"
-            >
-              <span key="1">Marketing &amp; design</span>
-              <span key="2">agency in san diego,</span>
-              <span class="outline" key="3">california</span>
-            </XyzTransitionGroup>
-          </h1>
-        </XyzTransition>
-        <!-- <h1 class="hero__title">We help you adapt to Evolving markets</h1> -->
-      </div>
-      <XyzTransition appear xyz="fade down rotate-90 ease-out-back delay-20" duration="auto">
-        <div class="hero__scroll">
-          <a href="#section1"><icon name="chevron-down" size="small" fill="none" /> Learn more</a>
-        </div>
-      </XyzTransition>
+      <AnimTransition class="hero__content" appear xyz="fade down ease-out-back" duration="auto">
+        <h1 class="hero__title">
+          <AnimTransitionGroup
+            appear
+            xyz="fade down ease-out-back delay-10 stagger-1"
+            duration="auto"
+          >
+            <span key="1">Marketing &amp; design</span>
+            <span key="2">agency in san diego,</span>
+            <span class="outline" key="3">california</span>
+          </AnimTransitionGroup>
+        </h1>
+      </AnimTransition>
+      <!-- <h1 class="hero__title">We help you adapt to Evolving markets</h1> -->
+      <AnimTransition
+        class="hero__scroll"
+        appear
+        xyz="fade down rotate-90 ease-out-back delay-20"
+        duration="auto"
+      >
+        <a href="#section1"><icon name="chevron-down" size="small" fill="none" /> Learn more</a>
+      </AnimTransition>
     </div>
-    <XyzTransition appear xyz="fade ease-out-back duration-10 delay-25" duration="auto"
-      ><div class="hero__phone">
-        <a href="tel:+1 7325670876"><strong>Call Us</strong> +1 732 567 0876</a>
-      </div></XyzTransition
+    <AnimTransition
+      class="hero__phone"
+      appear
+      xyz="fade up ease-out-back duration-10 delay-25"
+      duration="auto"
     >
+      <a href="tel:+1 7325670876"><strong>Call Us</strong> +1 732 567 0876</a>
+    </AnimTransition>
     <div class="hero__image-container">
-      <XyzTransition appear xyz="fade down duration-10  delay-10">
-        <div class="hero__image">
+      <div class="hero__image">
+        <AnimTransition class="hero__image" appear xyz="fade down duration-10  delay-10">
           <g-image
             :immediate="true"
             src="~/assets/images/hero.png"
@@ -75,19 +66,21 @@
             height="909"
             position="bottom right"
           />
-        </div>
-      </XyzTransition>
+        </AnimTransition>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import AnimTransition from './AnimTransition.vue'
+import AnimTransitionGroup from './AnimTransitionGroup.vue'
 import Icon from './Icon.vue'
 export default {
   data() {
     return {}
   },
-  components: { Icon },
+  components: { Icon, AnimTransitionGroup, AnimTransition },
   name: 'Hero',
 }
 </script>
@@ -143,18 +136,24 @@ $specific-breakpoint: '>=935px';
 
 .hero__image-container {
   @include media($specific-breakpoint) {
-    display: inline-grid;
+    // display: inline-grid;
+
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // right: 0;
+    // width: 100%;
+    // height: 100%;
+    // grid-template-columns: repeat(12, 1fr);
+    // grid-template-rows: 100%;
+    // grid-gap: 3.2rem;
+    // align-items: flex-end;
 
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
-    right: 0;
-    width: 100%;
+    width: 50%;
     height: 100%;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 100%;
-    grid-gap: 3.2rem;
-    align-items: flex-end;
   }
 }
 
@@ -258,6 +257,6 @@ $specific-breakpoint: '>=935px';
 
 .title-enter-active,
 .title-leave-active {
-  transition: opacity 0.5s var(--animation) 0.5s, transform 1.5s var(--animation) 0.5s;
+  animtransition: opacity 0.5s var(--animation) 0.5s, transform 1.5s var(--animation) 0.5s;
 }
 </style>

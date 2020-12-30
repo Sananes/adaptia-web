@@ -2,36 +2,35 @@
   <section-block variant="muted" size="large">
     <div class="container">
       <div class="list-block__heading">
-        <AnTransition appear xyz="fade up">
+        <AnimTransition appear xyz="fade up">
           <h2 class="list-block__title">
             {{ heading.title }}
           </h2>
-        </AnTransition>
+        </AnimTransition>
       </div>
 
-      <AnTransitionGroup
+      <AnimTransitionGroup
         group
         tag="ul"
         appear
         v-if="list && list.length > 0"
         class="list-block__list"
         xyz="fade up ease-out-back stagger-3"
-        :options="{ once: true }"
         duration="auto"
       >
         <li class="list-block__item" v-for="node in list" :key="node.id">
           <h3 class="list-block__item-title">{{ node.title }}</h3>
           <p class="list-block__item-body">{{ node.body }}</p>
         </li>
-      </AnTransitionGroup>
+      </AnimTransitionGroup>
     </div>
   </section-block>
 </template>
 
 <script>
 import SectionBlock from '~/components/SectionBlock'
-import AnTransition from '~/components/AnTransition'
-import AnTransitionGroup from '~/components/AnTransitionGroup'
+import AnimTransition from '~/components/AnimTransition'
+import AnimTransitionGroup from '~/components/AnimTransitionGroup'
 export default {
   name: 'ListBlock',
   data() {
@@ -56,9 +55,9 @@ export default {
         },
         {
           id: 3,
-          title: 'Paid Media Management',
+          title: 'Branding & Design',
           body:
-            'Interested in establishing a new revenue stream? We will set up and optimize your paid traffic with ad campaigns that drive immediate visibility and profit.',
+            'We help you bring your ideas to life. Our creative team turns your inspiration and vision into compelling content and designs that match your brand.',
         },
         {
           id: 4,
@@ -96,8 +95,8 @@ export default {
   },
   components: {
     SectionBlock,
-    AnTransition,
-    AnTransitionGroup,
+    AnimTransition,
+    AnimTransitionGroup,
   },
 }
 </script>

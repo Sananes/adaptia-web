@@ -4,22 +4,28 @@
       <ClientOnly
         ><div v-swiper:mySwiper="swiperOption" v-if="data.edges.length > 0" class="hp-slider">
           <div class="swiper-wrapper">
-            <div class="swiper-slide" v-for="edge in data.edges" :key="edge.node.id">
-              <div class="testimonial__rating">
+            <AnimTransitionGroup
+              class="swiper-slide"
+              :options="{ once: false }"
+              xyz="fade up stagger-2"
+              v-for="edge in data.edges"
+              :key="edge.node.id"
+            >
+              <div key="0" class="testimonial__rating">
                 <icon name="star" />
                 <icon name="star" />
                 <icon name="star" />
                 <icon name="star" />
                 <icon name="star" />
               </div>
-              <blockquote class="testimonial__quote">
+              <blockquote key="1" class="testimonial__quote">
                 <block-content :blocks="edge.node._rawBody" />
               </blockquote>
-              <aside class="testimonial__author" v-if="edge.node.clientName">
+              <aside key="2" class="testimonial__author" v-if="edge.node.clientName">
                 <strong class="testimonial__name">{{ edge.node.clientName }}</strong
                 ><span class="testimonial__role" v-html="edge.node.clientRole" />
               </aside>
-            </div>
+            </AnimTransitionGroup>
             <div class="swiper-pagination" slot="pagination"></div>
           </div>
         </div>
@@ -32,6 +38,8 @@
 import Icon from '../components/Icon.vue'
 import BlockContent from '~/components/BlockContent'
 import SectionBlock from '../components/SectionBlock.vue'
+import AnimTransition from '~/components/AnimTransition'
+import AnimTransitionGroup from '~/components/AnimTransitionGroup'
 export default {
   directives: !process.browser
     ? {}
@@ -57,6 +65,8 @@ export default {
     Icon,
     SectionBlock,
     BlockContent,
+    AnimTransition,
+    AnimTransitionGroup,
   },
   name: 'Testimonial',
 }

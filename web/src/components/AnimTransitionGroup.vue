@@ -10,11 +10,15 @@
 
 <script>
 export default {
-  name: 'AnTransitionGroup',
+  name: 'AnimTransitionGroup',
   props: {
     options: {
       type: Object,
-      default: () => {},
+      default() {
+        return {
+          once: true,
+        }
+      },
       required: false,
     },
   },
