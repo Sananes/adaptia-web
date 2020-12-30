@@ -91,13 +91,13 @@ export default {
 }
 
 .testimonial__quote {
-  font-size: var(--font-size-body);
+  @include heading-2;
   color: inherit;
   padding-left: 0;
   margin-bottom: rfs(2rem);
 
-  @include media('>desktop') {
-    font-size: var(--font-size-body-xl);
+  p {
+    line-height: 1;
   }
 }
 
@@ -106,7 +106,8 @@ export default {
 }
 
 .testimonial__name {
-  @include heading-5;
+  @include body-m;
+  font-weight: var(--font-weight-semibold);
   display: block;
   margin-bottom: 0.5rem;
 }
