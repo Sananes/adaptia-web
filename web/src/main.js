@@ -1,6 +1,5 @@
 // Import main css
 import VueAnimXyz from '@animxyz/vue'
-import '@animxyz/core'
 import 'normalize.css'
 import '~/assets/style/index.scss'
 import 'swiper/swiper-bundle.css'
