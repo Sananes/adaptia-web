@@ -1,28 +1,5 @@
 <template>
   <div class="hero">
-    <!-- <figure>
-      <svg viewBox="0 0 953 992">
-        <defs />
-        <clipPath id="heroPath">
-          <path
-            stroke="#fff"
-            stroke-width="20"
-            d="M952 386.735v164.99c-62.81.086-120.263 8.247-173.243 20.902l-1.122.268.425 1.073L943.413 991H767.945L623.038 629.498l-.402-1.003-.969.479C453.586 712.061 337.92 844.742 255.55 939.229l-.032.037c-16.597 19.037-31.834 36.516-45.881 51.734H1.473L394.682 1h155.523l115.154 288.891.001.002 50.336 126.879.326.821.855-.222c72.475-18.816 150.801-29.977 235.123-30.636zm-421.827 6.791l-.002-.005-56.801-140.677-.936-2.319-.921 2.326L328.157 614.98l-1.391 3.515 2.947-2.367c66.309-53.24 143.158-103.514 230.926-143.354l.868-.394-.352-.886-30.982-77.968z"
-          />
-        </clipPath>
-      </svg>
-      <g-image
-        :immediate="true"
-        preserveAspectRatio="xMidYMin slice"
-        src="~/assets/images/hero-alt.jpg"
-        fit="inside"
-        tag="image"
-        width="873"
-        height="909"
-        style="clip-path: url(#heroPath)"
-        position="bottom right"
-      />
-    </figure> -->
     <div class="hero__container">
       <AnimTransition class="hero__content" appear xyz="fade down ease-out-back" duration="auto">
         <h1 class="hero__title">
@@ -56,8 +33,64 @@
       <a href="tel:+1 7325670876"><strong>Call Us</strong> +1 732 567 0876</a>
     </AnimTransition>
     <div class="hero__image-container">
-      <div class="hero__image">
-        <AnimTransition class="hero__image" appear xyz="fade down duration-10  delay-10">
+      <AnimTransition class="hero__image" appear xyz="fade down duration-10  delay-10">
+        <div class="hero__image">
+          <!-- <g-image
+        :immediate="true"
+        src="~/assets/images/hero-alt.jpg"
+        fit="inside"
+        tag="image"
+        width="873"
+        height="909"
+        style="mask: url('#maskLayer')"
+        position="bottom right"
+      /> -->
+
+          <video
+            autoplay
+            playsinline
+            muted
+            loop
+            preload
+            style="width: 100%; object-fit: cover; background: var(--color-black); height: 100%"
+          >
+            <source :src="require('~/assets/videos/sandiego.mp4')" />
+          </video>
+
+          <svg
+            viewBox="0 0 953 992"
+            preserveAspectRatio="xMidYMid slice"
+            style="width: 100%; position: absolute; top: 0; left: 0; height: 100%"
+          >
+            <defs>
+              <mask id="maskLayer" x="0" y="0" height="100%" width="100%">
+                <rect
+                  x="0"
+                  y="0"
+                  style="fill: var(--color-white); overflow: hidden"
+                  height="100%"
+                  width="100%"
+                />
+                <path
+                  d="M952 386.735v164.99c-62.81.086-120.263 8.247-173.243 20.902l-1.122.268.425 1.073L943.413 991H767.945L623.038 629.498l-.402-1.003-.969.479C453.586 712.061 337.92 844.742 255.55 939.229l-.032.037c-16.597 19.037-31.834 36.516-45.881 51.734H1.473L394.682 1h155.523l115.154 288.891.001.002 50.336 126.879.326.821.855-.222c72.475-18.816 150.801-29.977 235.123-30.636zm-421.827 6.791l-.002-.005-56.801-140.677-.936-2.319-.921 2.326L328.157 614.98l-1.391 3.515 2.947-2.367c66.309-53.24 143.158-103.514 230.926-143.354l.868-.394-.352-.886-30.982-77.968z"
+                />
+              </mask>
+            </defs>
+            <rect
+              x="0"
+              y="0"
+              height="100%"
+              width="100%"
+              style="
+                overflow: hidden;
+                fill: var(--color-black);
+                mask: url('#maskLayer');
+                -webkit-mask: url(#maskLayer);
+                -webkit-mask-clip: fill-box;
+              "
+            />
+          </svg>
+          <!-- <AnimTransition class="hero__image" appear xyz="fade down duration-10  delay-10">
           <g-image
             :immediate="true"
             src="~/assets/images/hero.png"
@@ -66,8 +99,9 @@
             height="909"
             position="bottom right"
           />
-        </AnimTransition>
-      </div>
+        </AnimTransition> -->
+        </div>
+      </AnimTransition>
     </div>
   </div>
 </template>
@@ -97,7 +131,7 @@ $specific-breakpoint: '>=935px';
   @include media($specific-breakpoint) {
     height: 100%;
     width: 100%;
-    grid-template-rows: minmax(40vw, 1fr);
+    grid-template-rows: minmax(50vw, 1fr);
     overflow: hidden;
   }
 
@@ -154,15 +188,14 @@ $specific-breakpoint: '>=935px';
     left: 0;
     width: 50%;
     height: 100%;
+    overflow: hidden;
   }
 }
 
 .hero__image {
-  grid-column: 1 / span 6;
+  position: relative;
   width: 100%;
   height: 100%;
-  justify-self: flex-end;
-  align-self: flex-end;
 
   img {
     display: block;
