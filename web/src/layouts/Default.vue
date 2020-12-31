@@ -25,33 +25,29 @@ export default {
 </script>
 
 <style lang="scss">
-// @font-face {
-//   font-family: Tungsten;
-//   src: url('../assets/fonts/Roswell.woff') format('woff'),
-//     url('../assets/fonts/Roswell.woff2') format('woff2');
-//   font-weight: normal;
-//   font-display: swap;
-// }
-
 @font-face {
   font-family: Tungsten;
-  src: url('../assets/fonts/Cinderblock.eot') format('eot');
+  src: url('../assets/fonts/Tungsten.eot');
+  src: url('../assets/fonts/Tungsten.eot?#iefix') format('embedded-opentype'),
+    url('../assets/fonts/Tungsten.woff2') format('woff2'),
+    url('../assets/fonts/Tungsten.woff') format('woff'),
+    url('../assets/fonts/Tungsten.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Roobert;
+  src: url('../assets/fonts/Roobert.woff') format('woff'),
+    url('../assets/fonts/Roobert.woff2') format('woff2');
   font-weight: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: Roobert;
-  src: url('../assets/fonts/rooberttrial-regular-webfont.woff') format('woff'),
-    url('../assets/fonts/rooberttrial-regular-webfont.woff2') format('woff2');
-  font-weight: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Roobert;
-  src: url('../assets/fonts/rooberttrial-regularitalic-webfont.woff') format('woff'),
-    url('../assets/fonts/rooberttrial-regularitalic-webfont.woff2') format('woff2');
+  src: url('../assets/fonts/Roobert-Italic.woff') format('woff'),
+    url('../assets/fonts/Roobert-Italic.woff2') format('woff2');
   font-weight: normal;
   font-style: italic;
   font-display: swap;
@@ -59,16 +55,16 @@ export default {
 
 @font-face {
   font-family: Roobert;
-  src: url('../assets/fonts/rooberttrial-medium-webfont.woff') format('woff'),
-    url('../assets/fonts/rooberttrial-medium-webfont.woff2') format('woff2');
+  src: url('../assets/fonts/Roobert-Medium.woff') format('woff'),
+    url('../assets/fonts/Roobert-Medium.woff2') format('woff2');
   font-weight: 500;
   font-display: swap;
 }
 
 @font-face {
   font-family: Roobert;
-  src: url('../assets/fonts/rooberttrial-mediumitalic-webfont.woff') format('woff'),
-    url('../assets/fonts/rooberttrial-mediumitalic-webfont.woff2') format('woff2');
+  src: url('../assets/fonts/Roobert-Medium-Italic.woff') format('woff'),
+    url('../assets/fonts/Roobert-Medium-Italic.woff2') format('woff2');
   font-weight: 500;
   font-style: italic;
   font-display: swap;
@@ -76,16 +72,16 @@ export default {
 
 @font-face {
   font-family: Roobert;
-  src: url('../assets/fonts/rooberttrial-semibold-webfont.woff') format('woff'),
-    url('../assets/fonts/rooberttrial-semibold-webfont.woff2') format('woff2');
+  src: url('../assets/fonts/Roobert-Semibold.woff') format('woff'),
+    url('../assets/fonts/Roobert-Semibold.woff2') format('woff2');
   font-weight: 600;
   font-display: swap;
 }
 
 @font-face {
   font-family: Roobert;
-  src: url('../assets/fonts/rooberttrial-semibolditalic-webfont.woff') format('woff'),
-    url('../assets/fonts/rooberttrial-semibolditalic-webfont.woff2') format('woff2');
+  src: url('../assets/fonts/Roobert-Semibold-Italic.woff') format('woff'),
+    url('../assets/fonts/Roobert-Semibold-Italic.woff2') format('woff2');
   font-weight: 600;
   font-style: italic;
   font-display: swap;
@@ -93,16 +89,16 @@ export default {
 
 @font-face {
   font-family: Roobert;
-  src: url('../assets/fonts/rooberttrial-bold-webfont.woff') format('woff'),
-    url('../assets/fonts/rooberttrial-bold-webfont.woff2') format('woff2');
+  src: url('../assets/fonts/Roobert-Bold.woff') format('woff'),
+    url('../assets/fonts/Roobert-Bold.woff2') format('woff2');
   font-weight: 700;
   font-display: swap;
 }
 
 @font-face {
   font-family: Roobert;
-  src: url('../assets/fonts/rooberttrial-bolditalic-webfont.woff') format('woff'),
-    url('../assets/fonts/rooberttrial-bolditalic-webfont.woff2') format('woff2');
+  src: url('../assets/fonts/Roobert-Bold-Italic.woff') format('woff'),
+    url('../assets/fonts/Roobert-Bold-Italic.woff2') format('woff2');
   font-weight: 700;
   font-style: italic;
   font-display: swap;

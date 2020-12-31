@@ -28,7 +28,49 @@ export default function(Vue, { router, head, isClient }) {
     rel: 'preload',
     as: 'font',
     crossorigin: true,
-    href: require('~/assets/fonts/Tungsten-SemiBold.woff')
+    href: require('~/assets/fonts/Tungsten.woff')
+  })
+
+  head.link.push({
+    rel: 'preload',
+    as: 'font',
+    crossorigin: true,
+    href: require('~/assets/fonts/Roobert.woff')
+  })
+
+  head.link.push({
+    rel: 'preload',
+    as: 'font',
+    crossorigin: true,
+    href: require('~/assets/fonts/Roobert-Italic.woff')
+  })
+
+  head.link.push({
+    rel: 'preload',
+    as: 'font',
+    crossorigin: true,
+    href: require('~/assets/fonts/Roobert-Medium.woff')
+  })
+
+  head.link.push({
+    rel: 'preload',
+    as: 'font',
+    crossorigin: true,
+    href: require('~/assets/fonts/Roobert-Medium-Italic.woff')
+  })
+
+  head.link.push({
+    rel: 'preload',
+    as: 'font',
+    crossorigin: true,
+    href: require('~/assets/fonts/Roobert-Semibold.woff')
+  })
+
+  head.link.push({
+    rel: 'preload',
+    as: 'font',
+    crossorigin: true,
+    href: require('~/assets/fonts/Roobert-Semibold-Italic.woff')
   })
 
   head.link.push({
