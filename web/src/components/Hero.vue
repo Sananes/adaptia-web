@@ -213,12 +213,12 @@ $specific-breakpoint: '>=935px';
     }
     > rect {
       fill: var(--color-black);
-      animation: changeSettings 1s ease-in-out 6s forwards;
       mask: url('#maskLayer');
       -webkit-mask: url('#maskLayer');
 
       .animate & {
         fill: var(--color-white);
+        animation: changeSettings 1s ease-in-out 6s forwards;
       }
     }
   }
