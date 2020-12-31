@@ -35,60 +35,20 @@
     <div class="hero__image-container">
       <AnimTransition class="hero__image" appear xyz="fade down duration-10  delay-10">
         <div class="hero__image">
-          <!-- <g-image
-        :immediate="true"
-        src="~/assets/images/hero-alt.jpg"
-        fit="inside"
-        tag="image"
-        width="873"
-        height="909"
-        style="mask: url('#maskLayer')"
-        position="bottom right"
-      /> -->
-
-          <video
-            autoplay
-            playsinline
-            muted
-            loop
-            preload
-            style="width: 100%; object-fit: cover; background: var(--color-black); height: 100%"
-          >
-            <source :src="require('~/assets/videos/sandiego.mp4')" />
+          <video autoplay playsinline muted loop>
+            <source :src="require('~/assets/videos/hero.mp4')" />
           </video>
 
-          <svg
-            viewBox="0 0 953 992"
-            preserveAspectRatio="xMidYMid slice"
-            style="width: 100%; position: absolute; top: 0; left: 0; height: 100%"
-          >
+          <svg viewBox="0 0 953 992" preserveAspectRatio="xMidYMin slice">
             <defs>
               <mask id="maskLayer" x="0" y="0" height="100%" width="100%">
-                <rect
-                  x="0"
-                  y="0"
-                  style="fill: var(--color-white); overflow: hidden"
-                  height="100%"
-                  width="100%"
-                />
+                <rect x="0" y="0" height="100%" width="100%" />
                 <path
                   d="M952 386.735v164.99c-62.81.086-120.263 8.247-173.243 20.902l-1.122.268.425 1.073L943.413 991H767.945L623.038 629.498l-.402-1.003-.969.479C453.586 712.061 337.92 844.742 255.55 939.229l-.032.037c-16.597 19.037-31.834 36.516-45.881 51.734H1.473L394.682 1h155.523l115.154 288.891.001.002 50.336 126.879.326.821.855-.222c72.475-18.816 150.801-29.977 235.123-30.636zm-421.827 6.791l-.002-.005-56.801-140.677-.936-2.319-.921 2.326L328.157 614.98l-1.391 3.515 2.947-2.367c66.309-53.24 143.158-103.514 230.926-143.354l.868-.394-.352-.886-30.982-77.968z"
                 />
               </mask>
             </defs>
-            <rect
-              x="0"
-              y="0"
-              height="100%"
-              width="100%"
-              style="
-                overflow: hidden;
-                fill: var(--color-black);
-                mask: url('#maskLayer');
-                -webkit-mask: url(#maskLayer);
-                -webkit-mask-clip: fill-box;
-              "
-            />
+            <rect x="0" y="0" height="100%" width="100%" />
           </svg>
           <!-- <AnimTransition class="hero__image" appear xyz="fade down duration-10  delay-10">
           <g-image
@@ -112,14 +72,16 @@ import AnimTransitionGroup from './AnimTransitionGroup.vue'
 import Icon from './Icon.vue'
 export default {
   data() {
-    return {}
+    return {
+      isLoaded: true,
+    }
   },
   components: { Icon, AnimTransitionGroup, AnimTransition },
   name: 'Hero',
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 $specific-breakpoint: '>=935px';
 
 .hero {
@@ -196,6 +158,7 @@ $specific-breakpoint: '>=935px';
   position: relative;
   width: 100%;
   height: 100%;
+  transition: all 2s ease-in-out;
 
   img {
     display: block;
@@ -204,6 +167,105 @@ $specific-breakpoint: '>=935px';
     width: 100%;
     height: 100%;
     max-width: 100%;
+  }
+
+  video {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+
+    // No video
+
+    .animate & {
+      animation: showVideo 1s ease-in-out 6s both;
+      opacity: 0;
+    }
+  }
+
+  svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    path {
+      fill: inherit;
+
+      .animate & {
+        animation: dash 4s ease-in-out 1s;
+        stroke: var(--color-white);
+        stroke-width: 2px;
+        stroke-dasharray: 4030;
+        stroke-dashoffset: 0;
+        animation-fill-mode: both;
+      }
+    }
+
+    mask rect {
+      // Video
+      fill: var(--color-white);
+      .animate & {
+        animation: changeSettings3 6s ease-in-out, changeSettings2 1s ease-in-out 6s forwards;
+      }
+    }
+    > rect {
+      fill: var(--color-black);
+      animation: changeSettings 1s ease-in-out 6s forwards;
+      mask: url('#maskLayer');
+      -webkit-mask: url('#maskLayer');
+
+      .animate & {
+        fill: var(--color-white);
+      }
+    }
+  }
+}
+
+@keyframes changeSettings {
+  from {
+    fill: var(--color-white);
+  }
+  to {
+    fill: var(--color-black);
+  }
+}
+
+@keyframes changeSettings3 {
+  from {
+    fill: none;
+  }
+  to {
+    fill: var(--color-black);
+  }
+}
+
+@keyframes changeSettings2 {
+  from {
+    fill: transparent;
+  }
+  to {
+    fill: var(--color-black);
+  }
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 4030;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes showVideo {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
@@ -291,6 +353,6 @@ $specific-breakpoint: '>=935px';
 
 .title-enter-active,
 .title-leave-active {
-  animtransition: opacity 0.5s var(--animation) 0.5s, transform 1.5s var(--animation) 0.5s;
+  transition: opacity 0.5s var(--animation) 0.5s, transform 1.5s var(--animation) 0.5s;
 }
 </style>

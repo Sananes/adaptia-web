@@ -36,7 +36,6 @@ module.exports = {
       }
     }
   },
-
   // Scss loader
   chainWebpack(config) {
     // Load variables for all vue-files
