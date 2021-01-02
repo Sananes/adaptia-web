@@ -33,7 +33,11 @@
       <a href="tel:+1 7325670876"><strong>Call Us</strong> +1 732 567 0876</a>
     </AnimTransition>
     <div class="hero__image-container">
-      <AnimTransition class="hero__image" appear xyz="fade down duration-10  delay-10">
+      <AnimTransition
+        class="hero__image hero__image--has-video animate"
+        appear
+        xyz="fade down duration-10  delay-10"
+      >
         <div class="hero__image">
           <video autoplay playsinline muted loop>
             <source :src="require('~/assets/videos/hero.mp4')" />
@@ -42,13 +46,13 @@
           <svg viewBox="0 0 953 992" preserveAspectRatio="xMidYMin slice">
             <defs>
               <mask id="maskLayer" x="0" y="0" height="100%" width="100%">
-                <rect x="0" y="0" height="100%" width="100%" />
+                <rect class="inside" x="0" y="0" height="100%" width="100%" />
                 <path
                   d="M952 386.735v164.99c-62.81.086-120.263 8.247-173.243 20.902l-1.122.268.425 1.073L943.413 991H767.945L623.038 629.498l-.402-1.003-.969.479C453.586 712.061 337.92 844.742 255.55 939.229l-.032.037c-16.597 19.037-31.834 36.516-45.881 51.734H1.473L394.682 1h155.523l115.154 288.891.001.002 50.336 126.879.326.821.855-.222c72.475-18.816 150.801-29.977 235.123-30.636zm-421.827 6.791l-.002-.005-56.801-140.677-.936-2.319-.921 2.326L328.157 614.98l-1.391 3.515 2.947-2.367c66.309-53.24 143.158-103.514 230.926-143.354l.868-.394-.352-.886-30.982-77.968z"
                 />
               </mask>
             </defs>
-            <rect x="0" y="0" height="100%" width="100%" />
+            <rect class="outside" x="0" y="0" height="100%" width="100%" />
           </svg>
           <!-- <AnimTransition class="hero__image" appear xyz="fade down duration-10  delay-10">
           <g-image
@@ -132,19 +136,6 @@ $specific-breakpoint: '>=935px';
 
 .hero__image-container {
   @include media($specific-breakpoint) {
-    // display: inline-grid;
-
-    // position: absolute;
-    // top: 0;
-    // left: 0;
-    // right: 0;
-    // width: 100%;
-    // height: 100%;
-    // grid-template-columns: repeat(12, 1fr);
-    // grid-template-rows: 100%;
-    // grid-gap: 3.2rem;
-    // align-items: flex-end;
-
     position: absolute;
     bottom: 0;
     left: 0;
@@ -154,11 +145,94 @@ $specific-breakpoint: '>=935px';
   }
 }
 
+// .hero__image--has-video {
+//   video {
+//     width: 100%;
+//     object-fit: cover;
+//     height: 100%;
+
+//     .animate & {
+//       opacity: 0;
+//       animation: showVideo 1s ease-in-out 6s;
+//     }
+//   }
+
+//   svg {
+//     path {
+//       fill: inherit;
+
+//       .animate & {
+//         animation: dash 4s ease-in-out 1s;
+//         stroke: var(--color-white);
+//         stroke-width: 2px;
+//         stroke-dasharray: 4030;
+//         stroke-dashoffset: 0;
+//         animation-fill-mode: both;
+//       }
+//     }
+
+//     mask rect {
+//       // Video
+
+//       .animate & {
+//         animation: changeFill 1s ease-in-out 6s forwards;
+//       }
+//     }
+//     > rect {
+//       fill: var(--color-black);
+//       mask: url('#maskLayer');
+//       -webkit-mask: url('#maskLayer');
+
+//       .animate & {
+//         fill: var(--color-white);
+//         animation: changeSettings 1s ease-in-out 6s forwards;
+//       }
+//     }
+//   }
+// }
+
+@keyframes changeSettings {
+  from {
+    fill: var(--color-white);
+  }
+  to {
+    fill: var(--color-black);
+  }
+}
+
+@keyframes changeFill {
+  from {
+    fill: rgba(0, 0, 0, 0.01);
+  }
+  to {
+    fill: var(--color-white);
+  }
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 4030;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes showVideo {
+  from {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .hero__image {
   position: relative;
   width: 100%;
   height: 100%;
-  transition: all 2s ease-in-out;
 
   img {
     display: block;
@@ -170,6 +244,7 @@ $specific-breakpoint: '>=935px';
   }
 
   video {
+    opacity: 1;
     width: 100%;
     object-fit: cover;
     height: 100%;
@@ -177,8 +252,8 @@ $specific-breakpoint: '>=935px';
     // No video
 
     .animate & {
-      animation: showVideo 1s ease-in-out 6s both;
       opacity: 0;
+      animation: showVideo 1s ease-in-out 5s forwards;
     }
   }
 
@@ -204,68 +279,25 @@ $specific-breakpoint: '>=935px';
       }
     }
 
-    mask rect {
+    .inside {
       // Video
-      fill: var(--color-white);
+      fill: var(--color-black);
+
       .animate & {
-        animation: changeSettings3 6s ease-in-out, changeSettings2 1s ease-in-out 6s forwards;
+        fill: none;
+        animation: changeFill 0s ease-in-out 5s forwards;
       }
     }
-    > rect {
+    .outside {
       fill: var(--color-black);
       mask: url('#maskLayer');
       -webkit-mask: url('#maskLayer');
 
       .animate & {
         fill: var(--color-white);
-        animation: changeSettings 1s ease-in-out 6s forwards;
+        animation: changeSettings 0s ease-in-out 5s forwards;
       }
     }
-  }
-}
-
-@keyframes changeSettings {
-  from {
-    fill: var(--color-white);
-  }
-  to {
-    fill: var(--color-black);
-  }
-}
-
-@keyframes changeSettings3 {
-  from {
-    fill: none;
-  }
-  to {
-    fill: var(--color-black);
-  }
-}
-
-@keyframes changeSettings2 {
-  from {
-    fill: transparent;
-  }
-  to {
-    fill: var(--color-black);
-  }
-}
-
-@keyframes dash {
-  from {
-    stroke-dashoffset: 4030;
-  }
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes showVideo {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
   }
 }
 
