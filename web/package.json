@@ -7,6 +7,7 @@
     "explore": "gridsome explore"
   },
   "dependencies": {
+    "@animxyz/core": "^0.3.0",
     "@animxyz/vue": "^0.1.1",
     "@gridsome/plugin-google-analytics": "^0.1.2",
     "@sanity/image-url": "^0.140.19",

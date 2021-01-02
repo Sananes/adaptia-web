@@ -33,12 +33,8 @@
       <a href="tel:+1 7325670876"><strong>Call Us</strong> +1 732 567 0876</a>
     </AnimTransition>
     <div class="hero__image-container">
-      <AnimTransition
-        class="hero__image hero__image--has-video animate"
-        appear
-        xyz="fade down duration-10  delay-10"
-      >
-        <div class="hero__image">
+      <div class="hero__image animate">
+        <div class="hero__image animate">
           <video autoplay playsinline muted loop>
             <source :src="require('~/assets/videos/hero.mp4')" />
           </video>
@@ -65,7 +61,7 @@
           />
         </AnimTransition> -->
         </div>
-      </AnimTransition>
+      </div>
     </div>
   </div>
 </template>
