@@ -141,94 +141,16 @@ $specific-breakpoint: '>=935px';
   }
 }
 
-// .hero__image--has-video {
-//   video {
-//     width: 100%;
-//     object-fit: cover;
-//     height: 100%;
-
-//     .animate & {
-//       opacity: 0;
-//       animation: showVideo 1s ease-in-out 6s;
-//     }
-//   }
-
-//   svg {
-//     path {
-//       fill: inherit;
-
-//       .animate & {
-//         animation: dash 4s ease-in-out 1s;
-//         stroke: var(--color-white);
-//         stroke-width: 2px;
-//         stroke-dasharray: 4030;
-//         stroke-dashoffset: 0;
-//         animation-fill-mode: both;
-//       }
-//     }
-
-//     mask rect {
-//       // Video
-
-//       .animate & {
-//         animation: changeFill 1s ease-in-out 6s forwards;
-//       }
-//     }
-//     > rect {
-//       fill: var(--color-black);
-//       mask: url('#maskLayer');
-//       -webkit-mask: url('#maskLayer');
-
-//       .animate & {
-//         fill: var(--color-white);
-//         animation: changeSettings 1s ease-in-out 6s forwards;
-//       }
-//     }
-//   }
-// }
-
-@keyframes changeSettings {
-  from {
-    fill: var(--color-white);
-  }
-  to {
-    fill: var(--color-black);
-  }
-}
-
-@keyframes changeFill {
-  from {
-    fill: rgba(0, 0, 0, 0.01);
-  }
-  to {
-    fill: var(--color-white);
-  }
-}
-
-@keyframes dash {
-  from {
-    stroke-dashoffset: 4030;
-  }
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes showVideo {
-  from {
-    opacity: 0;
-    transform: scale(1.2);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
 .hero__image {
   position: relative;
   width: 100%;
   height: 100%;
+
+  .animate & {
+    @include media('<tablet') {
+      margin-bottom: rfs(-1rem);
+    }
+  }
 
   img {
     display: block;
@@ -294,6 +216,42 @@ $specific-breakpoint: '>=935px';
         animation: changeSettings 0s ease-in-out 5s forwards;
       }
     }
+  }
+}
+
+@keyframes changeSettings {
+  from {
+    fill: var(--color-white);
+  }
+  to {
+    fill: var(--color-black);
+  }
+}
+
+@keyframes changeFill {
+  from {
+    fill: rgba(0, 0, 0, 0.01);
+  }
+  to {
+    fill: var(--color-white);
+  }
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 4030;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes showVideo {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
