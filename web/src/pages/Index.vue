@@ -3,6 +3,7 @@
     <hero />
     <list-block />
     <testimonial :data="$page.testimonials" />
+    <multi-list-block />
   </Layout>
 </template>
 
@@ -29,17 +30,14 @@
 </page-query>
 
 <script>
-import AuthorCard from '~/components/AuthorCard'
-import PostCard from '~/components/PostCard'
-import Testimonial from '~/sections/Testimonial'
 import Hero from '~/components/Hero'
-import ListBlock from '../sections/ListBlock'
 
 export default {
   watch: {},
   components: {
     Hero,
     Testimonial: () => import('~/sections/Testimonial'),
+    MultiListBlock: () => import('~/sections/MultiListBlock.vue'),
     ListBlock: () => import('../sections/ListBlock'),
   },
   metaInfo: {
