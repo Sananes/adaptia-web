@@ -1,6 +1,6 @@
 <template>
   <section-block size="large" class="testimonial" v-if="data.edges">
-    <div class="container--narrow">
+    <div class="container container--narrow">
       <ClientOnly
         ><div v-swiper:mySwiper="swiperOption" v-if="data.edges.length > 0" class="hp-slider">
           <div class="swiper-wrapper">

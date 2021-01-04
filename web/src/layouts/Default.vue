@@ -3,15 +3,8 @@
     <main class="main">
       <Header />
       <slot />
+      <Footer />
     </main>
-    <footer class="footer">
-      <span class="footer__copyright">Copyright © {{ new Date().getFullYear() }}.</span>
-      <span class="footer__links">
-        Powered by
-        <a href="//gridsome.org">Gridsome</a> &amp;
-        <a href="//www.sanity.io">Sanity.io</a>
-      </span>
-    </footer>
   </div>
 </template>
 
@@ -20,6 +13,7 @@ import Header from '~/components/Header'
 export default {
   components: {
     Header,
+    Footer: () => import('~/components/Footer'),
   },
 }
 </script>
@@ -117,25 +111,6 @@ export default {
 
 .main {
   margin: 0 auto;
-}
-
-.footer {
-  padding: var(--gutter-h);
-
-  @include media('>tablet') {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
-
-  > span {
-    margin: 0 0.35em;
-  }
-
-  a {
-    color: currentColor;
-  }
 }
 
 // .fade-enter-to {

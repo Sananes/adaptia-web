@@ -325,20 +325,4 @@ $specific-breakpoint: '>=935px';
     height: inherit;
   }
 }
-
-.title-enter,
-.title-leave {
-  opacity: 0;
-  transform: translateY(-20px);
-}
-
-.title-enter-to {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-.title-enter-active,
-.title-leave-active {
-  transition: opacity 0.5s var(--animation) 0.5s, transform 1.5s var(--animation) 0.5s;
-}
 </style>

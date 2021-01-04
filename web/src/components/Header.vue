@@ -14,13 +14,15 @@
       class="header__right"
       xyz="fade up ease-out-back stagger-1"
       mode="in-out"
-      ><toggle-theme key="1" /> <button key="2" class="header__menu"><icon name="menu" /></button
+    >
+      <!-- <toggle-theme key="1" /> -->
+      <button key="2" class="header__menu"><icon name="menu" /></button
     ></XyzTransitionGroup>
   </header>
 </template>
 
 <script>
-import ToggleTheme from '~/components/ToggleTheme'
+// import ToggleTheme from '~/components/ToggleTheme'
 import Logo from '../../static/logo.svg'
 import Icon from '~/components/Icon.vue'
 import HeaderLogo from '~/components/HeaderLogo.vue'
@@ -35,7 +37,6 @@ export default {
   },
   components: {
     HeaderLogo,
-    ToggleTheme,
     Icon,
     Logo: () => import('../../static/logo.svg'),
   },
