@@ -73,12 +73,12 @@ export default function(Vue, { router, head, isClient }) {
     href: require('~/assets/fonts/Roobert-Semibold-Italic.woff')
   })
 
-  head.link.push({
-    rel: 'stylesheet',
-    type: 'text/css',
-    crossorigin: true,
-    href: 'https://fonts.googleapis.com/css?family=Inter:400,500,600,700&display=swap'
-  })
+  // head.link.push({
+  //   rel: 'stylesheet',
+  //   type: 'text/css',
+  //   crossorigin: true,
+  //   href: 'https://fonts.googleapis.com/css?family=Inter:400,500,600,700&display=swap'
+  // })
 
   head.link.push({
     rel: 'preload',

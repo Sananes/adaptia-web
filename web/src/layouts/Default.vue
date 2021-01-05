@@ -21,10 +21,10 @@ export default {
 <style lang="scss">
 @font-face {
   font-family: Tungsten;
-  src: url('../assets/fonts/Tungsten.eot');
-  src: url('../assets/fonts/Tungsten.eot?#iefix') format('embedded-opentype'),
+  src: url('../assets/fonts/Tungsten.woff'),
     url('../assets/fonts/Tungsten.woff2') format('woff2'),
-    url('../assets/fonts/Tungsten.woff') format('woff'),
+    url('../assets/fonts/Tungsten.eot') format('eot'),
+    url('../assets/fonts/Tungsten.eot?#iefix') format('embedded-opentype'),
     url('../assets/fonts/Tungsten.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
