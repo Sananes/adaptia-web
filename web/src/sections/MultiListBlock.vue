@@ -41,49 +41,44 @@ export default {
         {
           title: 'Strategy',
           body: [
-            'Research & Data',
-            'Branding & Positioning',
-            'Business Consulting',
-            'Go To Market',
-            'Innovation',
-            'SEO / SEM',
+            'User Research',
+            'Market Research',
+            'Positioning',
+            'Archetype Build',
+            'Customer Personas',
+            'Naming',
+            'Brand Voice Development',
+            'Art Direction',
           ],
         },
         {
-          title: 'Strategy',
+          title: 'Branding',
           body: [
-            'Research & Data',
-            'Branding & Positioning',
-            'Business Consulting',
-            'Go To Market',
-            'Innovation',
-            'SEO / SEM',
+            'Brand Identity',
+            'Logo',
+            'Packaging',
+            'Illustration',
+            'Iconography',
+            'Copywriting',
+            'Animation',
+            'Photography',
           ],
         },
         {
-          title: 'Strategy',
+          title: 'Experience',
           body: [
-            'Research & Data',
-            'Branding & Positioning',
-            'Business Consulting',
-            'Go To Market',
-            'Innovation',
-            'SEO / SEM',
+            'Responsive Web Design',
+            'Web Development',
+            'App Design',
+            'E-Commerce',
+            'CMS Integration',
+            'Ad Campaign',
+            'Social Media Campaign',
+            'Social Media Design',
           ],
         },
         {
-          title: 'Strategy',
-          body: [
-            'Research & Data',
-            'Branding & Positioning',
-            'Business Consulting',
-            'Go To Market',
-            'Innovation',
-            'SEO / SEM',
-          ],
-        },
-        {
-          title: 'Strategy',
+          title: 'Marketing',
           body: [
             'Research & Data',
             'Branding & Positioning',
@@ -105,10 +100,12 @@ export default {
   margin: rfs(6rem) 0 0 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
 .multilist__item-title {
+  @include body-l;
+  font-weight: var(--font-weight-semibold);
   @include margin-bottom(1.5rem);
 }
 </style>

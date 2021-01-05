@@ -47,24 +47,24 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      darkTheme: false,
-    }
-  },
-  methods: {
-    toggleTheme() {
-      this.darkTheme = !this.darkTheme
+// export default {
+//   data() {
+//     return {
+//       darkTheme: false,
+//     }
+//   },
+//   methods: {
+//     toggleTheme() {
+//       this.darkTheme = !this.darkTheme
 
-      // This is using a script that is added in index.html
-      window.__setPreferredTheme(this.darkTheme ? 'dark' : 'light')
-    },
-  },
-  mounted() {
-    if (window.__theme == 'dark') this.darkTheme = true
-  },
-}
+//       // This is using a script that is added in index.html
+//       window.__setPreferredTheme(this.darkTheme ? 'dark' : 'light')
+//     },
+//   },
+//   mounted() {
+//     if (window.__theme == 'dark') this.darkTheme = true
+//   },
+// }
 </script>
 
 <style lang="scss">

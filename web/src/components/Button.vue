@@ -13,8 +13,10 @@ export default {
 <style lang="scss" scoped>
 button,
 .button {
-  @include heading-5;
+  @include body-s;
   letter-spacing: rfs(2px);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
   outline: 0;
   background: transparent;
   border: 0;

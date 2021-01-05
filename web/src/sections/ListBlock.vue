@@ -108,11 +108,6 @@ export default {
     width: 50%;
   }
 }
-
-.list-block__title {
-  color: inherit;
-}
-
 .list-block__list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -129,7 +124,6 @@ export default {
 
 .list-block__item-title {
   @include body-m;
-  color: inherit;
   font-weight: var(--font-weight-semibold);
   margin-bottom: rfs(1rem);
 
@@ -140,7 +134,6 @@ export default {
 }
 
 .list-block__item-body {
-  color: var(--color-text-subdued);
-  color: inherit;
+  color: var(--color-text);
 }
 </style>

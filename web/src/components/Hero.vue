@@ -21,7 +21,7 @@
         xyz="fade down rotate-90 ease-out-back delay-20"
         duration="auto"
       >
-        <a href="#section1"><icon name="chevron-down" size="small" fill="none" /> Learn more</a>
+        <button-arrow>Learn more</button-arrow>
       </AnimTransition>
     </div>
     <AnimTransition
@@ -67,16 +67,17 @@
 </template>
 
 <script>
-import AnimTransition from './AnimTransition.vue'
-import AnimTransitionGroup from './AnimTransitionGroup.vue'
-import Icon from './Icon.vue'
+import AnimTransition from './AnimTransition'
+import AnimTransitionGroup from './AnimTransitionGroup'
+import ButtonArrow from './ButtonArrow'
+import Icon from './Icon'
 export default {
   data() {
     return {
       isLoaded: true,
     }
   },
-  components: { Icon, AnimTransitionGroup, AnimTransition },
+  components: { Icon, AnimTransitionGroup, AnimTransition, ButtonArrow },
   name: 'Hero',
 }
 </script>

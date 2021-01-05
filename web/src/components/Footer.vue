@@ -107,13 +107,14 @@ export default {
 
 .contact {
   text-align: center;
+  padding: rfs(12rem 0);
 
   button {
     margin-top: rfs(4rem);
   }
 }
 .contact__title {
-  @include hero-title;
+  @include heading-1;
   color: inherit;
 
   strong {
