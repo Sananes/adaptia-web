@@ -71,6 +71,7 @@ import AnimTransition from './AnimTransition'
 import AnimTransitionGroup from './AnimTransitionGroup'
 import ButtonArrow from './ButtonArrow'
 import Icon from './Icon'
+
 export default {
   data() {
     return {
@@ -90,12 +91,12 @@ $specific-breakpoint: '>=935px';
   display: grid;
   background: var(--color-black);
   color: var(--color-white);
+  overflow: hidden;
 
   @include media($specific-breakpoint) {
     height: 100%;
     width: 100%;
     grid-template-rows: minmax(50vw, 1fr);
-    overflow: hidden;
   }
 
   @include theme('dark') {

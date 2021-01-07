@@ -4,6 +4,7 @@
     <list-block />
     <testimonial :data="$page.testimonials" />
     <multi-list-block />
+    <process />
   </Layout>
 </template>
 
@@ -31,14 +32,14 @@
 
 <script>
 import Hero from '~/components/Hero'
-
 export default {
   watch: {},
   components: {
     Hero,
     Testimonial: () => import('~/sections/Testimonial'),
-    MultiListBlock: () => import('~/sections/MultiListBlock.vue'),
-    ListBlock: () => import('../sections/ListBlock'),
+    MultiListBlock: () => import('~/sections/MultiListBlock'),
+    Process: () => import('~/sections/Process'),
+    ListBlock: () => import('~/sections/ListBlock'),
   },
   metaInfo: {
     title: 'Marketing & Design Agency in San Diego, California',

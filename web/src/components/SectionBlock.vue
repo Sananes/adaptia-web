@@ -51,6 +51,10 @@ export default {
 .section--black {
   color: var(--color-white);
   background: var(--color-black);
+
+  * {
+    color: inherit;
+  }
 }
 
 .section--white {
