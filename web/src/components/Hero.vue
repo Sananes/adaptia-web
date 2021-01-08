@@ -5,7 +5,7 @@
         <h1 class="hero__title">
           <AnimTransitionGroup
             appear
-            xyz="fade down ease-out-back delay-10 stagger-1"
+            xyz="fade down ease-out-back delay-20 stagger-1"
             duration="auto"
           >
             <span key="1">Marketing &amp; design</span>
@@ -18,20 +18,18 @@
       <AnimTransition
         class="hero__scroll"
         appear
-        xyz="fade down rotate-90 ease-out-back delay-20"
+        xyz="fade down rotate-90 ease-out-back delay-30"
         duration="auto"
       >
         <button-arrow>Learn more</button-arrow>
       </AnimTransition>
     </div>
-    <AnimTransition
-      class="hero__phone"
-      appear
-      xyz="fade up ease-out-back duration-10 delay-25"
-      duration="auto"
-    >
-      <a href="tel:+1 7325670876"><strong>Call Us</strong> +1 732 567 0876</a>
-    </AnimTransition>
+    <div class="hero__phone">
+      <AnimTransition appear xyz="fade up ease-out-back duration-10 delay-20" duration="auto">
+        <a href="tel:+1 7325670876"><strong>Call Us</strong> +1 732 567 0876</a>
+      </AnimTransition>
+    </div>
+
     <div class="hero__image-container">
       <div class="hero__image animate">
         <div class="hero__image animate">

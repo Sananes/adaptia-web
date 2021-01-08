@@ -60,4 +60,8 @@ export default {
 .section--white {
   @include inverse-white;
 }
+
+.section--muted {
+  color: var(--color-black);
+}
 </style>

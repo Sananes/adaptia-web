@@ -1,5 +1,5 @@
 <template>
-  <section-block variant="muted" size="large">
+  <section-block class="list-block" variant="muted" size="large">
     <div class="container">
       <div class="list-block__heading">
         <AnimTransition appear xyz="fade up">
