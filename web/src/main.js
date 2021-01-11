@@ -10,7 +10,6 @@ import DefaultLayout from '~/layouts/Default.vue'
 // Scroll reveal
 import VueObserveVisibility from 'vue-observe-visibility'
 
-// registry directive
 // Import image url builder
 import urlForImage from './utils/urlForImage'
 
@@ -79,11 +78,4 @@ export default function(Vue, { router, head, isClient }) {
   //   crossorigin: true,
   //   href: 'https://fonts.googleapis.com/css?family=Inter:400,500,600,700&display=swap'
   // })
-
-  head.link.push({
-    rel: 'preload',
-    type: 'video',
-    crossorigin: true,
-    href: require('~/assets/videos/hero.mp4')
-  })
 }

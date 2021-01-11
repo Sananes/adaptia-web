@@ -20,6 +20,7 @@
     "sanity-blocks-vue-component": "^0.1.0",
     "swiper": "^6.4.5",
     "vue-awesome-swiper": "^4.1.1",
+    "vue-concise-slider": "^3.4.4",
     "vue-observe-visibility": "^1.0.0"
   },
   "devDependencies": {

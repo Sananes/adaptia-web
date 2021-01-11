@@ -43,6 +43,14 @@ export default {
   },
   metaInfo: {
     title: 'Marketing & Design Agency in San Diego, California',
+    link: [
+      {
+        rel: 'preload',
+        type: 'video',
+        crossorigin: true,
+        href: require('~/assets/videos/hero.mp4'),
+      },
+    ],
   },
 }
 </script>
