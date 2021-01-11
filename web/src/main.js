@@ -2,7 +2,6 @@
 import VueAnimXyz from '@animxyz/vue'
 import 'normalize.css'
 import '~/assets/style/index.scss'
-import 'swiper/swiper-bundle.css'
 
 // Import default layout so we don't need to import it to every page
 import DefaultLayout from '~/layouts/Default.vue'
