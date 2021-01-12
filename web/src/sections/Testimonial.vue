@@ -1,34 +1,27 @@
 <template>
   <section-block size="large" class="testimonial" v-if="data.edges">
     <div class="container container--narrow">
-      <ClientOnly
-        ><div v-swiper:mySwiper="options" v-if="data.edges.length > 0" class="hp-slider">
-          <div class="swiper-wrapper">
-            <AnimTransitionGroup
-              class="swiper-slide"
-              xyz="fade up stagger-2"
-              v-for="edge in data.edges"
-              :key="edge.node.id"
-            >
-              <div key="0" class="testimonial__rating">
-                <icon name="star" />
-                <icon name="star" />
-                <icon name="star" />
-                <icon name="star" />
-                <icon name="star" />
-              </div>
-              <blockquote key="1" class="testimonial__quote">
-                <block-content :blocks="edge.node._rawBody" />
-              </blockquote>
-              <aside key="2" class="testimonial__author" v-if="edge.node.clientName">
-                <strong class="testimonial__name">{{ edge.node.clientName }}</strong
-                ><span class="testimonial__role" v-html="edge.node.clientRole" />
-              </aside>
-            </AnimTransitionGroup>
-          </div>
-        </div>
-        <div class="swiper-pagination" slot="pagination"></div>
-      </ClientOnly>
+      <slider ref="slider" :options="options" v-if="data.edges.length > 0">
+        <slider-item class="slider-item" v-for="edge in data.edges" :key="edge.node.id">
+          <AnimTransitionGroup xyz="fade up stagger-2">
+            <div key="0" class="testimonial__rating">
+              <icon name="star" />
+              <icon name="star" />
+              <icon name="star" />
+              <icon name="star" />
+              <icon name="star" />
+            </div>
+            <blockquote key="1" class="testimonial__quote">
+              <block-content :blocks="edge.node._rawBody" />
+            </blockquote>
+            <aside key="2" class="testimonial__author" v-if="edge.node.clientName">
+              <strong class="testimonial__name">{{ edge.node.clientName }}</strong
+              ><span class="testimonial__role" v-html="edge.node.clientRole" />
+            </aside>
+          </AnimTransitionGroup>
+        </slider-item>
+        <div slot="loading">loading...</div>
+      </slider>
     </div>
   </section-block>
 </template>
@@ -39,7 +32,6 @@ import BlockContent from '~/components/BlockContent'
 import SectionBlock from '../components/SectionBlock.vue'
 import AnimTransition from '~/components/AnimTransition'
 import AnimTransitionGroup from '~/components/AnimTransitionGroup'
-import 'swiper/swiper-bundle.css'
 
 export default {
   name: 'Testimonial',
@@ -49,18 +41,12 @@ export default {
       required: true,
     },
   },
-  directives: !process.browser
-    ? {}
-    : {
-        swiper: require('vue-awesome-swiper').directive,
-      },
   data() {
     return {
       options: {
-        pagination: {
-          el: '.swiper-pagination',
-        },
-        // Some Swiper option/callback...
+        currentPage: 0,
+        slidesToScroll: 1,
+        itemAnimation: true,
       },
     }
   },
@@ -70,6 +56,14 @@ export default {
     BlockContent,
     AnimTransition,
     AnimTransitionGroup,
+    Slider: () =>
+      import('vue-concise-slider')
+        .then((m) => m.slider)
+        .catch(),
+    SliderItem: () =>
+      import('vue-concise-slider')
+        .then((m) => m.slideritem)
+        .catch(),
   },
 }
 </script>
@@ -129,10 +123,10 @@ export default {
   opacity: 0.5;
 }
 
-// .slider-item {
-//   white-space: pre-wrap;
-//   flex-direction: column;
-// }
+.slider-item {
+  flex-direction: column;
+  white-space: pre-wrap;
+}
 
 .swiper-container {
   overflow: hidden;
@@ -141,6 +135,13 @@ export default {
   display: flex;
   align-items: center;
 }
+
+.swiper-pagination {
+  > .swiper-pagination-bullet {
+    background-color: red;
+  }
+}
+
 .swiper-pagination {
   --swiper-pagination-color: var(--color-black);
   margin-top: rfs(-1rem);
