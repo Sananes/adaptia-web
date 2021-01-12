@@ -29,19 +29,19 @@ export default function(Vue, { router, head, isClient }) {
     href: require('~/assets/fonts/Tungsten.woff')
   })
 
-  head.link.push({
-    rel: 'preload',
-    as: 'font',
-    crossorigin: true,
-    href: require('~/assets/fonts/Roobert.woff')
-  })
+  // head.link.push({
+  //   rel: 'preload',
+  //   as: 'font',
+  //   crossorigin: true,
+  //   href: require('~/assets/fonts/Roobert.woff')
+  // })
 
-  head.link.push({
-    rel: 'preload',
-    as: 'font',
-    crossorigin: true,
-    href: require('~/assets/fonts/Roobert-Italic.woff')
-  })
+  // head.link.push({
+  //   rel: 'preload',
+  //   as: 'font',
+  //   crossorigin: true,
+  //   href: require('~/assets/fonts/Roobert-Italic.woff')
+  // })
 
   // head.link.push({
   //   rel: 'preload',
