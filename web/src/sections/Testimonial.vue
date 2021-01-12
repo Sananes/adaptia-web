@@ -1,7 +1,7 @@
 <template>
   <section-block size="large" class="testimonial" v-if="data.edges">
     <div class="container container--narrow">
-      <div style="width: 100%; height: 100%">
+      <div style="width: 100%; height: 100%; position: relative">
         <ClientOnly>
           <Slider class="slider-container" :options="options" v-if="data.edges.length > 0">
             <SliderItem class="slider-item" v-for="edge in data.edges" :key="edge.node.id">
@@ -127,9 +127,17 @@ export default {
   opacity: 0.5;
 }
 
+.slider-container {
+  position: unset;
+}
+
 .slider-item {
   flex-direction: column;
   white-space: pre-wrap;
+}
+
+::v-deep .swiper-container-horizontal > .slider-pagination-bullets {
+  bottom: -30px;
 }
 
 .swiper-container {
@@ -141,8 +149,8 @@ export default {
   align-items: center;
 }
 
-::v-deep .slider-pagination {
-  position: relative;
-  padding-top: rfs(1rem);
-}
+// ::v-deep .slider-pagination {
+//   position: relative;
+//   padding-top: rfs(1rem);
+// }
 </style>
