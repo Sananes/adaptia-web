@@ -62,7 +62,7 @@ export default {
         .catch(),
     SliderItem: () =>
       import('vue-concise-slider')
-        .then((m) => m.slideritem)
+        .then((m) => (m.slideritem !== null ? m.slideritem : undefined))
         .catch(),
   },
 }
