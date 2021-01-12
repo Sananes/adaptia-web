@@ -33,7 +33,6 @@
 <script>
 import Hero from '~/components/Hero'
 export default {
-  watch: {},
   components: {
     Hero,
     Testimonial: () => import('~/sections/Testimonial'),
@@ -54,6 +53,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss">
-</style>

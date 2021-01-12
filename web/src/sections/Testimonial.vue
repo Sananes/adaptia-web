@@ -1,27 +1,31 @@
 <template>
   <section-block size="large" class="testimonial" v-if="data.edges">
     <div class="container container--narrow">
-      <slider ref="slider" :options="options" v-if="data.edges.length > 0">
-        <slideritem class="slider-item" v-for="edge in data.edges" :key="edge.node.id">
-          <AnimTransitionGroup xyz="fade up stagger-2">
-            <div key="0" class="testimonial__rating">
-              <icon name="star" />
-              <icon name="star" />
-              <icon name="star" />
-              <icon name="star" />
-              <icon name="star" />
-            </div>
-            <blockquote key="1" class="testimonial__quote">
-              <block-content :blocks="edge.node._rawBody" />
-            </blockquote>
-            <aside key="2" class="testimonial__author" v-if="edge.node.clientName">
-              <strong class="testimonial__name">{{ edge.node.clientName }}</strong
-              ><span class="testimonial__role" v-html="edge.node.clientRole" />
-            </aside>
-          </AnimTransitionGroup>
-        </slideritem>
-        <div slot="loading">loading...</div>
-      </slider>
+      <div style="width: 100%; height: 100%">
+        <ClientOnly>
+          <Slider :options="options" v-if="data.edges.length > 0">
+            <SliderItem class="slider-item" v-for="edge in data.edges" :key="edge.node.id">
+              <AnimTransitionGroup xyz="fade up stagger-2">
+                <div key="0" class="testimonial__rating">
+                  <icon name="star" />
+                  <icon name="star" />
+                  <icon name="star" />
+                  <icon name="star" />
+                  <icon name="star" />
+                </div>
+                <blockquote key="1" class="testimonial__quote">
+                  <block-content :blocks="edge.node._rawBody" />
+                </blockquote>
+                <aside key="2" class="testimonial__author" v-if="edge.node.clientName">
+                  <strong class="testimonial__name">{{ edge.node.clientName }}</strong
+                  ><span class="testimonial__role" v-html="edge.node.clientRole" />
+                </aside>
+              </AnimTransitionGroup>
+            </SliderItem>
+            <div slot="loading">loading...</div>
+          </Slider>
+        </ClientOnly>
+      </div>
     </div>
   </section-block>
 </template>
@@ -59,11 +63,11 @@ export default {
     Slider: () =>
       import('vue-concise-slider')
         .then((m) => m.slider)
-        .catch(),
-    Slideritem: () =>
+        .catch((err) => console.log(err)),
+    SliderItem: () =>
       import('vue-concise-slider')
         .then((m) => m.slideritem && m.slideritem)
-        .catch(),
+        .catch((err) => console.log(err)),
   },
 }
 </script>
