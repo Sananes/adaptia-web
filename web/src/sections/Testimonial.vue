@@ -3,7 +3,7 @@
     <div class="container container--narrow">
       <div style="width: 100%; height: 100%">
         <ClientOnly>
-          <Slider :options="options" v-if="data.edges.length > 0">
+          <Slider class="slider-container" :options="options" v-if="data.edges.length > 0">
             <SliderItem class="slider-item" v-for="edge in data.edges" :key="edge.node.id">
               <AnimTransitionGroup xyz="fade up stagger-2">
                 <div key="0" class="testimonial__rating">
@@ -135,26 +135,14 @@ export default {
 .swiper-container {
   overflow: hidden;
 }
+
 .swiper-wrapper {
   display: flex;
   align-items: center;
 }
 
-.swiper-pagination {
-  > .swiper-pagination-bullet {
-    background-color: red;
-  }
-}
-
-.swiper-pagination {
-  --swiper-pagination-color: var(--color-black);
-  margin-top: rfs(-1rem);
-  padding-top: rfs(2rem);
+::v-deep .slider-pagination {
   position: relative;
-  display: block;
-  bottom: 0;
-  @include theme('dark') {
-    --swiper-pagination-color: var(--color-white);
-  }
+  padding-top: rfs(1rem);
 }
 </style>
