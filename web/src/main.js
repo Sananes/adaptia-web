@@ -43,38 +43,38 @@ export default function(Vue, { router, head, isClient }) {
     href: require('~/assets/fonts/Roobert-Italic.woff')
   })
 
-  head.link.push({
-    rel: 'preload',
-    as: 'font',
-    crossorigin: true,
-    href: require('~/assets/fonts/Roobert-Medium.woff')
-  })
-
-  head.link.push({
-    rel: 'preload',
-    as: 'font',
-    crossorigin: true,
-    href: require('~/assets/fonts/Roobert-Medium-Italic.woff')
-  })
-
-  head.link.push({
-    rel: 'preload',
-    as: 'font',
-    crossorigin: true,
-    href: require('~/assets/fonts/Roobert-Semibold.woff')
-  })
-
-  head.link.push({
-    rel: 'preload',
-    as: 'font',
-    crossorigin: true,
-    href: require('~/assets/fonts/Roobert-Semibold-Italic.woff')
-  })
+  // head.link.push({
+  //   rel: 'preload',
+  //   as: 'font',
+  //   crossorigin: true,
+  //   href: require('~/assets/fonts/Roobert-Medium.woff')
+  // })
 
   // head.link.push({
-  //   rel: 'stylesheet',
-  //   type: 'text/css',
+  //   rel: 'preload',
+  //   as: 'font',
   //   crossorigin: true,
-  //   href: 'https://fonts.googleapis.com/css?family=Inter:400,500,600,700&display=swap'
+  //   href: require('~/assets/fonts/Roobert-Medium-Italic.woff')
   // })
+
+  // head.link.push({
+  //   rel: 'preload',
+  //   as: 'font',
+  //   crossorigin: true,
+  //   href: require('~/assets/fonts/Roobert-Semibold.woff')
+  // })
+
+  // head.link.push({
+  //   rel: 'preload',
+  //   as: 'font',
+  //   crossorigin: true,
+  //   href: require('~/assets/fonts/Roobert-Semibold-Italic.woff')
+  // })
+
+  head.link.push({
+    rel: 'stylesheet',
+    type: 'text/css',
+    crossorigin: true,
+    href: 'https://fonts.googleapis.com/css?family=Inter:400,500,600,700&display=swap'
+  })
 }
