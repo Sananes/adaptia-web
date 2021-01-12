@@ -2,7 +2,7 @@
   <section-block size="large" class="testimonial" v-if="data.edges">
     <div class="container container--narrow">
       <slider ref="slider" :options="options" v-if="data.edges.length > 0">
-        <slider-item class="slider-item" v-for="edge in data.edges" :key="edge.node.id">
+        <slideritem class="slider-item" v-for="edge in data.edges" :key="edge.node.id">
           <AnimTransitionGroup xyz="fade up stagger-2">
             <div key="0" class="testimonial__rating">
               <icon name="star" />
@@ -19,7 +19,7 @@
               ><span class="testimonial__role" v-html="edge.node.clientRole" />
             </aside>
           </AnimTransitionGroup>
-        </slider-item>
+        </slideritem>
         <div slot="loading">loading...</div>
       </slider>
     </div>
@@ -60,9 +60,9 @@ export default {
       import('vue-concise-slider')
         .then((m) => m.slider)
         .catch(),
-    SliderItem: () =>
+    Slideritem: () =>
       import('vue-concise-slider')
-        .then((m) => (m.slideritem !== null ? m.slideritem : undefined))
+        .then((m) => m.slideritem && m.slideritem)
         .catch(),
   },
 }
