@@ -50,12 +50,12 @@
               />
             </svg>
             <h1 class="process__graphic-title">Adaptia</h1>
-            <AnimTransitionGroup xyz="stagger-1">
+            <XyzTransitionGroup xyz="stagger-1" appear-visible>
               <div v-for="item in elements" :key="item.id" class="element">
                 <span>0{{ item.id }}</span>
                 <h5>{{ item.title }}</h5>
               </div>
-            </AnimTransitionGroup>
+            </XyzTransitionGroup>
           </div>
         </div>
       </div>
@@ -65,10 +65,9 @@
 
 <script>
 import SectionBlock from '~/components/SectionBlock'
-import AnimTransitionGroup from '../components/AnimTransitionGroup'
 export default {
   name: 'Process',
-  components: { SectionBlock, AnimTransitionGroup },
+  components: { SectionBlock },
   data() {
     return {
       elements: [

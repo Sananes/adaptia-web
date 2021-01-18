@@ -2,15 +2,15 @@
   <section-block class="list-block" variant="muted" size="large">
     <div class="container">
       <div class="list-block__heading">
-        <AnimTransition appear xyz="fade up">
+        <XyzTransition appear-visible appear xyz="fade up">
           <h2 class="list-block__title" v-html="heading.title"></h2>
-        </AnimTransition>
+        </XyzTransition>
       </div>
 
-      <AnimTransitionGroup
+      <XyzTransitionGroup
         group
         tag="ul"
-        appear
+        appear-visible
         v-if="list && list.length > 0"
         class="list-block__list"
         xyz="fade up ease-out-back stagger-1"
@@ -20,15 +20,13 @@
           <h3 class="list-block__item-title">{{ node.title }}</h3>
           <p class="list-block__item-body">{{ node.body }}</p>
         </li>
-      </AnimTransitionGroup>
+      </XyzTransitionGroup>
     </div>
   </section-block>
 </template>
 
 <script>
 import SectionBlock from '~/components/SectionBlock'
-import AnimTransition from '~/components/AnimTransition'
-import AnimTransitionGroup from '~/components/AnimTransitionGroup'
 export default {
   name: 'ListBlock',
   data() {
@@ -86,15 +84,8 @@ export default {
       }
     },
   },
-  methods: {
-    visiblityChanged(isVisible) {
-      this.isVisible = isVisible
-    },
-  },
   components: {
     SectionBlock,
-    AnimTransition,
-    AnimTransitionGroup,
   },
 }
 </script>

@@ -6,23 +6,30 @@
       </div>
 
       <div class="multilist__grid">
-        <AnimTransitionGroup class="multilist__list" tag="ul" xyz="fade up ease-out-back stagger-1">
+        <XyzTransitionGroup
+          class="multilist__list"
+          tag="ul"
+          xyz="fade up ease-out-back stagger-1"
+          appear-visible
+        >
           <li class="multilist__item" v-for="(item, index) in services" :key="index">
             <h5 class="multilist__item-title">{{ item.title }}</h5>
-            <AnimTransitionGroup
+            <XyzTransitionGroup
               class="multilist__item-list"
               tag="ul"
               xyz="fade up ease-out-back stagger-1"
+              appear-visible
             >
               <li
                 class="multilist__item-list-item"
                 v-for="(service, index) in item.body"
                 :key="index"
+                appear-visible
               >
                 {{ service }}
               </li>
-            </AnimTransitionGroup>
-          </li></AnimTransitionGroup
+            </XyzTransitionGroup>
+          </li></XyzTransitionGroup
         >
       </div>
     </div>
@@ -30,10 +37,9 @@
 </template>
 
 <script>
-import AnimTransitionGroup from '../components/AnimTransitionGroup'
 import SectionBlock from '../components/SectionBlock'
 export default {
-  components: { SectionBlock, AnimTransitionGroup },
+  components: { SectionBlock },
   name: 'MultiListBlock',
   data() {
     return {

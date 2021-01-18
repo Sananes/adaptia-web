@@ -1,33 +1,45 @@
 <template>
   <div class="hero">
     <div class="hero__container">
-      <AnimTransition class="hero__content" appear xyz="fade down ease-out-back" duration="auto">
+      <XyzTransition
+        class="hero__content"
+        appear
+        appear-visible
+        xyz="fade down ease-out-back"
+        duration="auto"
+      >
         <h1 class="hero__title">
-          <AnimTransitionGroup
+          <XyzTransitionGroup
             appear
+            appear-visible
             xyz="fade down ease-out-back delay-20 stagger-1"
             duration="auto"
           >
             <span key="1">Marketing &amp; design</span>
             <span key="2">agency in san diego,</span>
             <span class="outline" key="3">california</span>
-          </AnimTransitionGroup>
+          </XyzTransitionGroup>
         </h1>
-      </AnimTransition>
+      </XyzTransition>
       <!-- <h1 class="hero__title">We help you adapt to Evolving markets</h1> -->
-      <AnimTransition
+      <XyzTransition
+        appear-visible
         class="hero__scroll"
         appear
         xyz="fade down rotate-90 ease-out-back delay-30"
         duration="auto"
       >
         <button-arrow>Learn more</button-arrow>
-      </AnimTransition>
+      </XyzTransition>
     </div>
     <div class="hero__phone">
-      <AnimTransition appear xyz="fade up ease-out-back duration-10 delay-20" duration="auto">
+      <XyzTransition
+        appear-visibleappear
+        xyz="fade up ease-out-back duration-10 delay-20"
+        duration="auto"
+      >
         <a href="tel:+1 7325670876"><strong>Call Us</strong> +1 732 567 0876</a>
-      </AnimTransition>
+      </XyzTransition>
     </div>
 
     <div class="hero__image-container">
@@ -48,7 +60,7 @@
             </defs>
             <rect class="outside" x="0" y="0" height="100%" width="100%" />
           </svg>
-          <!-- <AnimTransition class="hero__image" appear xyz="fade down duration-10  delay-10">
+          <!-- <XyzTransition class="hero__image" appear xyz="fade down duration-10  delay-10">
           <g-image
             :immediate="true"
             src="~/assets/images/hero.png"
@@ -57,7 +69,7 @@
             height="909"
             position="bottom right"
           />
-        </AnimTransition> -->
+        </XyzTransition> -->
         </div>
       </div>
     </div>
@@ -65,8 +77,6 @@
 </template>
 
 <script>
-import AnimTransition from './AnimTransition'
-import AnimTransitionGroup from './AnimTransitionGroup'
 import ButtonArrow from './ButtonArrow'
 import Icon from './Icon'
 
@@ -76,7 +86,7 @@ export default {
       isLoaded: true,
     }
   },
-  components: { Icon, AnimTransitionGroup, AnimTransition, ButtonArrow },
+  components: { Icon, ButtonArrow },
   name: 'Hero',
 }
 </script>

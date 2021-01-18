@@ -5,7 +5,7 @@
         <ClientOnly>
           <Slider class="slider-container" :options="options" v-if="data.edges.length > 0">
             <SliderItem class="slider-item" v-for="edge in data.edges" :key="edge.node.id">
-              <AnimTransitionGroup xyz="fade up stagger-2">
+              <XyzTransitionGroup xyz="fade up stagger-2" appear-visible>
                 <div key="0" class="testimonial__rating">
                   <icon name="star" />
                   <icon name="star" />
@@ -20,7 +20,7 @@
                   <strong class="testimonial__name">{{ edge.node.clientName }}</strong
                   ><span class="testimonial__role" v-html="edge.node.clientRole" />
                 </aside>
-              </AnimTransitionGroup>
+              </XyzTransitionGroup>
             </SliderItem>
             <div slot="loading">loading...</div>
           </Slider>
@@ -34,8 +34,6 @@
 import Icon from '../components/Icon.vue'
 import BlockContent from '~/components/BlockContent'
 import SectionBlock from '../components/SectionBlock.vue'
-import AnimTransition from '~/components/AnimTransition'
-import AnimTransitionGroup from '~/components/AnimTransitionGroup'
 
 export default {
   name: 'Testimonial',
@@ -58,8 +56,6 @@ export default {
     Icon,
     SectionBlock,
     BlockContent,
-    AnimTransition,
-    AnimTransitionGroup,
     Slider: () =>
       import('vue-concise-slider')
         .then((m) => m.slider)

@@ -2,7 +2,8 @@
   <footer class="footer">
     <section-block class="contact" size="large" variant="dark">
       <div class="container">
-        <AnimTransitionGroup
+        <XyzTransitionGroup
+          appear-visible
           class="contact__content"
           appear
           xyz="fade down ease-out-back stagger-1"
@@ -13,16 +14,18 @@
             <strong>Let’s chat.</strong>
           </h2>
           <Button key="2" class="button button--white">Contact us</Button>
-        </AnimTransitionGroup>
+        </XyzTransitionGroup>
       </div>
     </section-block>
-    <AnimTransitionGroup
+    <XyzTransitionGroup
+      appear-visible
       class="footer__grid container"
       xyz="fade down ease-out-back stagger-1"
       duration="auto"
     >
       <ul class="footer__links" key="1">
-        <AnimTransitionGroup
+        <XyzTransitionGroup
+          appear-visible
           class="contact__content"
           xyz="fade down ease-out-back stagger-1"
           duration="auto"
@@ -31,10 +34,11 @@
           <li key="2" class="footer__links-item"><g-link to="/">Services</g-link></li>
           <li key="3" class="footer__links-item"><g-link to="/">Work</g-link></li>
           <li key="4" class="footer__links-item"><g-link to="/">Blog</g-link></li>
-        </AnimTransitionGroup>
+        </XyzTransitionGroup>
       </ul>
       <ul class="footer__social" key="2">
-        <AnimTransitionGroup
+        <XyzTransitionGroup
+          appear-visible
           class="contact__content"
           xyz="fade down ease-out-back stagger-1"
           duration="auto"
@@ -43,10 +47,11 @@
           <li key="2" class="footer__links-item"><g-link to="/">Twitter</g-link></li>
           <li key="3" class="footer__links-item"><g-link to="/">LinkedIn</g-link></li>
           <li key="4" class="footer__links-item"><g-link to="/">Dribbble</g-link></li>
-        </AnimTransitionGroup>
+        </XyzTransitionGroup>
       </ul>
       <div class="footer__address" key="3">
-        <AnimTransitionGroup
+        <XyzTransitionGroup
+          appear-visible
           class="contact__content"
           xyz="fade down ease-out-back stagger-1"
           duration="auto"
@@ -56,11 +61,12 @@
             2292 Faraday Ave <br />
             Carlsbad, CA 92008
           </address>
-        </AnimTransitionGroup>
+        </XyzTransitionGroup>
       </div>
 
       <div class="footer__address" key="4">
-        <AnimTransitionGroup
+        <XyzTransitionGroup
+          appear-visible
           class="contact__content"
           xyz="fade down ease-out-back stagger-1"
           duration="auto"
@@ -70,9 +76,9 @@
             2292 Faraday Ave <br />
             Carlsbad, CA 92008
           </address>
-        </AnimTransitionGroup>
+        </XyzTransitionGroup>
       </div>
-    </AnimTransitionGroup>
+    </XyzTransitionGroup>
     <aside class="footer__copyright container">
       <span class="footer__copyright-text"
         >&copy; {{ new Date().getFullYear() }} Adaptia Design, LLC.</span
@@ -88,10 +94,8 @@
 <script>
 import Button from './Button'
 import SectionBlock from './SectionBlock'
-import AnimTransition from './AnimTransition'
-import AnimTransitionGroup from './AnimTransitionGroup'
 export default {
-  components: { SectionBlock, Button, AnimTransition, AnimTransitionGroup },
+  components: { SectionBlock, Button },
 }
 </script>
 

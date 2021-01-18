@@ -16,7 +16,9 @@ import urlForImage from './utils/urlForImage'
 export default function(Vue, { router, head, isClient }) {
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
-  Vue.use(VueAnimXyz)
+  Vue.use(VueAnimXyz, {
+    appearVisible: [true, { threshold: 0.5, rootMargin: '50px' }]
+  })
   Vue.use(VueObserveVisibility)
 
   // Inject global image URL builder
@@ -75,6 +77,6 @@ export default function(Vue, { router, head, isClient }) {
     rel: 'stylesheet',
     type: 'text/css',
     crossorigin: true,
-    href: 'https://fonts.googleapis.com/css?family=Inter:400,500,600,700&display=swap'
+    href: 'https://fonts.googleapis.com/css?family=Inter:400,500,600&display=swap'
   })
 }
