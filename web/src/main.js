@@ -6,9 +6,6 @@ import '~/assets/style/index.scss'
 // Import default layout so we don't need to import it to every page
 import DefaultLayout from '~/layouts/Default.vue'
 
-// Scroll reveal
-import VueObserveVisibility from 'vue-observe-visibility'
-
 // Import image url builder
 import urlForImage from './utils/urlForImage'
 
@@ -16,10 +13,7 @@ import urlForImage from './utils/urlForImage'
 export default function(Vue, { router, head, isClient }) {
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
-  Vue.use(VueAnimXyz, {
-    appearVisible: [true, { threshold: 0.5, rootMargin: '50px' }]
-  })
-  Vue.use(VueObserveVisibility)
+  Vue.use(VueAnimXyz)
 
   // Inject global image URL builder
   Vue.prototype.$urlForImage = urlForImage

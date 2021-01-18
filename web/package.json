@@ -14,12 +14,10 @@
     "gridsome": "^0.7.23",
     "gridsome-plugin-pwa": "0.0.18",
     "gridsome-source-sanity": "^1.0.5",
-    "keen-slider": "^5.3.5",
     "normalize.css": "^8.0.1",
     "rfs": "^9.0.3",
     "sanity-blocks-vue-component": "^0.1.0",
-    "vue-concise-slider": "^3.4.4",
-    "vue-observe-visibility": "^1.0.0"
+    "vue-concise-slider": "^3.4.4"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^3.1.3",
