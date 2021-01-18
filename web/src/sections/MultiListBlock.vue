@@ -109,6 +109,12 @@ export default {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
+.multilist__item-list {
+  list-style: none;
+  padding: 0;
+  margin-left: 0;
+}
+
 .multilist__item-title {
   @include body-l;
   font-weight: var(--font-weight-semibold);

@@ -102,6 +102,10 @@ export default {
   margin: 0 auto;
   max-width: var(--max-width);
   padding: rfs(0 1rem);
+
+  @include media('>tablet') {
+    padding: rfs(0 2rem);
+  }
 }
 
 .container--narrow {
