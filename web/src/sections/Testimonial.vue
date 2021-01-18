@@ -136,6 +136,10 @@ export default {
   bottom: -30px;
 }
 
+::v-deep .swiper-container-horizontal > * > .slider-pagination-bullet {
+  background-color: var(--color-white);
+}
+
 .swiper-container {
   overflow: hidden;
 }
