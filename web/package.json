@@ -17,7 +17,9 @@
     "normalize.css": "^8.0.1",
     "rfs": "^9.0.3",
     "sanity-blocks-vue-component": "^0.1.0",
-    "vue-concise-slider": "^3.4.4"
+    "vue-concise-slider": "^3.4.4",
+    "vue-lazy-hydration": "^2.0.0-beta.4",
+    "vue-slick-carousel": "^1.0.6"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^3.1.3",

@@ -1,11 +1,11 @@
 <template>
   <Layout :show-logo="false">
-    <hero />
-    <list-block />
-    <testimonial :data="$page.testimonials" />
-    <multi-list-block />
-    <process />
-    <customers />
+    <LazyHydrate when-idle><HomeHero /></LazyHydrate>
+    <LazyHydrate when-visible><HomeListBlock /></LazyHydrate>
+    <LazyHydrate when-visible><Testimonials :data="$page.testimonials" /></LazyHydrate>
+    <LazyHydrate when-visible><HomeServices /></LazyHydrate>
+    <LazyHydrate when-visible><HomeProcess /></LazyHydrate>
+    <LazyHydrate when-visible><HomeCustomers /></LazyHydrate>
   </Layout>
 </template>
 
@@ -32,18 +32,25 @@
 </page-query>
 
 <script>
-import Hero from '~/components/Hero'
+import LazyHydrate from 'vue-lazy-hydration'
+import HomeHero from '@/components/home/HomeHero'
+import Testimonials from '@/components/Testimonials'
+import HomeServices from '@/components/home/HomeServices'
+import HomeProcess from '@/components/home/HomeProcess'
+import HomeCustomers from '@/components/home/HomeCustomers'
+import HomeListBlock from '@/components/home/HomeListBlock'
 export default {
   data() {
     return {}
   },
   components: {
-    Hero,
-    Testimonial: () => import('~/sections/Testimonial'),
-    MultiListBlock: () => import('~/sections/MultiListBlock'),
-    Process: () => import('~/sections/Process'),
-    ListBlock: () => import('~/sections/ListBlock'),
-    Customers: () => import('~/sections/Customers'),
+    LazyHydrate,
+    HomeHero,
+    Testimonials,
+    HomeServices,
+    HomeProcess,
+    HomeListBlock,
+    HomeCustomers,
   },
   metaInfo: {
     title: 'Marketing & Design Agency in San Diego, California',
