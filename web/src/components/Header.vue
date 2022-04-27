@@ -3,7 +3,7 @@
     <div class="header__left">
       <XyzTransition appear xyz="fade up ease-out-back">
         <h1 class="header__title">
-          <g-link to="/"><logo class="header__logo" /></g-link>
+          <g-link to="/"><logo class="header__logo"/></g-link>
         </h1>
         <header-logo v-if="showLogo" />
       </XyzTransition>
@@ -16,8 +16,9 @@
       mode="in-out"
     >
       <!-- <toggle-theme key="1" /> -->
-      <button key="2" class="header__menu"><icon name="menu" /></button
-    ></XyzTransitionGroup>
+      <!-- <button key="2" class="header__menu"><icon name="menu" /></button
+    > -->
+    </XyzTransitionGroup>
   </header>
 </template>
 
@@ -32,14 +33,14 @@ export default {
   props: {
     showLogo: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   components: {
     HeaderLogo,
     Icon,
-    Logo: () => import('../../static/logo.svg'),
-  },
+    Logo: () => import('../../static/logo.svg')
+  }
 }
 </script>
 

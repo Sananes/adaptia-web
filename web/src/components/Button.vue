@@ -1,12 +1,16 @@
 <template>
-  <button class="button">
+  <a v-if="link" class="button">
     <slot />
-  </button>
+  </a>
+  <button class="button" v-else><slot /></button>
 </template>
 
 <script>
 export default {
   name: 'Button',
+  props: {
+    link: false
+  }
 }
 </script>
 
@@ -36,7 +40,13 @@ button,
   }
 }
 
-.button--white {
+a.button.button--white {
+  color: var(--color-black);
+  text-decoration: none;
+}
+
+.button--white,
+a.button--white {
   color: var(--color-black);
   background: var(--color-white);
 

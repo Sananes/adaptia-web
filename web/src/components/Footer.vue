@@ -13,7 +13,14 @@
             Have a project in mind? <br />
             <strong>Let’s chat.</strong>
           </h2>
-          <Button key="2" class="button button--white">Contact us</Button>
+          <Button
+            :link="true"
+            href="mailto:hello@adaptiadesign.com"
+            key="2"
+            class="button button--white"
+          >
+            Contact us
+          </Button>
         </XyzTransitionGroup>
       </div>
     </section-block>
@@ -23,7 +30,7 @@
       xyz="fade down ease-out-back stagger-1"
       duration="auto"
     >
-      <ul class="footer__links" key="1">
+      <!-- <ul class="footer__links" key="1">
         <XyzTransitionGroup
           appear-visible
           class="contact__content"
@@ -35,7 +42,7 @@
           <li key="3" class="footer__links-item"><g-link to="/">Work</g-link></li>
           <li key="4" class="footer__links-item"><g-link to="/">Blog</g-link></li>
         </XyzTransitionGroup>
-      </ul>
+      </ul> -->
       <ul class="footer__social" key="2">
         <XyzTransitionGroup
           appear-visible
@@ -95,7 +102,7 @@
 import Button from './Button'
 import SectionBlock from './SectionBlock'
 export default {
-  components: { SectionBlock, Button },
+  components: { SectionBlock, Button }
 }
 </script>
 
@@ -112,11 +119,13 @@ export default {
 .contact {
   text-align: center;
   padding: rfs(12rem 0);
-
-  button {
-    margin-top: rfs(4rem);
-  }
 }
+
+.contact__content .button {
+  display: inline-block;
+  margin-top: rfs(4rem);
+}
+
 .contact__title {
   @include heading-1;
   color: inherit;

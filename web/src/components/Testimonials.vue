@@ -1,6 +1,6 @@
 <template>
   <section-block size="large" class="testimonial" v-if="data.edges">
-    <div class="container container--narrow">
+    <div class="container">
       <div style="width: 100%; height: 100%; position: relative">
         <ClientOnly>
           <VueSlickCarousel class="slider-container" v-bind="settings" v-if="data.edges.length > 0">
@@ -42,8 +42,8 @@ export default {
   props: {
     data: {
       type: Object,
-      required: true,
-    },
+      required: true
+    }
   },
   data() {
     return {
@@ -56,8 +56,8 @@ export default {
         speed: 500,
         arrows: false,
         slidesToShow: 1,
-        slidesToScroll: 1,
-      },
+        slidesToScroll: 1
+      }
       // options: {
       //   currentPage: 0,
       //   slidesToScroll: 1,
@@ -69,7 +69,7 @@ export default {
     VueSlickCarousel,
     Icon,
     SectionBlock,
-    BlockContent,
+    BlockContent
     //   Slider: () =>
     //     import('vue-concise-slider')
     //       .then((m) => m.slider)
@@ -78,7 +78,7 @@ export default {
     //     import('vue-concise-slider')
     //       .then((m) => m.slideritem && m.slideritem)
     //       .catch((err) => console.log(err)),
-  },
+  }
 }
 </script>
 
