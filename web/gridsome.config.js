@@ -42,6 +42,8 @@ module.exports = {
     const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
     const svgRule = config.module.rule('svg')
 
+    config.resolve.alias.set('@images', '@/assets/images')
+
     // svg rules
     svgRule.uses.clear()
     svgRule.use('vue-svg-loader').loader('vue-svg-loader')

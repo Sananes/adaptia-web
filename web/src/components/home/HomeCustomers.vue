@@ -13,12 +13,11 @@
       </div>
 
       <XyzTransitionGroup tag="ul" class="customers__list" xyz="fade up stagger-1" appear-visible>
-        <li class="customers__item" v-for="(item, index) in 12" :key="index">
-          <img
+        <li class="customers__item" v-for="(item, index) in customers" :key="index">
+          <g-image
             class="customers__logo"
-            :src="`https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo${
-              Math.floor(Math.random() * 4) + 1
-            }.png`"
+            :src="require(`!!assets-loader!@images/${item.image}`)"
+            :alt="item.title"
           />
         </li>
       </XyzTransitionGroup>
@@ -31,6 +30,61 @@ import SectionBlock from '../SectionBlock'
 export default {
   name: 'Customers',
   components: { SectionBlock },
+
+  data() {
+    return {
+      customers: [
+        {
+          title: 'Orange Comet',
+          image: 'orangecomet.svg'
+        },
+        {
+          title: 'Disney',
+          image: 'disney.svg'
+        },
+        {
+          title: 'Maker Studios',
+          image: 'makerstudios.svg'
+        },
+        {
+          title: 'Tony Robbins',
+          image: 'tonyrobbins.svg'
+        },
+        {
+          title: 'Ranker',
+          image: 'ranker.svg'
+        },
+        {
+          title: 'Merry Jane',
+          image: 'merryjane.svg'
+        },
+        {
+          title: 'Designs for Health',
+          image: 'designsforhealth.svg'
+        },
+        {
+          title: 'JJVirgin',
+          image: 'jjvirgin.svg'
+        },
+        {
+          title: 'Fx Chocolate',
+          image: 'fxchocolate.svg'
+        },
+        {
+          title: 'Dr. Ann Shippy MD',
+          image: 'annshippymd.svg'
+        },
+        {
+          title: 'KandyPens',
+          image: 'kandypens.svg'
+        },
+        {
+          title: 'Mailcoms',
+          image: 'mailcoms.svg'
+        }
+      ]
+    }
+  }
 }
 </script>
 
@@ -64,6 +118,11 @@ export default {
   &__item {
     width: 25%;
     padding: rfs(2rem 1rem);
+
+    img {
+      width: 100%;
+      max-width: 100%;
+    }
   }
 
   &__logo {
