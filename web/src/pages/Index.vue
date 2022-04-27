@@ -2,7 +2,7 @@
   <Layout :show-logo="false">
     <LazyHydrate when-idle><HomeHero /></LazyHydrate>
     <LazyHydrate when-visible><HomeListBlock /></LazyHydrate>
-    <LazyHydrate when-visible><Testimonials :data="$page.testimonials" /></LazyHydrate>
+    <LazyHydrate when-visible><Testimonials :data="$page.testimonials"/></LazyHydrate>
     <LazyHydrate when-visible><HomeServices /></LazyHydrate>
     <LazyHydrate when-visible><HomeProcess /></LazyHydrate>
     <LazyHydrate when-visible><HomeCustomers /></LazyHydrate>
@@ -17,7 +17,7 @@
       dataset
     }
   }
-  testimonials: allSanityTestimonial(sortBy: "publishedAt", limit: 3) {
+  testimonials: allSanityTestimonial(sortBy: "publishedAt", limit: 4) {
     edges {
       node {
         id
@@ -50,7 +50,7 @@ export default {
     HomeServices,
     HomeProcess,
     HomeListBlock,
-    HomeCustomers,
+    HomeCustomers
   },
   metaInfo: {
     title: 'Marketing & Design Agency in San Diego, California',
@@ -59,9 +59,9 @@ export default {
         rel: 'preload',
         type: 'video',
         crossorigin: true,
-        href: require('~/assets/videos/hero.mp4'),
-      },
-    ],
-  },
+        href: require('~/assets/videos/hero.mp4')
+      }
+    ]
+  }
 }
 </script>
