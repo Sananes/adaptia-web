@@ -69,9 +69,14 @@ export default {
         },
         {
           id: 6,
-          title: 'Branding & Design',
-          body: `Bringing more than 10 years experience in optimizing organic SEO campaigns across a variety of media. We specialize in growing organic visibility to content on the internet’s most valuable properties. We've worked in crafting large scale SEO strategy for some of the world's most innovative companies and bring a wealth of experience in the digital space to our client's brands.`
+          title: 'Web3 & Smart Contract Development',
+          body: `We develop top-of-the-line smart contracts, utilizing the most up-to-date innovations and gas optimization techniques. Secure, optimized, and reliable on any EVM compatible network (ETH, MATIC, AVAX) or Solana.`
         }
+        // {
+        //   id: 6,
+        //   title: 'Branding & Design',
+        //   body: `Bringing more than 10 years experience in optimizing organic SEO campaigns across a variety of media. We specialize in growing organic visibility to content on the internet’s most valuable properties. We've worked in crafting large scale SEO strategy for some of the world's most innovative companies and bring a wealth of experience in the digital space to our client's brands.`
+        // }
       ]
     }
   },
