@@ -29,7 +29,7 @@
         xyz="fade down rotate-90 ease-out-back delay-30"
         duration="auto"
       >
-        <button-arrow>Learn more</button-arrow>
+        <button-arrow v-on:click="scrollToElement({ behavior: 'smooth' })">Learn more</button-arrow>
       </XyzTransition>
     </div>
     <div class="hero__phone">
@@ -73,11 +73,20 @@ import Icon from '../Icon'
 export default {
   data() {
     return {
-      isLoaded: true,
+      isLoaded: true
     }
   },
   components: { Icon, ButtonArrow },
   name: 'Hero',
+  methods: {
+    scrollToElement(options) {
+      const el = document.getElementById('list')
+      if (el) {
+        // Use el.scrollIntoView() to instantly scroll to the element
+        el.scrollIntoView(options)
+      }
+    }
+  }
 }
 </script>
 

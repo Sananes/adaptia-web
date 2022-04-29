@@ -1,5 +1,5 @@
 <template>
-  <section-block class="list-block" variant="white" size="large">
+  <section-block id="list" class="list-block home-list" variant="white" size="large">
     <div class="container">
       <div class="list-block__heading">
         <XyzTransition appear-visible appear xyz="fade up">

@@ -50,10 +50,15 @@
           xyz="fade down ease-out-back stagger-1"
           duration="auto"
         >
-          <li key="1" class="footer__links-item"><g-link to="/">Instagram</g-link></li>
-          <li key="2" class="footer__links-item"><g-link to="/">Twitter</g-link></li>
-          <li key="3" class="footer__links-item"><g-link to="/">LinkedIn</g-link></li>
-          <li key="4" class="footer__links-item"><g-link to="/">Dribbble</g-link></li>
+          <li key="1" class="footer__links-item">
+            <a href="https://www.instagram.com/adaptia/">Instagram</a>
+          </li>
+          <li key="2" class="footer__links-item">
+            <a href="https://www.facebook.com/adaptiadesign">Facebook</a>
+          </li>
+          <li key="3" class="footer__links-item">
+            <a href="https://www.linkedin.com/company/adaptia/">LinkedIn</a>
+          </li>
         </XyzTransitionGroup>
       </ul>
       <div class="footer__address" key="3">
@@ -71,7 +76,7 @@
         </XyzTransitionGroup>
       </div>
 
-      <div class="footer__address" key="4">
+      <!-- <div class="footer__address" key="4">
         <XyzTransitionGroup
           appear-visible
           class="contact__content"
@@ -84,7 +89,7 @@
             Carlsbad, CA 92008
           </address>
         </XyzTransitionGroup>
-      </div>
+      </div> -->
     </XyzTransitionGroup>
     <aside class="footer__copyright container">
       <span class="footer__copyright-text"
@@ -151,7 +156,7 @@ export default {
   grid-gap: rfs(2rem);
 
   @include media('>=tablet') {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 

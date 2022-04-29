@@ -1,16 +1,16 @@
 <template>
-  <g-link v-bind="this.$attrs" class="button__arrow">
+  <a v-bind="this.$attrs" v-on="$listeners" class="button__arrow">
     <span>
       <icon name="chevron-down" size="small" />
     </span>
     <slot />
-  </g-link>
+  </a>
 </template>
 
 <script>
 import Icon from './Icon'
 export default {
-  components: { Icon },
+  components: { Icon }
 }
 </script>
 

@@ -107,16 +107,25 @@ export default {
   }
 
   &__list {
-    display: flex;
+    display: grid;
     flex-wrap: wrap;
-    justify-content: space-around;
+    grid-template-columns: repeat(2, 1fr);
     align-items: center;
     list-style: none;
     padding-left: 0;
+    margin: 0;
+
+    @include media('>tablet') {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include media('>desktop') {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 
   &__item {
-    width: 25%;
+    width: 100%;
     padding: rfs(2rem 1rem);
 
     img {
