@@ -45,6 +45,28 @@ export default {
     return {
       services: [
         {
+          title: 'Marketing',
+          body: [
+            'Search Engine Optimization',
+            'Paid Media Management',
+            'Research & Data',
+            'Business Consulting',
+            'Go To Market Strategy',
+            'Innovation'
+          ]
+        },
+        {
+          title: 'NFT',
+          body: [
+            ' NFT Market Strategy',
+            'NFT Digital Marketing',
+            'Crypto Endemic Publishers',
+            'Generative Art',
+            'Smart Contract Development',
+            'Web3 Development'
+          ]
+        },
+        {
           title: 'Strategy',
           body: [
             'User Research',
@@ -54,8 +76,19 @@ export default {
             'Customer Personas',
             'Naming',
             'Brand Voice Development',
-            'Art Direction',
-          ],
+            'Art Direction'
+          ]
+        },
+        {
+          title: 'Web Experience',
+          body: [
+            'Responsive Web Design',
+            'Web Development',
+            'App Design',
+            'Shopify/Woo E-Commerce',
+            'CMS Integration',
+            'Social Media Design'
+          ]
         },
         {
           title: 'Branding',
@@ -67,36 +100,12 @@ export default {
             'Iconography',
             'Copywriting',
             'Animation',
-            'Photography',
-          ],
-        },
-        {
-          title: 'Experience',
-          body: [
-            'Responsive Web Design',
-            'Web Development',
-            'App Design',
-            'E-Commerce',
-            'CMS Integration',
-            'Ad Campaign',
-            'Social Media Campaign',
-            'Social Media Design',
-          ],
-        },
-        {
-          title: 'Marketing',
-          body: [
-            'Research & Data',
-            'Branding & Positioning',
-            'Business Consulting',
-            'Go To Market',
-            'Innovation',
-            'SEO / SEM',
-          ],
-        },
-      ],
+            'Photography'
+          ]
+        }
+      ]
     }
-  },
+  }
 }
 </script>
 
@@ -106,7 +115,19 @@ export default {
   margin: rfs(6rem) 0 0 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(1, 1fr);
+
+  @media screen and (min-width: 500px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (min-width: 800px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media screen and (min-width: 1200px) {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }
 
 .multilist__item-list {

@@ -69,7 +69,7 @@
           duration="auto"
         >
           <address key="1">
-            San Deigo <br />
+            San Diego <br />
             2292 Faraday Ave <br />
             Carlsbad, CA 92008
           </address>

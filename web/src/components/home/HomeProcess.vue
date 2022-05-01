@@ -8,10 +8,6 @@
             Continuity is key — steady, year-long attention to brands and clients enables us to
             continually reevaluate what could be done to produce better results.
           </p>
-          <p>
-            We provide efficient value across multiple platforms. This needs to be addressed in the
-            document.
-          </p>
         </div>
         <div class="process__graphic">
           <div class="process__graphic-grid">
@@ -73,27 +69,27 @@ export default {
       elements: [
         {
           id: 1,
-          title: 'Business Goals',
+          title: 'Business Goals'
         },
         {
           id: 2,
-          title: 'Discovery',
+          title: 'Discovery'
         },
         {
           id: 3,
-          title: 'Branding',
+          title: 'Branding'
         },
         {
           id: 4,
-          title: 'Development',
+          title: 'Development'
         },
         {
           id: 5,
-          title: 'Production',
-        },
-      ],
+          title: 'Production'
+        }
+      ]
     }
-  },
+  }
 }
 </script>
 
