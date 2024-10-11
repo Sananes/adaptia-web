@@ -69,9 +69,8 @@
           duration="auto"
         >
           <address key="1">
-            San Diego <br />
-            2292 Faraday Ave <br />
-            Carlsbad, CA 92008
+            7901 4th St N suite 300<br />St. Petersburg<br />
+            FL 33702, United States
           </address>
         </XyzTransitionGroup>
       </div>
@@ -107,7 +106,7 @@
 import Button from './Button'
 import SectionBlock from './SectionBlock'
 export default {
-  components: { SectionBlock, Button }
+  components: { SectionBlock, Button },
 }
 </script>
 
